@@ -789,10 +789,10 @@ ul {
    ========================================================================== */
 .feature-accordion-layout {
     display: grid;
-    grid-template-columns: 1fr 340px;
-    gap: 4rem;
+    grid-template-columns: 1fr 310px;
+    gap: 3.5rem;
     align-items: start;
-    margin-top: 2rem;
+    margin-top: 1.5rem;
     width: 100%;
 }
 
@@ -810,12 +810,12 @@ ul {
 .feature-acc-item {
     position: relative;
     border-bottom: 1px solid rgba(255, 255, 255, 0.07);
-    padding: 1.4rem 1.6rem;
+    padding: 1.05rem 1.25rem;
     cursor: pointer;
     background: transparent;
     user-select: none;
     border-radius: 8px;
-    margin: 0.2rem 0;
+    margin: 0.15rem 0;
     transition: margin 0.8s cubic-bezier(0.16, 1, 0.3, 1),
                 box-shadow 0.8s cubic-bezier(0.16, 1, 0.3, 1),
                 border-color 0.8s cubic-bezier(0.16, 1, 0.3, 1);
@@ -848,26 +848,26 @@ ul {
 
 .feature-acc-item.active {
     border-color: rgba(255, 255, 255, 0.25);
-    margin: 0.55rem 0;
-    box-shadow: 0 20px 45px rgba(10, 102, 240, 0.4);
+    margin: 0.35rem 0;
+    box-shadow: 0 16px 36px rgba(10, 102, 240, 0.35);
 }
 
 .feature-acc-header {
     display: flex;
     align-items: center;
     justify-content: flex-start;
-    gap: 1.5rem;
+    gap: 1.15rem;
     position: relative;
     z-index: 2;
 }
 
 .feature-acc-num {
-    font-size: 0.95rem;
+    font-size: 0.82rem;
     font-weight: 600;
     color: rgba(255, 255, 255, 0.35);
     font-family: inherit;
-    min-width: 32px;
-    height: 26px;
+    min-width: 26px;
+    height: 22px;
     border-radius: 4px;
     display: flex;
     align-items: center;
@@ -885,7 +885,7 @@ ul {
 
 .feature-acc-title {
     flex: 1;
-    font-size: 1.15rem;
+    font-size: 0.98rem;
     font-weight: 500;
     color: rgba(255, 255, 255, 0.7);
     transition: color 0.75s ease;
@@ -913,14 +913,14 @@ ul {
 }
 
 .feature-acc-desc {
-    font-size: 0.95rem;
-    line-height: 1.6;
+    font-size: 0.85rem;
+    line-height: 1.5;
     color: rgba(255, 255, 255, 0.55);
     margin: 0;
     padding-top: 0;
-    padding-left: calc(32px + 1.5rem);
+    padding-left: calc(26px + 1.15rem);
     opacity: 0;
-    transform: translateY(-8px);
+    transform: translateY(-6px);
     transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.05s,
                 transform 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.05s,
                 padding 0.85s cubic-bezier(0.16, 1, 0.3, 1),
@@ -932,7 +932,7 @@ ul {
 }
 
 .feature-acc-item.active .feature-acc-desc {
-    padding-top: 0.95rem;
+    padding-top: 0.75rem;
     opacity: 1;
     transform: translateY(0);
     color: rgba(255, 255, 255, 0.95);
@@ -948,24 +948,24 @@ ul {
 }
 
 .pixel-mockup-wrap {
-    width: 380px;
+    width: 295px;
     max-width: 100%;
     position: relative;
-    filter: drop-shadow(0 35px 75px rgba(0, 0, 0, 0.9)) drop-shadow(0 0 45px rgba(10, 102, 240, 0.22));
+    filter: drop-shadow(0 30px 65px rgba(0, 0, 0, 0.9)) drop-shadow(0 0 35px rgba(10, 102, 240, 0.2));
     transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), filter 0.4s ease;
     display: flex;
     justify-content: center;
 }
 
 .pixel-mockup-wrap:hover {
-    transform: translateY(-8px) scale(1.02);
-    filter: drop-shadow(0 45px 90px rgba(0, 0, 0, 0.95)) drop-shadow(0 0 60px rgba(10, 102, 240, 0.35));
+    transform: translateY(-6px) scale(1.02);
+    filter: drop-shadow(0 40px 80px rgba(0, 0, 0, 0.95)) drop-shadow(0 0 50px rgba(10, 102, 240, 0.3));
 }
 
 .pixel-mockup-img {
     width: 100%;
     height: auto;
-    max-height: 640px;
+    max-height: 520px;
     object-fit: contain;
     display: block;
 }
