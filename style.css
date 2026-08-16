@@ -2059,18 +2059,18 @@ ul {
     left: -1px;
     width: 2px;
     height: 14px;
-    background: #ff5722;
+    background: #3385ff;
     opacity: 0.9;
 }
 
-/* Warm Ambient Bottom-Left Glow Accent */
+/* Ambient Bottom-Left Blue Glow Accent */
 .philosophy-glow-accent {
     position: absolute;
     bottom: -120px;
     left: -80px;
     width: 650px;
     height: 520px;
-    background: radial-gradient(circle, rgba(230, 81, 0, 0.22) 0%, rgba(255, 109, 0, 0.07) 50%, transparent 75%);
+    background: radial-gradient(circle, rgba(10, 102, 240, 0.28) 0%, rgba(51, 133, 255, 0.08) 50%, transparent 75%);
     filter: blur(95px);
     pointer-events: none;
     z-index: 1;
@@ -2103,7 +2103,7 @@ ul {
 }
 
 .philosophy-top-tags .tag-slash {
-    color: #ff5722;
+    color: #3385ff;
     font-weight: 700;
     opacity: 0.9;
 }
@@ -2132,7 +2132,7 @@ ul {
     text-align: left;
 }
 
-/* Tilted Download Pill (Matching Reference Screenshot) */
+/* Tilted Download Pill (STRON Blue Theme) */
 .tilted-download-pill {
     position: absolute;
     top: 36%;
@@ -2140,10 +2140,10 @@ ul {
     transform: rotate(-22deg);
     display: inline-flex;
     align-items: center;
-    background: linear-gradient(135deg, #e65100 0%, #ff6d00 100%);
+    background: linear-gradient(135deg, #0052cc 0%, #0066ff 50%, #3385ff 100%);
     border-radius: 100px;
     padding: 0.55rem 1.25rem 0.55rem 0.65rem;
-    box-shadow: 0 14px 35px rgba(230, 81, 0, 0.45), 0 0 20px rgba(255, 109, 0, 0.25);
+    box-shadow: 0 14px 35px rgba(10, 102, 240, 0.45), 0 0 25px rgba(51, 133, 255, 0.3);
     text-decoration: none;
     cursor: pointer;
     z-index: 10;
@@ -2152,7 +2152,7 @@ ul {
 
 .tilted-download-pill:hover {
     transform: rotate(-22deg) scale(1.08);
-    box-shadow: 0 20px 45px rgba(230, 81, 0, 0.65), 0 0 30px rgba(255, 109, 0, 0.4);
+    box-shadow: 0 20px 45px rgba(10, 102, 240, 0.65), 0 0 35px rgba(51, 133, 255, 0.45);
 }
 
 .tilted-download-pill .pill-plus-circle {
@@ -2160,7 +2160,7 @@ ul {
     height: 22px;
     border-radius: 50%;
     background: #ffffff;
-    color: #e65100;
+    color: #0066ff;
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -2169,7 +2169,7 @@ ul {
 }
 
 .tilted-download-pill .pill-plus-circle svg {
-    stroke: #e65100;
+    stroke: #0066ff;
 }
 
 .tilted-download-pill .pill-title {
