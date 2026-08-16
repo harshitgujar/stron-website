@@ -396,9 +396,9 @@ ul {
 }
 
 .h-hero {
-    font-size: 3.75rem; /* Reduce size slightly more */
+    font-size: 3rem;
     line-height: 1.15;
-    font-weight: 500; /* Reduce boldness */
+    font-weight: 500;
     letter-spacing: -0.02em;
     color: #fff;
     margin: 0;
@@ -416,7 +416,7 @@ ul {
 }
 
 .hero-content-right .copy {
-    font-size: 1.3125rem;
+    font-size: 1.05rem;
     line-height: 1.6;
     color: rgba(255, 255, 255, 0.7);
     text-align: center;
