@@ -119,9 +119,9 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     const accordionItems = document.querySelectorAll('.feature-acc-item');
-    const mockupScreen = document.getElementById('feature-mockup-screen');
+    const pixelMockupImg = document.getElementById('pixelMockupImg');
 
-    if (accordionItems.length > 0 && mockupScreen) {
+    if (accordionItems.length > 0) {
         accordionItems.forEach(item => {
             item.addEventListener('click', () => {
                 const isActive = item.classList.contains('active');
@@ -131,60 +131,11 @@ document.addEventListener('DOMContentLoaded', () => {
                 accordionItems.forEach(i => i.classList.remove('active'));
                 item.classList.add('active');
 
-                const featureKey = item.getAttribute('data-feature');
-                const screenData = featureScreens[featureKey];
-                if (!screenData) return;
-
-                // Animate mockup screen transition with GSAP
-                const currentCard = mockupScreen.querySelector('.feature-screen-card');
-                if (currentCard && typeof gsap !== 'undefined') {
-                    gsap.to(currentCard, {
-                        opacity: 0,
-                        y: 12,
-                        scale: 0.96,
-                        duration: 0.35,
-                        ease: "power2.inOut",
-                        onComplete: () => {
-                            mockupScreen.innerHTML = `
-                                <div class="feature-screen-card" style="background: ${screenData.bg}; opacity: 0; transform: translateY(-12px) scale(0.96);">
-                                    <div class="screen-pill">${screenData.pill}</div>
-                                    <div class="screen-title">${screenData.title}</div>
-                                    <div class="screen-stats">
-                                        <div class="stat-num">${screenData.statNum}</div>
-                                        <div class="stat-lbl">${screenData.statLbl}</div>
-                                    </div>
-                                </div>
-                            `;
-                            const newCard = mockupScreen.querySelector('.feature-screen-card');
-                            if (newCard) {
-                                gsap.fromTo(newCard, 
-                                    { opacity: 0, y: -12, scale: 0.96 },
-                                    { opacity: 1, y: 0, scale: 1, duration: 0.75, ease: "power2.out" }
-                                );
-                            }
-                        }
-                    });
-                } else if (currentCard) {
-                    currentCard.style.opacity = '0';
-                    setTimeout(() => {
-                        mockupScreen.innerHTML = `
-                            <div class="feature-screen-card" style="background: ${screenData.bg}; opacity: 0; transform: translateY(-10px) scale(0.96);">
-                                <div class="screen-pill">${screenData.pill}</div>
-                                <div class="screen-title">${screenData.title}</div>
-                                <div class="screen-stats">
-                                    <div class="stat-num">${screenData.statNum}</div>
-                                    <div class="stat-lbl">${screenData.statLbl}</div>
-                                </div>
-                            </div>
-                        `;
-                        requestAnimationFrame(() => {
-                            const newCard = mockupScreen.querySelector('.feature-screen-card');
-                            if (newCard) {
-                                newCard.style.opacity = '1';
-                                newCard.style.transform = 'translateY(0) scale(1)';
-                            }
-                        });
-                    }, 200);
+                if (pixelMockupImg && typeof gsap !== 'undefined') {
+                    gsap.fromTo(pixelMockupImg, 
+                        { scale: 0.98, opacity: 0.9 },
+                        { scale: 1, opacity: 1, duration: 0.4, ease: "power2.out" }
+                    );
                 }
             });
         });
