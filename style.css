@@ -687,6 +687,12 @@ ul {
     max-width: 600px;
 }
 
+.business-hero .section-header {
+    margin-left: auto;
+    margin-right: 0;
+    text-align: right;
+}
+
 .feature-combined-layout {
     display: grid;
     grid-template-columns: auto 1fr auto;
@@ -695,7 +701,7 @@ ul {
     min-height: auto;
     position: relative;
     max-width: 1100px;
-    margin: 1rem auto 0 auto;
+    margin: 1.5rem auto 0 auto;
     width: 100%;
 }
 
@@ -704,8 +710,8 @@ ul {
 }
 
 .combined-info {
-    max-width: 380px;
-    padding: 0 1rem;
+    max-width: 400px;
+    padding: 0 1.25rem;
 }
 
 .combined-list {
@@ -722,29 +728,29 @@ ul {
 }
 
 .feature-item {
-    font-size: clamp(0.9rem, 1.2vw, 1.1rem);
+    font-size: clamp(1rem, 1.4vw, 1.3rem);
     font-weight: 800;
     line-height: 1.4;
     color: rgba(255, 255, 255, 0.15);
     cursor: pointer;
     transition: color 0.3s ease, transform 0.3s ease;
     letter-spacing: -0.01em;
-    padding: 0.2rem 0;
+    padding: 0.25rem 0;
 }
 
 .feature-item.active,
 .feature-item:hover {
     color: #fff;
-    transform: translateX(-8px);
+    transform: translateX(-10px);
 }
 
 .detail-mockup-container.mobile-shape {
-    width: 220px;
-    height: 440px;
-    border-radius: 28px;
+    width: 250px;
+    height: 500px;
+    border-radius: 32px;
     overflow: hidden;
     margin-bottom: 0;
-    border: 6px solid #1a1a1a;
+    border: 7px solid #1a1a1a;
     box-shadow: 0 30px 60px rgba(0,0,0,0.6), inset 0 0 0 2px rgba(255,255,255,0.05);
 }
 
