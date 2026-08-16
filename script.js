@@ -65,128 +65,132 @@ document.addEventListener('DOMContentLoaded', () => {
     ScrollTrigger.refresh();
 
 
-    // 2. Interactive Feature Hover Selector & Detail View
-    const featureDataDetail = {
-        'mockup-members': {
-            mainTitle: 'Members',
-            subTitle: 'Member Management',
-            text: '<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae obcaecati id natus dignissimos totam at incidunt ipsam odio consequatur ducimus!</p><p>Placeat assumenda. Saepe repellendus delectus minima ullam facilis laboriosam facere harum quas laudantium voluptate corrupti reiciendis ipsa, odio repudiandae ab.</p>'
+    // 2. Interactive Feature Accordion & Dynamic Mockup Showcase
+    const featureScreens = {
+        'members': {
+            pill: 'MEMBERS',
+            title: 'Member Directory',
+            statNum: '1,248',
+            statLbl: 'Active Members',
+            bg: 'linear-gradient(135deg, #3385ff, #7928ca)'
         },
-        'mockup-attendance': {
-            mainTitle: 'Attendance',
-            subTitle: 'Track Check-ins',
-            text: '<p>Monitor daily attendance, track peak hours, and keep an eye on member engagement with real-time check-in data.</p>'
+        'attendance': {
+            pill: 'ATTENDANCE',
+            title: 'Live Check-in Hub',
+            statNum: '94.2%',
+            statLbl: 'Weekly Check-in Rate',
+            bg: 'linear-gradient(135deg, #00c3ff, #0a66f0)'
         },
-        'mockup-memberships': {
-            mainTitle: 'Memberships',
-            subTitle: 'Flexible Plans',
-            text: '<p>Create and manage various membership tiers, handle renewals, and track active subscriptions effortlessly.</p>'
+        'memberships': {
+            pill: 'PLANS & PASSES',
+            title: 'Tiered Memberships',
+            statNum: '4 Tiers',
+            statLbl: 'Auto-Renew Enabled',
+            bg: 'linear-gradient(135deg, #ff2d78, #ff8c00)'
         },
-        'mockup-payments': {
-            mainTitle: 'Payments',
-            subTitle: 'Revenue Tracking',
-            text: '<p>Automate billing, track overdue payments, and get a clear overview of your monthly revenue streams.</p>'
+        'payments': {
+            pill: 'FINANCE',
+            title: 'Automated Billing',
+            statNum: '$42,850',
+            statLbl: 'Processed This Month',
+            bg: 'linear-gradient(135deg, #00ff87, #0a66f0)'
         },
-        'mockup-workouts': {
-            mainTitle: 'Workouts',
-            subTitle: 'Program Design',
-            text: '<p>Assign workout plans, track member progress, and build custom exercise libraries for your trainers.</p>'
+        'workouts': {
+            pill: 'PROGRAMMING',
+            title: 'Workout Engine',
+            statNum: '320+',
+            statLbl: 'Custom WODs Logged',
+            bg: 'linear-gradient(135deg, #7928ca, #ff007f)'
         },
-        'mockup-crm': {
-            mainTitle: 'CRM',
-            subTitle: 'Client Relations',
-            text: '<p>Automate follow-ups, send targeted communications, and never miss an opportunity to engage with your leads and members.</p>'
+        'crm': {
+            pill: 'CRM & LEADS',
+            title: 'Lead Pipeline',
+            statNum: '84%',
+            statLbl: 'Lead-to-Trial Conversion',
+            bg: 'linear-gradient(135deg, #f12711, #f5af19)'
         },
-        'mockup-analytics': {
-            mainTitle: 'Analytics',
-            subTitle: 'Business Insights',
-            text: '<p>Get deep insights into retention rates, month-over-month growth, and overall business health with powerful analytics.</p>'
+        'analytics': {
+            pill: 'ANALYTICS',
+            title: 'Business Health',
+            statNum: '91.8%',
+            statLbl: 'Quarterly Member Retention',
+            bg: 'linear-gradient(135deg, #11998e, #38ef7d)'
         }
     };
 
-    const featureItems = document.querySelectorAll('.feature-item');
-    const combinedMockupContainer = document.getElementById('combined-mockup-container');
-    const combinedSubtitle = document.getElementById('combined-subtitle');
-    const combinedText = document.getElementById('combined-text');
-    const hiddenMockups = document.getElementById('hidden-mockups');
+    const accordionItems = document.querySelectorAll('.feature-acc-item');
+    const mockupScreen = document.getElementById('feature-mockup-screen');
 
-    if (featureItems.length > 0 && combinedMockupContainer) {
-        featureItems.forEach(item => {
-            item.addEventListener('mouseenter', () => {
-                // Update active state for list items
-                featureItems.forEach(i => i.classList.remove('active'));
+    if (accordionItems.length > 0 && mockupScreen) {
+        accordionItems.forEach(item => {
+            item.addEventListener('click', () => {
+                const isActive = item.classList.contains('active');
+                if (isActive) return;
+
+                // Toggle active classes
+                accordionItems.forEach(i => i.classList.remove('active'));
                 item.classList.add('active');
 
-                const targetId = item.getAttribute('data-target');
-                const data = featureDataDetail[targetId];
-                if (!data) return;
+                const featureKey = item.getAttribute('data-feature');
+                const screenData = featureScreens[featureKey];
+                if (!screenData) return;
 
-                // Update text content
-                if (combinedSubtitle) combinedSubtitle.textContent = data.subTitle;
-                if (combinedText) combinedText.innerHTML = data.text;
-
-                // Update Mockup Box
-                if (hiddenMockups) {
-                    const targetMockup = hiddenMockups.querySelector(`#${targetId}`);
-                    combinedMockupContainer.innerHTML = '';
-                    if (targetMockup && targetMockup.children.length > 0) {
-                        const clonedBox = targetMockup.children[0].cloneNode(true);
-                        combinedMockupContainer.appendChild(clonedBox);
-                    }
+                // Animate mockup screen transition with GSAP
+                const currentCard = mockupScreen.querySelector('.feature-screen-card');
+                if (currentCard && typeof gsap !== 'undefined') {
+                    gsap.to(currentCard, {
+                        opacity: 0,
+                        y: 12,
+                        scale: 0.96,
+                        duration: 0.35,
+                        ease: "power2.inOut",
+                        onComplete: () => {
+                            mockupScreen.innerHTML = `
+                                <div class="feature-screen-card" style="background: ${screenData.bg}; opacity: 0; transform: translateY(-12px) scale(0.96);">
+                                    <div class="screen-pill">${screenData.pill}</div>
+                                    <div class="screen-title">${screenData.title}</div>
+                                    <div class="screen-stats">
+                                        <div class="stat-num">${screenData.statNum}</div>
+                                        <div class="stat-lbl">${screenData.statLbl}</div>
+                                    </div>
+                                </div>
+                            `;
+                            const newCard = mockupScreen.querySelector('.feature-screen-card');
+                            if (newCard) {
+                                gsap.fromTo(newCard, 
+                                    { opacity: 0, y: -12, scale: 0.96 },
+                                    { opacity: 1, y: 0, scale: 1, duration: 0.75, ease: "power2.out" }
+                                );
+                            }
+                        }
+                    });
+                } else if (currentCard) {
+                    currentCard.style.opacity = '0';
+                    setTimeout(() => {
+                        mockupScreen.innerHTML = `
+                            <div class="feature-screen-card" style="background: ${screenData.bg}; opacity: 0; transform: translateY(-10px) scale(0.96);">
+                                <div class="screen-pill">${screenData.pill}</div>
+                                <div class="screen-title">${screenData.title}</div>
+                                <div class="screen-stats">
+                                    <div class="stat-num">${screenData.statNum}</div>
+                                    <div class="stat-lbl">${screenData.statLbl}</div>
+                                </div>
+                            </div>
+                        `;
+                        requestAnimationFrame(() => {
+                            const newCard = mockupScreen.querySelector('.feature-screen-card');
+                            if (newCard) {
+                                newCard.style.opacity = '1';
+                                newCard.style.transform = 'translateY(0) scale(1)';
+                            }
+                        });
+                    }, 200);
                 }
-
-                // Add a smooth fade-in animation to the newly injected content
-                gsap.fromTo([combinedMockupContainer.children[0], combinedSubtitle, combinedText], 
-                    { opacity: 0, y: 10 }, 
-                    { opacity: 1, y: 0, duration: 0.4, stagger: 0.05, ease: "power2.out" }
-                );
             });
         });
     }
 
-    // 3. Footer Aurora Bars Animation
-    function initAuroraBars() {
-        const container = document.getElementById('footerAurora');
-        if (!container) return;
 
-        const barCount = 30; // Matches React default feel but tweaked for full width
-        const minHeightRatio = 0.18;
-        const maxHeightRatio = 0.92;
-        const speed = 0.5;
-        
-        const bars = [];
-        for (let i = 0; i < barCount; i++) {
-            const bar = document.createElement('div');
-            bar.className = 'aurora-bar';
-            container.appendChild(bar);
-            bars.push(bar);
-        }
-
-        let startTime = performance.now();
-
-        function animate(currentTime) {
-            const elapsed = (currentTime - startTime) / 1000;
-            const time = elapsed * speed;
-
-            bars.forEach((bar, index) => {
-                const norm = index / (barCount - 1);
-                const arch = Math.sin(norm * Math.PI);
-                const phase1 = (index / barCount) * Math.PI * 2;
-                const phase2 = (index / barCount) * Math.PI * 5.3;
-                const wave = 0.5 + 0.25 * Math.sin(time * 1.1 + phase1) + 0.25 * Math.sin(time * 0.7 + phase2);
-                const blended = arch * 0.65 + wave * 0.35;
-                const heightFraction = minHeightRatio + blended * (maxHeightRatio - minHeightRatio);
-                
-                bar.style.height = `${heightFraction * 100}%`;
-            });
-
-            requestAnimationFrame(animate);
-        }
-
-        requestAnimationFrame(animate);
-    }
-
-    initAuroraBars();
 
     // 5. Scramble Text Animation
     class TextScrambler {
@@ -293,95 +297,192 @@ document.addEventListener('DOMContentLoaded', () => {
 
     scrambleElements.forEach(el => scrambleObserver.observe(el));
 
-    // 6. Infinite Scroller Animation
-    const scrollerTrack = document.querySelector('.scroller-track');
-    const scrollerCards = document.querySelectorAll('.scroller-card');
-    const scrollerTitle = document.querySelector('.scroller-active-title');
-    const scrollerDesc = document.querySelector('.scroller-active-desc');
-    const scrollerTextArea = document.querySelector('.scroller-text-area');
-    
-    if (scrollerTrack && scrollerCards.length > 0) {
-        const scrollerDetails = [
-            { title: "Create", desc: "Build your event from the ground up with custom registration forms and ticketing." },
-            { title: "Discover", desc: "Reach athletes globally through the STRON marketplace." },
-            { title: "Register", desc: "Provide frictionless sign-ups and automated confirmations." },
-            { title: "Participate", desc: "Engage users with live leaderboards and interactive tracking." },
-            { title: "Complete", desc: "Publish official results and distribute finisher badges." },
-            { title: "Review", desc: "Gather feedback and analyze your event's success." }
-        ];
-        
-        const totalOriginalCards = 6;
-        let currentIndex = 0;
-        
-        function updateScrollerState() {
-            scrollerCards.forEach((card, index) => {
-                if (index === currentIndex || index === currentIndex + totalOriginalCards) {
-                    card.classList.add('active');
-                } else {
-                    card.classList.remove('active');
-                }
-            });
-            
-            const cardHeight = scrollerCards[0].offsetHeight;
-            const style = window.getComputedStyle(scrollerTrack);
-            const gap = parseFloat(style.gap) || 24;
-            const moveAmount = currentIndex * (cardHeight + gap);
-            
-            scrollerTrack.style.transform = `translateY(-${moveAmount}px)`;
-            
-            scrollerTextArea.classList.add('fade-out');
-            setTimeout(() => {
-                const dataIndex = currentIndex % totalOriginalCards;
-                scrollerTitle.innerText = scrollerDetails[dataIndex].title;
-                scrollerDesc.innerText = scrollerDetails[dataIndex].desc;
-                scrollerTextArea.classList.remove('fade-out');
-            }, 300);
+    // 6. Events Staggered Carousel Controls
+    const eventsViewport = document.getElementById('eventsCarouselViewport');
+    const eventsPrevBtn = document.getElementById('eventsPrevBtn');
+    const eventsNextBtn = document.getElementById('eventsNextBtn');
+
+    if (eventsViewport && eventsPrevBtn && eventsNextBtn) {
+        function getScrollStep() {
+            const firstCard = eventsViewport.querySelector('.stagger-col');
+            if (!firstCard) return 360;
+            const style = window.getComputedStyle(eventsViewport.querySelector('.staggered-carousel-track'));
+            const gap = parseFloat(style.gap) || 48;
+            return firstCard.offsetWidth + gap;
         }
-        
-        updateScrollerState();
-        
-        setInterval(() => {
-            currentIndex++;
-            scrollerTrack.classList.remove('no-transition');
-            updateScrollerState();
-            
-            if (currentIndex === totalOriginalCards) {
-                setTimeout(() => {
-                    scrollerTrack.classList.add('no-transition');
-                    currentIndex = 0;
-                    scrollerTrack.style.transform = `translateY(0px)`;
-                    // Update active classes without triggering text fade
-                    scrollerCards.forEach((card, index) => {
-                        if (index === 0) card.classList.add('active');
-                        else card.classList.remove('active');
-                    });
-                }, 600); // Wait for transition duration
-            }
-        }, 3500);
-    }
-    
-    // 7. FAQ Accordion Logic
-    const faqItems = document.querySelectorAll('.faq-item');
-    
-    faqItems.forEach(item => {
-        const questionBtn = item.querySelector('.faq-question');
-        const answer = item.querySelector('.faq-answer');
-        
-        questionBtn.addEventListener('click', () => {
-            const isOpen = item.classList.contains('open');
-            
-            // Close all items
-            faqItems.forEach(otherItem => {
-                otherItem.classList.remove('open');
-                otherItem.querySelector('.faq-answer').style.maxHeight = null;
-            });
-            
-            // If it wasn't open, open it
-            if (!isOpen) {
-                item.classList.add('open');
-                answer.style.maxHeight = answer.scrollHeight + "px";
+
+        function updateCarouselButtons() {
+            const maxScroll = eventsViewport.scrollWidth - eventsViewport.clientWidth;
+            eventsPrevBtn.disabled = eventsViewport.scrollLeft <= 5;
+            eventsNextBtn.disabled = eventsViewport.scrollLeft >= maxScroll - 5;
+        }
+
+        eventsNextBtn.addEventListener('click', () => {
+            const step = getScrollStep();
+            const maxScroll = eventsViewport.scrollWidth - eventsViewport.clientWidth;
+            if (eventsViewport.scrollLeft >= maxScroll - 10) {
+                eventsViewport.scrollTo({ left: 0, behavior: 'smooth' });
+            } else {
+                eventsViewport.scrollBy({ left: step, behavior: 'smooth' });
             }
         });
-    });
+
+        eventsPrevBtn.addEventListener('click', () => {
+            const step = getScrollStep();
+            const maxScroll = eventsViewport.scrollWidth - eventsViewport.clientWidth;
+            if (eventsViewport.scrollLeft <= 10) {
+                eventsViewport.scrollTo({ left: maxScroll, behavior: 'smooth' });
+            } else {
+                eventsViewport.scrollBy({ left: -step, behavior: 'smooth' });
+            }
+        });
+
+        eventsViewport.addEventListener('scroll', updateCarouselButtons, { passive: true });
+        updateCarouselButtons();
+    }
+    
+    // 7. Editorial FAQ Accordion Logic
+    const faqCardItems = document.querySelectorAll('.faq-card-item');
+    
+    if (faqCardItems.length > 0) {
+        faqCardItems.forEach(item => {
+            const header = item.querySelector('.faq-card-header');
+            if (!header) return;
+
+            header.addEventListener('click', (e) => {
+                e.preventDefault();
+                const isActive = item.classList.contains('active');
+                
+                // Optional: Close other items for single-open behavior
+                faqCardItems.forEach(otherItem => {
+                    if (otherItem !== item) {
+                        otherItem.classList.remove('active');
+                        const otherBtn = otherItem.querySelector('.faq-card-header');
+                        if (otherBtn) otherBtn.setAttribute('aria-expanded', 'false');
+                    }
+                });
+                
+                if (isActive) {
+                    item.classList.remove('active');
+                    header.setAttribute('aria-expanded', 'false');
+                } else {
+                    item.classList.add('active');
+                    header.setAttribute('aria-expanded', 'true');
+                }
+            });
+        });
+    }
+    // 8. Reviews Carousel Logic (Queue with Swapping 3D Rotation)
+    const reviewCards = Array.from(document.querySelectorAll('.review-card-tilted'));
+    const btnPrev = document.getElementById('btn-prev-review');
+    const btnNext = document.getElementById('btn-next-review');
+    const carouselContainer = document.getElementById('reviews-carousel');
+
+    if (reviewCards.length > 0 && btnPrev && btnNext) {
+        const totalCards = reviewCards.length; // 6 cards
+        let activeIndex = 1; // start with Alex R (index 1) in center, Sarah (0) on left, David (2) on right
+        let isAnimating = false;
+
+        function updateCarousel() {
+            reviewCards.forEach((card, i) => {
+                // Calculate circular offset relative to activeIndex
+                const diff = (i - activeIndex + totalCards) % totalCards;
+
+                // Reset all position classes
+                card.classList.remove('pos-center', 'pos-left', 'pos-right', 'pos-hidden-left', 'pos-hidden-right');
+
+                if (diff === 0) {
+                    // Center Active Card
+                    card.classList.add('pos-center');
+                } else if (diff === 1) {
+                    // Immediate Right Card
+                    card.classList.add('pos-right');
+                } else if (diff === totalCards - 1) {
+                    // Immediate Left Card
+                    card.classList.add('pos-left');
+                } else if (diff <= Math.floor(totalCards / 2)) {
+                    // Waiting in Right Queue
+                    card.classList.add('pos-hidden-right');
+                } else {
+                    // Waiting in Left Queue
+                    card.classList.add('pos-hidden-left');
+                }
+            });
+        }
+
+        function nextSlide() {
+            if (isAnimating) return;
+            isAnimating = true;
+            activeIndex = (activeIndex + 1) % totalCards;
+            updateCarousel();
+            setTimeout(() => { isAnimating = false; }, 400);
+        }
+
+        function prevSlide() {
+            if (isAnimating) return;
+            isAnimating = true;
+            activeIndex = (activeIndex - 1 + totalCards) % totalCards;
+            updateCarousel();
+            setTimeout(() => { isAnimating = false; }, 400);
+        }
+
+        // Button clicks
+        btnNext.addEventListener('click', (e) => {
+            e.preventDefault();
+            nextSlide();
+        });
+
+        btnPrev.addEventListener('click', (e) => {
+            e.preventDefault();
+            prevSlide();
+        });
+
+        // Direct card click support (Click left card -> rotate left; Click right card -> rotate right)
+        reviewCards.forEach((card) => {
+            card.addEventListener('click', () => {
+                if (card.classList.contains('pos-left')) {
+                    prevSlide();
+                } else if (card.classList.contains('pos-right')) {
+                    nextSlide();
+                }
+            });
+        });
+
+        // Touch swipe support for mobile
+        if (carouselContainer) {
+            let touchStartX = 0;
+            let touchEndX = 0;
+
+            carouselContainer.addEventListener('touchstart', (e) => {
+                touchStartX = e.changedTouches[0].screenX;
+            }, { passive: true });
+
+            carouselContainer.addEventListener('touchend', (e) => {
+                touchEndX = e.changedTouches[0].screenX;
+                const swipeDist = touchEndX - touchStartX;
+                if (Math.abs(swipeDist) > 40) {
+                    if (swipeDist < 0) {
+                        nextSlide(); // swipe left -> next
+                    } else {
+                        prevSlide(); // swipe right -> prev
+                    }
+                }
+            }, { passive: true });
+        }
+
+        // Keyboard arrow support when in view
+        document.addEventListener('keydown', (e) => {
+            if (!carouselContainer) return;
+            const rect = carouselContainer.getBoundingClientRect();
+            const isInView = rect.top < window.innerHeight && rect.bottom > 0;
+            if (isInView) {
+                if (e.key === 'ArrowRight') nextSlide();
+                else if (e.key === 'ArrowLeft') prevSlide();
+            }
+        });
+
+        // Initial setup
+        updateCarousel();
+    }
 
 });
