@@ -1633,8 +1633,8 @@ ul {
 }
 
 .stagger-feature-card:hover {
-    height: 560px;
-    max-height: 560px;
+    height: 580px;
+    max-height: 580px;
     transform: translateY(-10px);
     box-shadow: 0 45px 95px rgba(0, 0, 0, 0.9), 0 0 45px rgba(10, 102, 240, 0.45);
 }
@@ -1643,7 +1643,7 @@ ul {
     font-size: 1.2rem;
     font-weight: 700;
     color: #ffffff;
-    padding: 1.6rem 1.6rem 0.5rem;
+    padding: 1.3rem 1.4rem 0.3rem;
     margin: 0;
     letter-spacing: -0.015em;
     line-height: 1.2;
@@ -1677,11 +1677,11 @@ ul {
 .stagger-card-media.stagger-mockup-media {
     overflow: visible;
     align-items: flex-start;
-    padding: 0.4rem 0.8rem 0;
+    padding: 0.25rem 0.7rem 0.6rem;
 }
 
 .stagger-card-media.stagger-mockup-media img {
-    width: 92%;
+    width: 93%;
     height: auto;
     max-width: 260px;
     object-fit: contain;
