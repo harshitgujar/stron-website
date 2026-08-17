@@ -1073,13 +1073,14 @@ ul {
 .fullscreen-showcase-section {
     position: relative;
     width: 100%;
-    min-height: clamp(800px, 94vh, 980px);
+    min-height: clamp(820px, 94vh, 1000px);
     background-color: #050506;
     overflow: hidden;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 3rem 0;
+    padding: 6rem 0;
+    margin: 5rem 0;
 }
 
 /* Fullscreen Immersive Mockup Backdrop */
