@@ -657,74 +657,184 @@
                     </p>
                 </div>
 
-                <div class="app-features-layout mt-large">
-                    <div class="app-showcase">
-                        <div class="device large-device">
-                            <div class="screen">
-                                <div class="ui-image placeholder-box" style="height: 480px; background-color: #1a1a1a; padding: 12px; border-radius: 40px; box-sizing: border-box; display: flex;">
-                                    <div style="flex: 1; border-radius: 32px; background: linear-gradient(180deg, #4d94ff 0%, #b366ff 100%); display: flex; align-items: center; justify-content: center; flex-direction: column; color: #fff; font-size: 2.2rem; font-weight: 700; text-align: center; line-height: 1.3; font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif;">
-                                        Members<br>Mockup
+                <!-- 3 Behance Story Cards: Workout Logging, Challenges, Rewards -->
+                <div class="virex-cards-grid mt-large">
+                    
+                    <!-- Card 01: Workout Logging -->
+                    <div class="virex-story-card card-workout">
+                        <!-- Top Story Progress Bar -->
+                        <div class="virex-story-bars">
+                            <span class="bar active"></span>
+                            <span class="bar"></span>
+                            <span class="bar"></span>
+                        </div>
+
+                        <!-- Card Header -->
+                        <div class="virex-card-header">
+                            <div class="virex-brand-info">
+                                <div class="virex-logo-icon">
+                                    <svg viewBox="0 0 24 24" width="16" height="16" fill="#ffffff"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+                                </div>
+                                <div class="virex-brand-text">
+                                    <span class="virex-brand-name">STRON</span>
+                                    <span class="virex-brand-sub">Workout Logging</span>
+                                </div>
+                            </div>
+                            <div class="virex-more-btn">
+                                <span></span><span></span><span></span>
+                            </div>
+                        </div>
+
+                        <!-- Card Body Stage -->
+                        <div class="virex-card-stage">
+                            <div class="virex-floating-mockup">
+                                <img src="assets/Mockuuups Free Transparent iPhone 17 Mockup copy.png" alt="Workout Logging UI" class="virex-mockup-img" loading="lazy">
+                            </div>
+                            <div class="virex-card-headline">
+                                <span>YOUR ROUTINE</span>
+                                <strong>NEEDS A SYSTEM.</strong>
+                            </div>
+                        </div>
+
+                        <!-- Card Social Toolbar Footer -->
+                        <div class="virex-card-footer">
+                            <div class="virex-social-actions">
+                                <button class="virex-action-btn" aria-label="Like">
+                                    <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+                                </button>
+                                <button class="virex-action-btn" aria-label="Comment">
+                                    <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+                                </button>
+                                <button class="virex-action-btn" aria-label="Share">
+                                    <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+                                </button>
+                            </div>
+                            <button class="virex-action-btn" aria-label="Save">
+                                <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path></svg>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Card 02: Challenges -->
+                    <div class="virex-story-card card-challenges">
+                        <!-- Top Story Progress Bar -->
+                        <div class="virex-story-bars">
+                            <span class="bar active"></span>
+                            <span class="bar active"></span>
+                            <span class="bar"></span>
+                        </div>
+
+                        <!-- Card Header -->
+                        <div class="virex-card-header">
+                            <div class="virex-brand-info">
+                                <div class="virex-logo-icon">
+                                    <svg viewBox="0 0 24 24" width="16" height="16" fill="#ffffff"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+                                </div>
+                                <div class="virex-brand-text">
+                                    <span class="virex-brand-name">STRON</span>
+                                    <span class="virex-brand-sub">Challenges</span>
+                                </div>
+                            </div>
+                            <div class="virex-more-btn">
+                                <span></span><span></span><span></span>
+                            </div>
+                        </div>
+
+                        <!-- Card Body Stage -->
+                        <div class="virex-card-stage">
+                            <div class="virex-hanging-poster">
+                                <div class="poster-hanger-bar"></div>
+                                <div class="poster-glass-frame">
+                                    <img src="assets/virtual_challenge_photo_1786782933816.jpg" alt="Fitness Challenge" class="poster-img" loading="lazy">
+                                    <div class="poster-logo-center">
+                                        <svg viewBox="0 0 24 24" width="26" height="26" fill="#ffffff"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
                                     </div>
                                 </div>
                             </div>
+                            <div class="virex-card-headline">
+                                <span>PUSH BEYOND</span>
+                                <strong>EVERY BOUNDARY.</strong>
+                            </div>
+                        </div>
+
+                        <!-- Card Social Toolbar Footer -->
+                        <div class="virex-card-footer">
+                            <div class="virex-social-actions">
+                                <button class="virex-action-btn" aria-label="Like">
+                                    <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+                                </button>
+                                <button class="virex-action-btn" aria-label="Comment">
+                                    <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+                                </button>
+                                <button class="virex-action-btn" aria-label="Share">
+                                    <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+                                </button>
+                            </div>
+                            <button class="virex-action-btn" aria-label="Save">
+                                <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path></svg>
+                            </button>
                         </div>
                     </div>
-                    <div class="app-features-grid">
-                        <div class="feature-box smooth-card">
-                            <div class="icon-wrapper">
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg>
+
+                    <!-- Card 03: Rewards -->
+                    <div class="virex-story-card card-rewards">
+                        <!-- Top Story Progress Bar -->
+                        <div class="virex-story-bars">
+                            <span class="bar active"></span>
+                            <span class="bar active"></span>
+                            <span class="bar active"></span>
+                        </div>
+
+                        <!-- Card Header -->
+                        <div class="virex-card-header">
+                            <div class="virex-brand-info">
+                                <div class="virex-logo-icon">
+                                    <svg viewBox="0 0 24 24" width="16" height="16" fill="#ffffff"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+                                </div>
+                                <div class="virex-brand-text">
+                                    <span class="virex-brand-name">STRON</span>
+                                    <span class="virex-brand-sub">Rewards</span>
+                                </div>
                             </div>
-                            <div class="feature-content">
-                                <h4>Activity Tracking</h4>
-                                <p>Track daily movement.</p>
+                            <div class="virex-more-btn">
+                                <span></span><span></span><span></span>
                             </div>
                         </div>
-                        <div class="feature-box smooth-card">
-                            <div class="icon-wrapper">
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+
+                        <!-- Card Body Stage -->
+                        <div class="virex-card-stage">
+                            <div class="virex-floating-badge">
+                                <img src="assets/event_card_complete.jpg" alt="Athlete Finishers & Rewards" class="badge-bg-img" loading="lazy">
+                                <div class="badge-holo-overlay">
+                                    <span class="badge-star-icon">★</span>
+                                    <span class="badge-level-text">PRO ATHLETE TIER</span>
+                                </div>
                             </div>
-                            <div class="feature-content">
-                                <h4>Workout Logging</h4>
-                                <p>Record workouts.</p>
-                            </div>
-                        </div>
-                        <div class="feature-box smooth-card">
-                            <div class="icon-wrapper">
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
-                            </div>
-                            <div class="feature-content">
-                                <h4>Challenges</h4>
-                                <p>Compete in fitness challenges.</p>
+                            <div class="virex-card-headline">
+                                <span>TURN EFFORT</span>
+                                <strong>INTO REAL VALUE.</strong>
                             </div>
                         </div>
-                        <div class="feature-box smooth-card">
-                            <div class="icon-wrapper">
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+
+                        <!-- Card Social Toolbar Footer -->
+                        <div class="virex-card-footer">
+                            <div class="virex-social-actions">
+                                <button class="virex-action-btn" aria-label="Like">
+                                    <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+                                </button>
+                                <button class="virex-action-btn" aria-label="Comment">
+                                    <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+                                </button>
+                                <button class="virex-action-btn" aria-label="Share">
+                                    <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+                                </button>
                             </div>
-                            <div class="feature-content">
-                                <h4>Events</h4>
-                                <p>Discover and join events.</p>
-                            </div>
-                        </div>
-                        <div class="feature-box smooth-card">
-                            <div class="icon-wrapper">
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="7"></circle><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline></svg>
-                            </div>
-                            <div class="feature-content">
-                                <h4>Achievements</h4>
-                                <p>Certificates, badges, rewards.</p>
-                            </div>
-                        </div>
-                        <div class="feature-box smooth-card">
-                            <div class="icon-wrapper">
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.42 4.58a5.4 5.4 0 0 0-7.65 0l-.77.78-.77-.78a5.4 5.4 0 0 0-7.65 0C1.46 6.7 1.33 10.28 4 13l8 8 8-8c2.67-2.72 2.54-6.3.42-8.42z"></path></svg>
-                            </div>
-                            <div class="feature-content">
-                                <h4>Health Sync</h4>
-                                <p>Connect with Apple Health.</p>
-                            </div>
+                            <button class="virex-action-btn" aria-label="Save">
+                                <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path></svg>
+                            </button>
                         </div>
                     </div>
+
                 </div>
             </div>
         </section>
