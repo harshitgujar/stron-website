@@ -1068,59 +1068,117 @@ ul {
     padding-bottom: 0.5rem;
 }
 /* ==========================================================================
-   OPERATIONAL INTELLIGENCE SHOWCASE (Behance 4-Corner Editorial Grid)
+   FULLSCREEN OPERATIONAL SHOWCASE (Behance 4-Corner Glassmorphism Overlay)
    ========================================================================== */
-.creative-board {
+.fullscreen-showcase-section {
     position: relative;
-    padding: 7rem 0 8rem;
+    width: 100%;
+    min-height: clamp(800px, 94vh, 980px);
     background-color: #050506;
     overflow: hidden;
-}
-
-.behance-showcase-grid {
-    display: grid;
-    grid-template-columns: 1fr 1.35fr 1fr;
-    gap: 2.2rem;
+    display: flex;
     align-items: center;
-    max-width: 1280px;
-    margin: 0 auto;
-    position: relative;
+    justify-content: center;
+    padding: 3rem 0;
 }
 
-.behance-col {
+/* Fullscreen Immersive Mockup Backdrop */
+.fullscreen-mockup-backdrop {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.fullscreen-mockup-img {
+    width: 100%;
+    height: 100%;
+    max-width: 1520px;
+    object-fit: contain;
+    object-position: center;
+    filter: drop-shadow(0 40px 100px rgba(0, 0, 0, 0.95));
+    transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.fullscreen-showcase-section:hover .fullscreen-mockup-img {
+    transform: scale(1.02);
+}
+
+/* Soft Vignette Overlay for Crisp Contrast */
+.fullscreen-mockup-overlay {
+    position: absolute;
+    inset: 0;
+    background: 
+        radial-gradient(ellipse 70% 70% at 50% 50%, transparent 35%, rgba(5, 5, 6, 0.82) 100%),
+        linear-gradient(to bottom, rgba(5, 5, 6, 0.5) 0%, transparent 18%, transparent 82%, rgba(5, 5, 6, 0.65) 100%);
+    pointer-events: none;
+    z-index: 2;
+}
+
+/* 4-Corner Floating Cards Stage */
+.fullscreen-cards-stage {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    z-index: 3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.fullscreen-stage-container {
+    width: 100%;
+    max-width: 1380px;
+    margin: 0 auto;
+    padding: 0 2rem;
     display: flex;
     flex-direction: column;
-    gap: 2.2rem;
-    position: relative;
-    z-index: 3;
+    justify-content: space-between;
+    min-height: 720px;
+    gap: 4rem;
 }
 
-/* Glassmorphism Dark Editorial Cards (1:1 with Behance Reference) */
-.behance-editorial-card {
-    position: relative;
-    background: rgba(16, 17, 23, 0.78);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    border-top: 1px solid rgba(255, 255, 255, 0.2);
+.showcase-cards-row {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    gap: 2.5rem;
+}
+
+/* Authentic Glassmorphism Floating Cards (Matching Behance Ref) */
+.glassmorphic-card {
+    width: clamp(290px, 28vw, 365px);
+    background: rgba(14, 15, 20, 0.58);
+    backdrop-filter: blur(28px);
+    -webkit-backdrop-filter: blur(28px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-top: 1px solid rgba(255, 255, 255, 0.28);
     border-radius: 12px;
     padding: 2.4rem 2rem 2.2rem;
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.75), inset 0 1px 0 rgba(255, 255, 255, 0.18);
+    position: relative;
     overflow: hidden;
-    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.7), inset 0 1px 0 rgba(255, 255, 255, 0.1);
     transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), 
                 box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1),
-                border-color 0.4s ease;
+                border-color 0.4s ease,
+                background 0.4s ease;
     cursor: default;
 }
 
-.behance-editorial-card:hover {
-    transform: translateY(-6px);
-    border-color: rgba(51, 133, 255, 0.35);
-    border-top-color: rgba(51, 133, 255, 0.6);
-    box-shadow: 0 30px 70px rgba(0, 0, 0, 0.85), 0 0 35px rgba(10, 102, 240, 0.25);
+.glassmorphic-card:hover {
+    transform: translateY(-8px);
+    background: rgba(18, 20, 28, 0.75);
+    border-color: rgba(51, 133, 255, 0.4);
+    border-top-color: rgba(51, 133, 255, 0.75);
+    box-shadow: 0 35px 80px rgba(0, 0, 0, 0.9), 0 0 40px rgba(10, 102, 240, 0.3);
 }
 
-.behance-card-title {
+.glassmorphic-card .behance-card-title {
     font-size: 1.35rem;
     font-weight: 700;
     color: #ffffff;
@@ -1131,43 +1189,42 @@ ul {
     z-index: 2;
 }
 
-.behance-card-desc {
+.glassmorphic-card .behance-card-desc {
     font-size: 0.88rem;
     line-height: 1.62;
-    color: rgba(255, 255, 255, 0.62);
+    color: rgba(255, 255, 255, 0.75);
     margin-bottom: 1.8rem;
     position: relative;
     z-index: 2;
 }
 
-.behance-card-footer {
+.glassmorphic-card .behance-card-footer {
     display: flex;
     align-items: center;
     position: relative;
     z-index: 2;
 }
 
-.behance-tag-pill {
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.12);
+.glassmorphic-card .behance-tag-pill {
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.16);
     border-radius: 4px;
     padding: 0.32rem 0.85rem;
     font-size: 0.75rem;
     font-weight: 600;
     letter-spacing: 0.02em;
-    color: rgba(255, 255, 255, 0.75);
+    color: rgba(255, 255, 255, 0.85);
     text-transform: uppercase;
 }
 
-/* Huge Watermark Ghost Number (Bottom Right of Each Card) */
-.behance-ghost-num {
+.glassmorphic-card .behance-ghost-num {
     position: absolute;
     bottom: -0.8rem;
     right: 0.8rem;
     font-size: 7rem;
     font-weight: 900;
     line-height: 1;
-    color: rgba(255, 255, 255, 0.035);
+    color: rgba(255, 255, 255, 0.04);
     user-select: none;
     pointer-events: none;
     font-family: inherit;
@@ -1175,65 +1232,37 @@ ul {
     z-index: 1;
 }
 
-.behance-editorial-card:hover .behance-ghost-num {
-    color: rgba(51, 133, 255, 0.12);
-    transform: scale(1.04);
+.glassmorphic-card:hover .behance-ghost-num {
+    color: rgba(51, 133, 255, 0.18);
+    transform: scale(1.05);
 }
 
-/* Center Device Mockup Showcase Stage */
-.behance-center-showcase {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    z-index: 2;
-    padding: 0 0.5rem;
-}
-
-.behance-mockup-frame {
-    position: relative;
-    width: 100%;
-    max-width: 580px;
-    border-radius: 14px;
-    overflow: hidden;
-    box-shadow: 0 35px 85px rgba(0, 0, 0, 0.95), 0 0 50px rgba(10, 102, 240, 0.2);
-    transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.5s ease;
-}
-
-.behance-mockup-frame:hover {
-    transform: translateY(-8px) scale(1.02);
-    box-shadow: 0 45px 100px rgba(0, 0, 0, 0.98), 0 0 65px rgba(10, 102, 240, 0.35);
-}
-
-.behance-mockup-img {
-    width: 100%;
-    height: auto;
-    display: block;
-    object-fit: cover;
-}
-
-/* Responsive Breakpoints */
-@media (max-width: 1100px) {
-    .behance-showcase-grid {
-        grid-template-columns: 1fr;
-        gap: 3rem;
+/* Responsive Media Queries */
+@media (max-width: 1024px) {
+    .fullscreen-showcase-section {
+        min-height: auto;
+        padding: 5rem 0;
     }
-    .behance-center-showcase {
-        order: -1;
-        max-width: 520px;
-        margin: 0 auto;
+    .fullscreen-mockup-backdrop {
+        position: relative;
+        height: 380px;
+        margin-bottom: 2.5rem;
     }
-    .behance-col {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
+    .fullscreen-cards-stage {
+        position: static;
+        min-height: auto;
+    }
+    .fullscreen-stage-container {
+        min-height: auto;
         gap: 1.5rem;
     }
-}
-
-@media (max-width: 768px) {
-    .behance-col {
-        grid-template-columns: 1fr;
+    .showcase-cards-row {
+        flex-direction: column;
         gap: 1.5rem;
+    }
+    .glassmorphic-card {
+        width: 100%;
+        max-width: 100%;
     }
 }
 
