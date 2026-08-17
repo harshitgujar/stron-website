@@ -675,9 +675,9 @@ ul {
     justify-content: center;
     text-align: center;
     overflow: hidden;
-    background-color: #002266;
-    box-shadow: 0 30px 80px rgba(0, 82, 204, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.35);
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    background-color: #05070f;
+    box-shadow: 0 30px 80px rgba(0, 30, 90, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.25);
+    border: 1px solid rgba(255, 255, 255, 0.15);
     /* Prevent subpixel antialiasing border-radius clipping artifacts */
     transform: translateZ(0);
     -webkit-mask-image: -webkit-radial-gradient(white, black);
@@ -694,14 +694,14 @@ ul {
     pointer-events: none;
 }
 
-/* 100% Full-Coverage Blue Gradient & Ambient Lighting Overlay */
+/* Reduced-Opacity Blue Gradient & Cinematic Contrast Overlay */
 .banner-gradient-card::after {
     content: '';
     position: absolute;
     inset: -2px;
     background: 
-        radial-gradient(circle at 50% 30%, rgba(51, 133, 255, 0.35) 0%, transparent 70%),
-        linear-gradient(135deg, rgba(10, 102, 240, 0.86) 0%, rgba(0, 38, 120, 0.92) 100%);
+        radial-gradient(circle at 50% 35%, rgba(51, 133, 255, 0.2) 0%, transparent 65%),
+        linear-gradient(135deg, rgba(10, 75, 185, 0.45) 0%, rgba(2, 12, 38, 0.65) 100%);
     z-index: 1;
     pointer-events: none;
 }
@@ -717,6 +717,7 @@ ul {
     margin: 0 auto 2rem;
     position: relative;
     z-index: 2;
+    text-shadow: 0 4px 30px rgba(0, 0, 0, 0.85), 0 1px 3px rgba(0, 0, 0, 0.9);
 }
 
 .banner-card-btn {
