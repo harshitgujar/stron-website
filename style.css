@@ -1457,6 +1457,48 @@ ul {
     max-width: 540px;
     padding: 1.2rem;
     pointer-events: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.community-download-pill {
+    display: inline-flex;
+    align-items: center;
+    background: linear-gradient(135deg, #0052cc 0%, #0066ff 50%, #3385ff 100%);
+    border-radius: 100px;
+    padding: 0.45rem 1.15rem 0.45rem 0.5rem;
+    box-shadow: 0 10px 25px rgba(10, 102, 240, 0.45), 0 0 20px rgba(51, 133, 255, 0.3);
+    text-decoration: none;
+    cursor: pointer;
+    margin-bottom: 1.5rem;
+    transform: rotate(0deg);
+    transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s ease;
+}
+
+.community-download-pill:hover {
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 16px 35px rgba(10, 102, 240, 0.6), 0 0 30px rgba(51, 133, 255, 0.45);
+}
+
+.community-download-pill .pill-icon-circle {
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 0.55rem;
+    flex-shrink: 0;
+}
+
+.community-download-pill .pill-label {
+    font-size: 0.86rem;
+    font-weight: 700;
+    color: #ffffff;
+    letter-spacing: -0.01em;
+    white-space: nowrap;
 }
 
 .events-cloud-headline {
@@ -1468,18 +1510,6 @@ ul {
     text-transform: uppercase;
     margin: 0;
     text-shadow: 0 10px 40px rgba(0, 0, 0, 0.85);
-}
-
-.community-tilted-pill {
-    position: absolute;
-    top: 38%;
-    right: -24px;
-    transform: rotate(-18deg);
-    pointer-events: auto;
-}
-
-.community-tilted-pill:hover {
-    transform: rotate(-18deg) scale(1.08);
 }
 
 /* Floating India Location Cards */
