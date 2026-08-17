@@ -1043,30 +1043,109 @@ ul {
    ANALYTICS SECTION
    ========================================================================== */
 /* ==========================================================================
-   MASONRY BENTO BOARD
+   BRAND LOGOS BULLETIN / HORIZONTAL AUTO-SCROLLING MARQUEE
    ========================================================================== */
+.brand-ticker-section {
+    width: 100%;
+    margin-top: 5rem;
+    padding-top: 3.5rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+    position: relative;
+    z-index: 5;
+}
 
-.split-header {
+.brand-ticker-label {
+    text-align: center;
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    color: rgba(255, 255, 255, 0.45);
+    text-transform: uppercase;
+    margin-bottom: 2rem;
     display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
-    flex-wrap: wrap;
-    text-align: left;
-    max-width: 1050px;
-    margin-left: auto;
-    margin-right: auto;
-    gap: 2rem;
+    align-items: center;
+    justify-content: center;
+    gap: 0.45rem;
 }
 
-.split-header-left {
-    max-width: 600px;
+.brand-ticker-label .ticker-slash {
+    color: #0066ff;
+    font-weight: 800;
+    font-size: 0.95rem;
 }
 
-.split-header-right {
-    max-width: 350px;
-    text-align: right;
-    padding-bottom: 0.5rem;
+.brand-ticker-marquee {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    padding: 0.6rem 0;
+    mask-image: linear-gradient(to right, transparent, black 12%, black 88%, transparent);
+    -webkit-mask-image: linear-gradient(to right, transparent, black 12%, black 88%, transparent);
 }
+
+.brand-ticker-track {
+    display: flex;
+    gap: 1.5rem;
+    width: max-content;
+    animation: brandTickerScroll 42s linear infinite;
+}
+
+.brand-ticker-marquee:hover .brand-ticker-track {
+    animation-play-state: paused;
+}
+
+@keyframes brandTickerScroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+.brand-logo-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.75rem 1.45rem;
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.07);
+    border-radius: 100px;
+    color: rgba(255, 255, 255, 0.55);
+    transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    user-select: none;
+    white-space: nowrap;
+}
+
+.brand-logo-item:hover {
+    background: rgba(10, 102, 240, 0.12);
+    border-color: rgba(51, 133, 255, 0.4);
+    color: #ffffff;
+    transform: translateY(-3px) scale(1.04);
+    box-shadow: 0 10px 25px rgba(0, 102, 255, 0.25);
+}
+
+.brand-svg-icon {
+    flex-shrink: 0;
+    opacity: 0.75;
+    transition: opacity 0.3s ease, color 0.3s ease, transform 0.3s ease;
+}
+
+.brand-logo-item:hover .brand-svg-icon {
+    opacity: 1;
+    color: #3385ff;
+    transform: scale(1.1);
+}
+
+.brand-name-text {
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+}
+
 /* ==========================================================================
    FULLSCREEN OPERATIONAL SHOWCASE (Behance 4-Corner Glassmorphism Overlay)
    ========================================================================== */
