@@ -904,7 +904,7 @@ ul {
 .feature-acc-item.active {
     border-color: rgba(255, 255, 255, 0.25);
     margin: 0.35rem 0;
-    box-shadow: 0 14px 35px rgba(10, 102, 240, 0.35);
+    box-shadow: none;
 }
 
 .feature-acc-header {
