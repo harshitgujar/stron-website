@@ -123,7 +123,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (accordionItems.length > 0) {
         accordionItems.forEach(item => {
-            item.addEventListener('click', () => {
+            const activateItem = () => {
                 const isActive = item.classList.contains('active');
                 if (isActive) return;
 
@@ -137,7 +137,11 @@ document.addEventListener('DOMContentLoaded', () => {
                         { scale: 1, opacity: 1, duration: 0.4, ease: "power2.out" }
                     );
                 }
-            });
+            };
+
+            // Switch interaction to hover (mouseenter) while retaining touch support
+            item.addEventListener('mouseenter', activateItem);
+            item.addEventListener('click', activateItem);
         });
     }
 
