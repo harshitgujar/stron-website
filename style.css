@@ -1678,29 +1678,11 @@ ul {
 }
 
 .stagger-col {
-    width: clamp(250px, 23vw, 295px);
+    width: clamp(260px, 24vw, 310px);
     flex-shrink: 0;
     scroll-snap-align: start;
     display: flex;
     flex-direction: column;
-}
-
-.col-offset-down {
-    gap: 1.6rem;
-    padding-top: 1.4rem;
-}
-
-.col-offset-up {
-    gap: 1.6rem;
-    margin-top: -1.6rem;
-}
-
-.stagger-col-desc {
-    font-size: 0.85rem;
-    line-height: 1.55;
-    color: rgba(255, 255, 255, 0.62);
-    margin: 0;
-    max-width: 290px;
 }
 
 /* Staggered Feature Card (Slow Smooth Morphing Vertical Expansion) */
