@@ -659,8 +659,62 @@ ul {
 }
 
 /* ==========================================================================
-   BLUE GRADIENT BANNER CARD SECTION (Run Your Gym)
+   UNIFIED GYM OPERATING SYSTEM & BUSINESS BANNER SECTION
    ========================================================================== */
+.gym-operating-unified {
+    padding: 6rem 0 8rem;
+    position: relative;
+    overflow: hidden;
+    background-color: #050506;
+    background-image: 
+        /* Left ambient glow near gym banner & top area */
+        radial-gradient(ellipse 55% 38% at -8% 16%, rgba(10, 102, 240, 0.28) 0%, rgba(51, 133, 255, 0.08) 45%, transparent 75%),
+        /* Right organic rim glow bridging banner and operating system */
+        radial-gradient(ellipse 50% 45% at 108% 42%, rgba(10, 102, 240, 0.3) 0%, rgba(51, 133, 255, 0.1) 45%, transparent 80%),
+        /* Bottom-left glow framing the accordion items */
+        radial-gradient(ellipse 55% 45% at -6% 75%, rgba(10, 102, 240, 0.26) 0%, rgba(51, 133, 255, 0.06) 40%, transparent 75%),
+        /* Bottom-right glow behind device mockup */
+        radial-gradient(ellipse 45% 40% at 105% 85%, rgba(10, 102, 240, 0.32) 0%, transparent 70%);
+}
+
+.gym-operating-unified::before {
+    content: '';
+    position: absolute;
+    top: 24%;
+    left: -140px;
+    width: 540px;
+    height: 540px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(51, 133, 255, 0.25) 0%, rgba(10, 102, 240, 0.1) 50%, transparent 70%);
+    filter: blur(120px);
+    pointer-events: none;
+    z-index: 0;
+}
+
+.gym-operating-unified::after {
+    content: '';
+    position: absolute;
+    bottom: 18%;
+    right: -130px;
+    width: 580px;
+    height: 580px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(10, 102, 240, 0.28) 0%, rgba(51, 133, 255, 0.08) 50%, transparent 70%);
+    filter: blur(120px);
+    pointer-events: none;
+    z-index: 0;
+}
+
+.gym-operating-unified .container {
+    position: relative;
+    z-index: 2;
+}
+
+.gym-operating-header {
+    margin-top: 8rem;
+    padding-top: 1rem;
+}
+
 .banner-card-section {
     padding: 4rem 0 3rem;
 }
