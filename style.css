@@ -420,6 +420,53 @@ ul {
     text-shadow: 0 2px 12px rgba(0, 0, 0, 0.7);
 }
 
+/* Hero CTA Button Group */
+.hero-cta-group {
+    display: flex;
+    align-items: center;
+    gap: 1.1rem;
+    margin-top: 0.6rem;
+}
+
+.hero-pill-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.65rem;
+    padding: 0.85rem 1.8rem;
+    background: #d8dadf;
+    color: #050506;
+    font-size: 0.98rem;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    border-radius: 14px;
+    text-decoration: none;
+    transition: all 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+.hero-pill-btn:hover {
+    background: #ffffff;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.35);
+    color: #000000;
+}
+
+.hero-pill-btn.btn-explore {
+    padding: 0.85rem 2rem;
+}
+
+.btn-phone-icon {
+    flex-shrink: 0;
+    color: #000000;
+    transition: transform 0.25s ease;
+}
+
+.hero-pill-btn:hover .btn-phone-icon {
+    transform: scale(1.1) rotate(-8deg);
+}
+
 .glass-card {
     background: rgba(20, 20, 20, 0.7);
     backdrop-filter: blur(12px);
