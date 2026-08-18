@@ -265,28 +265,18 @@ ul {
 /* ==========================================================================
    HERO CARD & NAVIGATION
    ========================================================================== */
-/* ==========================================================================
-   HERO CARD & NAVIGATION
-   ========================================================================== */
 .hero-card-wrapper {
-    padding: 1.5rem 2rem 2.5rem;
+    padding: 0;
     width: 100%;
     min-height: 100vh;
-    background-color: #06080e;
-    box-sizing: border-box;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    overflow: hidden;
 }
 
 .hero-card {
     position: relative;
     width: 100%;
-    max-width: 1440px;
-    min-height: clamp(680px, 88vh, 860px);
-    border-radius: 24px;
-    border: 1.5px solid #0066ff;
-    box-shadow: 0 0 50px rgba(0, 102, 255, 0.25), 0 25px 60px rgba(0, 0, 0, 0.7);
+    min-height: 100vh;
+    border-radius: 0;
     overflow: hidden;
     display: flex;
     flex-direction: column;
@@ -301,7 +291,7 @@ ul {
     bottom: 0;
     background-image: url('assets/hero-macbook-mockup.png');
     background-size: cover;
-    background-position: center center;
+    background-position: center bottom;
     background-repeat: no-repeat;
     z-index: 0;
 }
@@ -309,7 +299,7 @@ ul {
 .new-nav {
     position: relative;
     width: 100%;
-    height: 90px;
+    height: 100px;
     display: flex;
     align-items: center;
     background: transparent;
@@ -318,9 +308,9 @@ ul {
 
 .nav-container {
     width: 100%;
-    max-width: 1320px;
+    max-width: var(--max-width);
     margin: 0 auto;
-    padding: 0 3.5rem;
+    padding: 0 5rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -330,23 +320,23 @@ ul {
     display: flex;
     align-items: center;
     gap: 12px;
-    font-size: 1.45rem;
+    font-size: 1.5rem;
     font-weight: 800;
     letter-spacing: 0.02em;
     color: #fff;
     text-decoration: none;
-    margin-left: 0;
+    margin-left: -5.25rem; /* Aligned with hero title */
 }
 
 .nav-links {
     display: flex;
-    gap: 2.8rem;
+    gap: 3rem;
 }
 
 .nav-link {
-    font-size: 0.95rem;
-    font-weight: 500;
-    color: rgba(255, 255, 255, 0.85);
+    font-size: 1rem;
+    font-weight: 400; /* Regular format */
+    color: rgba(255, 255, 255, 0.8);
     transition: var(--tr-fast);
     text-decoration: none;
 }
@@ -357,27 +347,25 @@ ul {
 
 .nav-cta {
     display: flex;
-    gap: 0.85rem;
-    margin-right: 0;
+    gap: 1rem;
+    margin-right: -7.5rem; /* Aligned with hero right text */
 }
 
-.nav-cta .btn-nav-store {
-    background: #0056e0;
-    border: 1px solid rgba(255, 255, 255, 0.15);
-    box-shadow: 0 4px 15px rgba(0, 86, 224, 0.4);
-    padding: 0.75rem 1.65rem;
-    border-radius: 10px;
+.nav-cta .btn-primary {
+    background: #0a66f0; /* Slightly lighter blue to match screenshot */
+    border: none;
+    box-shadow: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 8px;
     font-weight: 600;
-    font-size: 0.95rem;
-    color: #ffffff;
-    cursor: pointer;
-    transition: transform 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
+    font-size: 1rem;
+    text-transform: none;
+    letter-spacing: normal;
 }
 
-.nav-cta .btn-nav-store:hover {
-    background: #0066ff;
+.nav-cta .btn-primary:hover {
+    background: #005bf0;
     transform: translateY(-2px);
-    box-shadow: 0 8px 25px rgba(0, 102, 255, 0.6);
 }
 
 .mobile-menu-toggle {
@@ -390,10 +378,10 @@ ul {
 .new-hero {
     flex-grow: 1;
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: flex-start;
-    padding: 0 3.5rem;
-    max-width: 1320px;
+    padding: 0 5rem;
+    max-width: var(--max-width);
     margin: 0 auto;
     width: 100%;
     position: relative;
@@ -402,75 +390,30 @@ ul {
 
 .hero-content-left {
     flex: 1;
-    max-width: 580px;
-    margin-top: 5.5rem;
-    margin-left: 0;
+    max-width: 560px;
+    margin-top: 6rem;
+    margin-left: -5.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
 }
 
 .h-hero {
-    font-size: clamp(2.8rem, 4.2vw, 3.8rem);
+    font-size: 3.2rem;
     line-height: 1.12;
-    font-weight: 700;
-    letter-spacing: -0.02em;
-    color: #ffffff;
-    margin: 0 0 1.6rem;
+    font-weight: 600;
+    letter-spacing: -0.025em;
+    color: #fff;
+    margin: 0;
 }
 
-.hero-copy {
+.hero-subhead {
     font-size: 1.05rem;
     line-height: 1.6;
-    color: rgba(255, 255, 255, 0.82);
-    margin: 0 0 2.2rem;
-}
-
-.hero-cta-actions {
-    display: flex;
-    align-items: center;
-    gap: 1.2rem;
-}
-
-.btn-hero-demo {
-    background: #ffffff;
-    color: #000000;
-    border-radius: 100px;
-    padding: 0.85rem 1.85rem;
-    font-weight: 700;
-    font-size: 0.95rem;
-    display: inline-flex;
-    align-items: center;
-    gap: 0.6rem;
-    text-decoration: none;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
-    transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
-}
-
-.btn-hero-demo:hover {
-    transform: translateY(-3px) scale(1.02);
-    background: #f0f4ff;
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.35);
-}
-
-.btn-hero-explore {
-    background: rgba(235, 238, 245, 0.85);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    color: #000000;
-    border-radius: 100px;
-    padding: 0.85rem 2.2rem;
-    font-weight: 700;
-    font-size: 0.95rem;
-    text-decoration: none;
-    transition: transform 0.2s ease, background-color 0.2s ease;
-}
-
-.btn-hero-explore:hover {
-    background: #ffffff;
-    transform: translateY(-3px) scale(1.02);
-}
-
-.hero-content-right {
-    flex: 1;
-    max-width: 600px;
+    color: rgba(255, 255, 255, 0.75);
+    margin: 0;
+    max-width: 520px;
+    text-shadow: 0 2px 12px rgba(0, 0, 0, 0.65);
 }
 
 .glass-card {
