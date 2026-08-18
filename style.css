@@ -280,6 +280,7 @@ ul {
     overflow: hidden;
     display: flex;
     flex-direction: column;
+    background-color: #023ca8;
 }
 
 .hero-card::before {
@@ -290,7 +291,7 @@ ul {
     right: 0;
     bottom: 0;
     background-image: url('assets/hero-macbook-mockup.png');
-    background-size: cover;
+    background-size: auto clamp(460px, 70vh, 700px);
     background-position: center bottom;
     background-repeat: no-repeat;
     z-index: 0;
