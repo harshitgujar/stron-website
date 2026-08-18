@@ -2476,9 +2476,9 @@ ul {
 }
 
 .gym-editorial-intro {
-    margin-top: 1.5rem;
-    margin-bottom: 5.5rem;
-    padding: 3rem 0 2rem;
+    margin-top: 2rem;
+    margin-bottom: 10.5rem;
+    padding: 3rem 0 1rem;
 }
 
 /* ==========================================================================
@@ -2487,7 +2487,7 @@ ul {
 .sticker-headline-container {
     position: relative;
     overflow: visible;
-    min-height: 480px;
+    min-height: 350px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -2538,12 +2538,12 @@ ul {
                 inset 0 2px 0 rgba(255, 255, 255, 0.7);
 }
 
-/* Individual Minimal Sticker Positions */
-.sticker-top-left-1 { top: 6%; left: 15%; }
-.sticker-top-right-1 { top: 4%; right: 18%; }
-.sticker-bottom-left-1 { bottom: 6%; left: 12%; }
-.sticker-bottom-center { bottom: -4%; left: 42%; }
-.sticker-bottom-right-1 { bottom: 4%; right: 14%; }
+/* Individual Minimal Sticker Positions - Snug & Tight Around RUN your GYM */
+.sticker-top-left-1 { top: 12%; left: 24%; }
+.sticker-top-right-1 { top: 10%; right: 24%; }
+.sticker-bottom-left-1 { bottom: 14%; left: 23%; }
+.sticker-bottom-center { bottom: 2%; left: 44%; }
+.sticker-bottom-right-1 { bottom: 12%; right: 23%; }
 
 /* Minimal STRON Design System Themes */
 .sticker-blue {
