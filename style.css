@@ -2478,7 +2478,312 @@ ul {
 .gym-editorial-intro {
     margin-top: 1.5rem;
     margin-bottom: 5.5rem;
-    padding: 2.5rem 0 1rem;
+    padding: 3rem 0 2rem;
+}
+
+/* ==========================================================================
+   3D FITNESS STICKERS CONSTELLATION (Matching Reference Aesthetic with STRON System)
+   ========================================================================== */
+.sticker-headline-container {
+    position: relative;
+    overflow: visible;
+    min-height: 480px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    perspective: 1000px;
+}
+
+.stickers-scene {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.relative-z {
+    position: relative;
+    z-index: 4;
+    pointer-events: auto;
+}
+
+.fitness-sticker {
+    position: absolute;
+    pointer-events: auto;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    transform: rotate(var(--rot, 0deg));
+    transition: transform 0.35s cubic-bezier(0.175, 0.885, 0.32, 1.275), 
+                box-shadow 0.35s ease, 
+                filter 0.35s ease;
+    user-select: none;
+    font-family: var(--font-primary);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.55), 
+                inset 0 1.5px 0 rgba(255, 255, 255, 0.45),
+                inset 0 -1.5px 0 rgba(0, 0, 0, 0.25);
+    filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.4));
+    z-index: 2;
+}
+
+.fitness-sticker:hover {
+    transform: rotate(calc(var(--rot, 0deg) * 0.3)) scale(1.16) translateY(-6px);
+    z-index: 10;
+    box-shadow: 0 24px 44px rgba(0, 0, 0, 0.85), 
+                inset 0 2px 0 rgba(255, 255, 255, 0.7);
+}
+
+/* Individual Sticker Positions */
+.sticker-top-left-1 { top: 8%; left: 14%; }
+.sticker-top-left-2 { top: 22%; left: 2%; }
+.sticker-top-center { top: 2%; left: 45%; }
+.sticker-top-right-1 { top: 6%; right: 28%; }
+.sticker-top-right-2 { top: 12%; right: 8%; }
+.sticker-far-right { top: 40%; right: 2%; }
+
+.sticker-bottom-left-1 { bottom: 10%; left: 4%; }
+.sticker-bottom-left-2 { bottom: 2%; left: 20%; }
+.sticker-bottom-center-left { bottom: 8%; left: 33%; }
+.sticker-bottom-center { bottom: 0%; left: 51%; }
+.sticker-bottom-right-1 { bottom: 6%; right: 24%; }
+.sticker-bottom-right-2 { bottom: 12%; right: 4%; }
+
+/* Sticker Shapes & Color Themes */
+.sticker-orange {
+    background: linear-gradient(135deg, #ff6b22, #ff3c00);
+    color: #ffffff;
+    padding: 0.7rem 1.25rem;
+    border-radius: 14px;
+}
+
+.sticker-orange .sticker-tag {
+    font-size: 0.62rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    opacity: 0.9;
+    text-transform: uppercase;
+}
+
+.sticker-orange .sticker-title {
+    font-size: 1.05rem;
+    font-weight: 900;
+    letter-spacing: -0.01em;
+    line-height: 1.1;
+}
+
+.sticker-pink {
+    background: linear-gradient(135deg, #ff1a68, #d9004c);
+    color: #ffffff;
+    padding: 1.1rem 1.4rem;
+    border-radius: 48% 52% 46% 54% / 56% 48% 52% 44%;
+}
+
+.sticker-pink .sticker-title {
+    font-size: 1.2rem;
+    font-weight: 900;
+    letter-spacing: -0.02em;
+    line-height: 1;
+}
+
+.sticker-silver-circle {
+    width: 78px;
+    height: 78px;
+    border-radius: 50%;
+    background: linear-gradient(145deg, #f0f3f7, #c4cbd6);
+    color: #1a1e26;
+}
+
+.sticker-silver-circle .sticker-icon {
+    width: 34px;
+    height: 34px;
+    stroke-width: 2.4;
+}
+
+.sticker-neon-circle {
+    width: 84px;
+    height: 84px;
+    border-radius: 50%;
+    background: linear-gradient(145deg, #00ff66, #00c74d);
+    color: #002e11;
+}
+
+.sticker-circular-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+}
+
+.sticker-micro-txt {
+    font-size: 0.58rem;
+    font-weight: 900;
+    letter-spacing: 0.06em;
+}
+
+.sticker-lightning {
+    font-size: 1.4rem;
+    line-height: 1;
+}
+
+.sticker-tangerine {
+    background: linear-gradient(135deg, #ff9500, #ff6600);
+    color: #ffffff;
+    padding: 0.8rem 1.35rem;
+    border-radius: 12px;
+}
+
+.sticker-tangerine .sticker-title {
+    font-size: 0.96rem;
+    font-weight: 900;
+    line-height: 1.15;
+    letter-spacing: -0.01em;
+}
+
+.sticker-cyan-diamond {
+    background: linear-gradient(135deg, #00f2fe, #00b4d8);
+    color: #002244;
+    padding: 0.9rem 1.3rem;
+    border-radius: 16px;
+}
+
+.sticker-cyan-diamond .sticker-tag {
+    font-size: 0.6rem;
+    font-weight: 800;
+    opacity: 0.85;
+}
+
+.sticker-cyan-diamond .sticker-title {
+    font-size: 1.02rem;
+    font-weight: 900;
+    line-height: 1.1;
+}
+
+.sticker-starburst-green {
+    width: 98px;
+    height: 98px;
+    background: #23ff53;
+    color: #003311;
+    clip-path: polygon(50% 0%, 63% 12%, 81% 6%, 86% 24%, 100% 29%, 95% 47%, 100% 65%, 88% 74%, 88% 92%, 70% 90%, 59% 100%, 41% 95%, 26% 100%, 19% 86%, 3% 84%, 8% 66%, 0% 50%, 9% 35%, 2% 19%, 20% 16%, 28% 2%, 44% 9%);
+    padding: 0.4rem;
+}
+
+.sticker-starburst-green .sticker-sub {
+    font-size: 0.55rem;
+    font-weight: 900;
+    letter-spacing: 0.04em;
+}
+
+.sticker-starburst-green .sticker-big-num {
+    font-size: 1.45rem;
+    font-weight: 900;
+    line-height: 0.95;
+    letter-spacing: -0.04em;
+}
+
+.sticker-yellow-circle {
+    width: 78px;
+    height: 78px;
+    border-radius: 50%;
+    background: linear-gradient(145deg, #ffd700, #ffb300);
+}
+
+.sticker-yellow-circle .dark-icon {
+    width: 38px;
+    height: 38px;
+    color: #2b2000;
+}
+
+.sticker-magenta-pill {
+    background: linear-gradient(135deg, #ff0077, #c7005a);
+    color: #ffffff;
+    padding: 0.75rem 1.4rem;
+    border-radius: 26px;
+}
+
+.sticker-sub-tiny {
+    font-size: 0.58rem;
+    font-weight: 800;
+    letter-spacing: 0.06em;
+    opacity: 0.9;
+    text-transform: uppercase;
+}
+
+.sticker-magenta-pill .sticker-title {
+    font-size: 0.95rem;
+    font-weight: 900;
+}
+
+.sticker-teal-circle {
+    width: 86px;
+    height: 86px;
+    border-radius: 50%;
+    background: linear-gradient(145deg, #00f5c4, #00bfa5);
+    color: #00362c;
+}
+
+.sticker-teal-circle .sticker-title {
+    font-size: 1.15rem;
+    font-weight: 900;
+    line-height: 1.05;
+}
+
+.sticker-starburst-yellow {
+    width: 104px;
+    height: 104px;
+    background: #ffcc00;
+    color: #2b2200;
+    clip-path: polygon(50% 0%, 63% 10%, 79% 5%, 83% 21%, 98% 23%, 94% 39%, 100% 54%, 89% 67%, 92% 84%, 76% 87%, 69% 100%, 52% 93%, 36% 99%, 27% 88%, 10% 88%, 13% 72%, 2% 59%, 10% 45%, 4% 29%, 20% 24%, 23% 8%, 40% 12%);
+    padding: 0.5rem;
+}
+
+.sticker-starburst-yellow .sticker-sub {
+    font-size: 0.55rem;
+    font-weight: 900;
+}
+
+.sticker-starburst-yellow .sticker-title-sm {
+    font-size: 0.85rem;
+    font-weight: 900;
+    line-height: 1;
+}
+
+.sticker-white-pill {
+    background: #ffffff;
+    color: #000000;
+    padding: 0.75rem 1.4rem;
+    border-radius: 12px;
+    border: 2.5px solid #111111;
+}
+
+.sticker-white-pill .sticker-title {
+    font-size: 0.95rem;
+    font-weight: 900;
+}
+
+@media (max-width: 900px) {
+    .sticker-headline-container {
+        min-height: 380px;
+    }
+    .fitness-sticker {
+        transform: rotate(var(--rot, 0deg)) scale(0.8);
+    }
+}
+
+@media (max-width: 600px) {
+    .sticker-headline-container {
+        min-height: 320px;
+    }
+    .fitness-sticker {
+        transform: rotate(var(--rot, 0deg)) scale(0.65);
+    }
+    .sticker-top-left-2, .sticker-bottom-left-1, .sticker-bottom-right-2 {
+        display: none;
+    }
 }
 
 .filter-chips {
