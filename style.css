@@ -394,17 +394,17 @@ ul {
 
 .hero-content-left {
     flex: 1;
-    max-width: 440px;
-    margin-top: 2rem;
+    max-width: 500px;
+    margin-top: clamp(4.5rem, 8vh, 6.5rem);
     margin-left: 0;
     display: flex;
     flex-direction: column;
-    gap: 1rem;
+    gap: 1.35rem;
 }
 
 .h-hero {
-    font-size: clamp(1.9rem, 2.8vw, 2.45rem);
-    line-height: 1.15;
+    font-size: clamp(2.35rem, 3.4vw, 2.9rem);
+    line-height: 1.14;
     font-weight: 600;
     letter-spacing: -0.025em;
     color: #fff;
@@ -412,12 +412,12 @@ ul {
 }
 
 .hero-subhead {
-    font-size: 0.88rem;
-    line-height: 1.55;
-    color: rgba(255, 255, 255, 0.82);
+    font-size: 0.98rem;
+    line-height: 1.62;
+    color: rgba(255, 255, 255, 0.85);
     margin: 0;
-    max-width: 390px;
-    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.65);
+    max-width: 465px;
+    text-shadow: 0 2px 12px rgba(0, 0, 0, 0.7);
 }
 
 .glass-card {
