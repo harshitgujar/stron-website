@@ -31,7 +31,7 @@
     --sp-xl: 8rem;
     
     /* Layout */
-    --max-width: 1280px;
+    --max-width: 1520px;
     --nav-height: 80px;
     
     /* Transitions */
@@ -310,7 +310,7 @@ ul {
 
 .nav-container {
     width: 100%;
-    max-width: 1280px;
+    max-width: 1520px;
     margin: 0 auto;
     padding: 0 2rem;
     display: flex;
@@ -385,7 +385,7 @@ ul {
     justify-content: flex-start;
     align-items: flex-start;
     padding: 0 2rem;
-    max-width: 1280px;
+    max-width: 1520px;
     margin: 0 auto;
     width: 100%;
     position: relative;
@@ -2774,7 +2774,7 @@ ul {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 2.2rem;
-    max-width: 1280px;
+    max-width: 1520px;
     margin: 3.5rem auto 0;
     align-items: stretch;
 }
@@ -4364,7 +4364,7 @@ ul {
 
 .saas-section {
     padding: 6rem 2rem;
-    max-width: 1280px;
+    max-width: 1520px;
     margin: 0 auto;
 }
 
