@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>STRON — The Fitness Operating Platform</title>
+    <meta name="description" content="One platform for every fitness experience. Run your fitness business, organize events and track every workout.">
+
+    <link rel="stylesheet" href="style.css?v=2">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.css">
+</head>
+<style>
+    /* Responsive overrides for pricing */
+    @media (max-width: 768px) {
+        .pricing-grid { grid-template-columns: 1fr !important; }
+    }
+</style>
+<body class="theme-dark" style="background: #0d0d12; color: #fff;">
+    <div data-scroll-container>
+        <header style="position: absolute; top: 0; width: 100%; z-index: 100;">
+<nav class="nav new-nav">
+                    <div class="nav-container">
+                        <a href="#" class="logo">
+                            <svg class="logo-icon" width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 2L2 7.5L12 13L22 7.5L12 2Z" fill="#4d94ff"/>
+                                <path d="M2.5 11.5L12 16.5L21.5 11.5" stroke="#4d94ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M2.5 16L12 21L21.5 16" stroke="#4d94ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            STRON
+                        </a>
+                        <div class="nav-links">
+                            <a href="index.html" class="nav-link">HOME</a>
+                            <a href="index.html#about" class="nav-link">ABOUT US</a>
+                            <a href="index.html#contact" class="nav-link">CONTACT US</a>
+                            <a href="blog.html" class="nav-link">BLOG</a>
+                            <a href="pricing.html" class="nav-link">PRICING</a>
+                            </div>
+                        <div class="nav-cta" style="gap: 10px;">
+                            <button class="btn btn-secondary" style="display: flex; align-items: center; justify-content: center; background: white; color: black; border: none; border-radius: 6px; font-weight: 700; font-size: 0.75rem; padding: 0.6rem 1.2rem; letter-spacing: 1px; box-shadow: 0 4px 10px rgba(0,0,0,0.1);">
+                                <svg viewBox="0 0 512 512" width="14" height="14" fill="currentColor" style="margin-right: 8px;"><path d="M325.3 234.3L104.6 13l280.8 161.2-60.1 60.1zM47 0C34 6.8 25.3 19.2 25.3 35.3v441.3c0 16.1 8.7 28.5 21.7 35.3l256.6-256L47 0zm425.2 225.6l-58.9-34.1-65.7 64.5 65.7 64.5 60.1-34.1c18-14.3 18-46.5-1.2-60.8zM104.6 499l280.8-161.2-60.1-60.1L104.6 499z"/></svg>
+                                PLAY STORE
+                            </button>
+                            <button class="btn btn-secondary" style="display: flex; align-items: center; justify-content: center; background: white; color: black; border: none; border-radius: 6px; font-weight: 700; font-size: 0.75rem; padding: 0.6rem 1.2rem; letter-spacing: 1px; box-shadow: 0 4px 10px rgba(0,0,0,0.1);">
+                                <svg viewBox="0 0 384 512" width="14" height="14" fill="currentColor" style="margin-right: 8px; margin-bottom: 2px;"><path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"/></svg>
+                                APP STORE
+                            </button>
+                        </div>
+                        <button class="mobile-menu-toggle" aria-label="Toggle menu">
+                            <span></span>
+                            <span></span>
+                        </button>
+                    </div>
+                </nav>
+</header>
+
+        <section class="pricing-hero" style="padding: 10rem 2rem 6rem; text-align: center; max-width: 1000px; margin: 0 auto; position: relative;">
+            
+            <!-- Top label -->
+            <div style="display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem; background: rgba(255,255,255,0.05); padding: 0.4rem 1rem; border-radius: 20px; font-size: 0.75rem; font-weight: 700; color: #fff; margin-bottom: 2rem;">
+                <span style="color: #666;">008</span> <span style="width: 4px; height: 4px; background: #fff; border-radius: 50%;"></span> PRICING
+            </div>
+            
+            <h1 style="font-size: clamp(2.5rem, 5vw, 4.5rem); font-weight: 700; letter-spacing: -1.5px; margin-bottom: 1rem; color: #fff;">Built for Growth at Every Stage</h1>
+            <p style="font-size: 1.1rem; color: #aaa; margin-bottom: 3rem;">Whether you're starting small or scaling fast, we have a platform plan that fits.</p>
+            
+            <!-- Toggle -->
+            <div style="display: flex; align-items: center; justify-content: center; gap: 1rem; margin-bottom: 4rem; font-size: 0.85rem; font-weight: 700;">
+                <span style="color: #fff;">MONTHLY</span>
+                <div style="width: 48px; height: 26px; background: #333; border-radius: 13px; position: relative; cursor: pointer; border: 1px solid rgba(255,255,255,0.1);">
+                    <div style="width: 20px; height: 20px; background: #fff; border-radius: 50%; position: absolute; left: 2px; top: 2px;"></div>
+                </div>
+                <span style="color: #666;">ANNUALLY <span style="color: #fff; font-weight: 500;">(SAVE 10%)</span></span>
+            </div>
+            
+            <!-- Pricing Cards Wrapper -->
+            <div class="pricing-grid" style="background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.05); border-radius: 32px; padding: 1.5rem; display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; text-align: left; margin-bottom: 4rem;">
+                
+                <!-- Plan 1 -->
+                <div style="background: #111116; border: 1px solid rgba(255,255,255,0.03); border-radius: 24px; padding: 2.5rem; display: flex; flex-direction: column;">
+                    <div style="width: 48px; height: 48px; background: #1a1a24; border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem;">
+                        <div style="width: 16px; height: 16px; border: 3px solid #aaa; border-radius: 50%;"></div>
+                    </div>
+                    <h3 style="font-size: 1.5rem; font-weight: 700; margin-bottom: 0.5rem; color: #fff;">Starter Automation</h3>
+                    <p style="font-size: 0.9rem; color: #888; margin-bottom: 2rem;">For small teams beginning their journey</p>
+                    
+                    <div style="margin-bottom: 2rem; display: flex; align-items: baseline;">
+                        <span style="font-size: 3.5rem; font-weight: 700; letter-spacing: -2px; color: #fff; line-height: 1;">$499</span>
+                        <span style="color: #aaa; font-size: 1.5rem; font-weight: 600;">.00</span>
+                        <span style="color: #666; font-size: 0.9rem; margin-left: 0.5rem;">/Month</span>
+                    </div>
+                    
+                    <div style="font-size: 0.85rem; font-weight: 700; color: #fff; margin-bottom: 1.5rem;">What's included:</div>
+                    <ul style="list-style: none; padding: 0; margin: 0; margin-bottom: 3rem; color: #aaa; font-size: 0.9rem; line-height: 2;">
+                        <li style="display: flex; gap: 0.75rem; align-items: center;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg> Workflow setup (1-3 systems)</li>
+                        <li style="display: flex; gap: 0.75rem; align-items: center;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg> Basic AI chatbot</li>
+                        <li style="display: flex; gap: 0.75rem; align-items: center;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg> CRM integration</li>
+                    </ul>
+                    
+                    <button style="margin-top: auto; width: 100%; padding: 1.2rem; background: linear-gradient(180deg, rgba(255,255,255,0.1), rgba(255,255,255,0)); color: #fff; border: 1px solid rgba(255,255,255,0.1); border-radius: 12px; font-weight: 700; font-size: 0.95rem; cursor: pointer; transition: all 0.3s ease;">Get Starter Package</button>
+                </div>
+                
+                <!-- Plan 2 -->
+                <div style="background: #181820; border: 1px solid rgba(255,255,255,0.08); border-radius: 24px; padding: 2.5rem; display: flex; flex-direction: column; position: relative;">
+                    <div style="position: absolute; top: 2rem; right: 2rem; background: #fff; border: 1px solid rgba(255,255,255,0.1); padding: 0.4rem 0.8rem; border-radius: 20px; font-size: 0.75rem; font-weight: 700; color: #000; display: flex; align-items: center; gap: 0.4rem; box-shadow: 0 4px 10px rgba(0,0,0,0.2);">
+                        <span>✦</span> Most Popular
+                    </div>
+                    <div style="width: 48px; height: 48px; background: linear-gradient(135deg, #FF9A9E 0%, #FECFEF 99%, #FECFEF 100%); border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem; filter: blur(0.5px); opacity: 0.9;">
+                        <!-- Using a nice pastel gradient blob icon to match the screenshot -->
+                    </div>
+                    <h3 style="font-size: 1.5rem; font-weight: 700; margin-bottom: 0.5rem; color: #fff;">Growth Automation</h3>
+                    <p style="font-size: 0.9rem; color: #888; margin-bottom: 2rem;">For scaling businesses</p>
+                    
+                    <div style="margin-bottom: 2rem; display: flex; align-items: baseline;">
+                        <span style="font-size: 3.5rem; font-weight: 700; letter-spacing: -2px; color: #fff; line-height: 1;">$1199</span>
+                        <span style="color: #aaa; font-size: 1.5rem; font-weight: 600;">.00</span>
+                        <span style="color: #666; font-size: 0.9rem; margin-left: 0.5rem;">/Month</span>
+                    </div>
+                    
+                    <div style="font-size: 0.85rem; font-weight: 700; color: #fff; margin-bottom: 1.5rem;">Included everything in Starter, plus:</div>
+                    <ul style="list-style: none; padding: 0; margin: 0; margin-bottom: 3rem; color: #aaa; font-size: 0.9rem; line-height: 2;">
+                        <li style="display: flex; gap: 0.75rem; align-items: center;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg> Advanced workflow automation</li>
+                        <li style="display: flex; gap: 0.75rem; align-items: center;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg> Multi-channel AI chatbot</li>
+                        <li style="display: flex; gap: 0.75rem; align-items: center;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg> Sales & marketing automation</li>
+                        <li style="display: flex; gap: 0.75rem; align-items: center;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg> Dashboard & reporting</li>
+                    </ul>
+                    
+                    <button style="margin-top: auto; width: 100%; padding: 1.2rem; background: linear-gradient(180deg, rgba(255,255,255,0.1), rgba(255,255,255,0)); color: #fff; border: 1px solid rgba(255,255,255,0.1); border-radius: 12px; font-weight: 700; font-size: 0.95rem; cursor: pointer; transition: all 0.3s ease;">Get Growth Package</button>
+                </div>
+            </div>
+
+            <!-- Gradient CTA Banner -->
+            <div style="background: linear-gradient(135deg, rgba(238,205,163,0.3) 0%, rgba(239,98,159,0.3) 50%, rgba(137,255,253,0.3) 100%); border-radius: 32px; padding: 4rem 2rem; position: relative; overflow: hidden; border: 1px solid rgba(255,255,255,0.05); margin-top: 2rem;">
+                
+                <div style="background: rgba(255,255,255,0.8); padding: 0.4rem; border-radius: 40px; display: inline-flex; align-items: center; gap: 0.5rem; margin-bottom: 2rem; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
+                    <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=64&h=64" style="width: 48px; height: 48px; border-radius: 50%; object-fit: cover;">
+                    <div style="width: 48px; height: 48px; border-radius: 50%; background: #f4f4f5; display: flex; align-items: center; justify-content: center;">
+                        <svg viewBox="0 0 24 24" width="20" height="20" stroke="#000" stroke-width="2" fill="none"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                    </div>
+                </div>
+                
+                <h2 style="font-size: 2rem; font-weight: 700; color: #fff; margin-bottom: 0.5rem; letter-spacing: -0.5px;">Not sure which plan is right for you?</h2>
+                <p style="color: rgba(255,255,255,0.8); font-size: 1rem; margin-bottom: 2rem;">Book a free 30-minute AI strategy session.</p>
+                
+                <button style="background: #111; color: #fff; border: 1px solid rgba(255,255,255,0.2); padding: 1rem 2rem; border-radius: 30px; font-weight: 700; font-size: 0.95rem; display: inline-flex; align-items: center; gap: 0.75rem; cursor: pointer;">
+                    Book a Free Consultation
+                    <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                </button>
+            </div>
+            
+        </section>
+
+        <footer class="new-footer">
+        <div class="footer-blob-container">
+            <div class="footer-blob footer-blob-1"></div>
+            <div class="footer-blob footer-blob-2"></div>
+            <div class="footer-blob footer-blob-3"></div>
+            <div class="footer-blob footer-blob-4"></div>
+        </div>
+        <div class="footer-blobs-overlay"></div>
+        <div class="footer-glow"></div>
+        <div class="footer-content">
+            <div class="footer-top">
+                <div class="footer-left">
+                    <div class="download-label">Download Now</div>
+                    <div class="footer-logo">STRON</div>
+                </div>
+                <div class="footer-right">
+                    <div class="footer-nav-col">
+                        <a href="#" class="footer-link">LinkedIn</a>
+                        <a href="#" class="footer-link">Instagram</a>
+                        <a href="#" class="footer-link">X</a>
+                        <a href="#" class="btn-contact">Contact Us</a>
+                    </div>
+                    <div class="footer-nav-col">
+                        <a href="#" class="footer-link">About</a>
+                        <a href="#" class="footer-link">Contact</a>
+                        <a href="#" class="footer-link">Founding Team</a>
+                        <a href="#" class="footer-link">Privacy & Terms</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="footer-bottom-text">One App for all your Fitness Journey, Available on your Device</div>
+                <div class="footer-badges">
+                    <a href="#" class="btn-store">Google Play Store</a>
+                    <a href="#" class="btn-store">Apple App Store</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
