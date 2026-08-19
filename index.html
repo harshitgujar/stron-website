@@ -441,33 +441,33 @@
             title: "Memberships",
             count: "3 Active",
             items: [
-                { icon: "🏋️", title: "Monthly Pro", desc: "Access to all gym equipment", price: "$49/mo" },
-                { icon: "⭐", title: "Annual Elite", desc: "VIP Access + 2 PT Sessions", price: "$499/yr" },
-                { icon: "🎟️", title: "Day Pass", desc: "Drop-in access", price: "$15/day" }
+                { bannerText: "PRO", grad: "linear-gradient(135deg, #001b4d, #005bf0)", title: "Monthly Pro", desc: "Access to all gym equipment", meta: "Recurring • 1 Month", price: "Starts from $49" },
+                { bannerText: "ELITE", grad: "linear-gradient(135deg, #4d3300, #ffb700)", title: "Annual Elite", desc: "VIP Access + 2 PT Sessions", meta: "Recurring • 1 Year", price: "Starts from $499" },
+                { bannerText: "PASS", grad: "linear-gradient(135deg, #4d0012, #f0003c)", title: "Day Pass", desc: "Drop-in access", meta: "One-time • 24 hrs", price: "Starts from $15" }
             ]
         },
         events: {
             title: "Events",
             count: "2 Upcoming",
             items: [
-                { icon: "🔥", title: "Summer HIIT Bootcamp", desc: "Sat, Aug 15 • 10:00 AM", price: "$20" },
-                { icon: "🧘‍♀️", title: "Yoga Retreat 2024", desc: "Sun, Sep 2 • 8:00 AM", price: "$199" }
+                { bannerText: "BOOTCAMP", grad: "linear-gradient(135deg, #003314, #00cc52)", title: "Summer HIIT Bootcamp", desc: "Intense full body workout", meta: "Studio 1 • Aug 15", price: "Starts from $20" },
+                { bannerText: "RETREAT", grad: "linear-gradient(135deg, #33004d, #9d00f0)", title: "Yoga Retreat 2024", desc: "Relax and rejuvenate", meta: "Outdoors • Sep 2", price: "Starts from $199" }
             ]
         },
         products: {
             title: "Products",
             count: "2 In Stock",
             items: [
-                { icon: "🥤", title: "STRON Protein Powder", desc: "Vanilla Bean (2 lbs)", price: "$39.99" },
-                { icon: "🎽", title: "Pro Resistance Bands", desc: "Set of 5 levels", price: "$19.99" }
+                { bannerText: "PROTEIN", grad: "linear-gradient(135deg, #001b4d, #005bf0)", title: "STRON Protein Powder", desc: "Vanilla Bean (2 lbs)", meta: "Supplements • In stock", price: "Starts from $39.99" },
+                { bannerText: "GEAR", grad: "linear-gradient(135deg, #1a1a1a, #4d4d4d)", title: "Pro Resistance Bands", desc: "Set of 5 levels", meta: "Equipment • In stock", price: "Starts from $19.99" }
             ]
         },
         services: {
             title: "Services",
             count: "2 Available",
             items: [
-                { icon: "💪", title: "1-on-1 Personal Training", desc: "Customized workout plan", price: "$60/hr" },
-                { icon: "🥗", title: "Nutrition Consultation", desc: "Meal planning & macros", price: "$80/hr" }
+                { bannerText: "TRAIN", grad: "linear-gradient(135deg, #4d1a00, #f05a00)", title: "1-on-1 Personal Training", desc: "Customized workout plan", meta: "60 mins • Flexible", price: "Starts from $60" },
+                { bannerText: "DIET", grad: "linear-gradient(135deg, #004d33, #00f0a8)", title: "Nutrition Consultation", desc: "Meal planning & macros", meta: "45 mins • Online", price: "Starts from $80" }
             ]
         }
     };
@@ -488,12 +488,19 @@
         data.items.forEach(item => {
             listEl.innerHTML += `
                 <div class="mockup-item">
-                    <div class="mockup-item-icon">${item.icon}</div>
+                    <div class="mockup-item-banner" style="background: ${item.grad};">
+                        <div class="mockup-item-circle"></div>
+                        <div class="mockup-item-banner-text">${item.bannerText}</div>
+                    </div>
                     <div class="mockup-item-details">
                         <h4>${item.title}</h4>
-                        <p>${item.desc}</p>
+                        <p class="desc">${item.desc}</p>
+                        <p class="meta">${item.meta}</p>
+                        <div class="mockup-item-footer">
+                            <span class="mockup-item-price">${item.price}</span>
+                            <span class="mockup-item-chevron"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><polyline points="9 18 15 12 9 6"></polyline></svg></span>
+                        </div>
                     </div>
-                    <div class="mockup-item-price">${item.price}</div>
                 </div>
             `;
         });
