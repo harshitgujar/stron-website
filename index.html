@@ -441,33 +441,33 @@
             title: "Memberships",
             count: "3 Active",
             items: [
-                { bannerText: "PRO", grad: "linear-gradient(135deg, #001b4d, #005bf0)", title: "Monthly Pro", desc: "Access to all gym equipment", meta: "Recurring • 1 Month", price: "Starts from $49" },
-                { bannerText: "ELITE", grad: "linear-gradient(135deg, #4d3300, #ffb700)", title: "Annual Elite", desc: "VIP Access + 2 PT Sessions", meta: "Recurring • 1 Year", price: "Starts from $499" },
-                { bannerText: "PASS", grad: "linear-gradient(135deg, #4d0012, #f0003c)", title: "Day Pass", desc: "Drop-in access", meta: "One-time • 24 hrs", price: "Starts from $15" }
+                { bannerText: "PRO", bgImg: "url('https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=300&q=80')", title: "Monthly Pro", desc: "Access to all gym equipment", meta: "Recurring • 1 Month", price: "Starts from $49" },
+                { bannerText: "ELITE", bgImg: "url('https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?w=300&q=80')", title: "Annual Elite", desc: "VIP Access + 2 PT Sessions", meta: "Recurring • 1 Year", price: "Starts from $499" },
+                { bannerText: "PASS", bgImg: "url('https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?w=300&q=80')", title: "Day Pass", desc: "Drop-in access", meta: "One-time • 24 hrs", price: "Starts from $15" }
             ]
         },
         events: {
             title: "Events",
             count: "2 Upcoming",
             items: [
-                { bannerText: "BOOTCAMP", grad: "linear-gradient(135deg, #003314, #00cc52)", title: "Summer HIIT Bootcamp", desc: "Intense full body workout", meta: "Studio 1 • Aug 15", price: "Starts from $20" },
-                { bannerText: "RETREAT", grad: "linear-gradient(135deg, #33004d, #9d00f0)", title: "Yoga Retreat 2024", desc: "Relax and rejuvenate", meta: "Outdoors • Sep 2", price: "Starts from $199" }
+                { bannerText: "BOOTCAMP", bgImg: "url('https://images.unsplash.com/photo-1552674605-db6ffd4facb5?w=300&q=80')", title: "Summer HIIT Bootcamp", desc: "Intense full body workout", meta: "Studio 1 • Aug 15", price: "Starts from $20" },
+                { bannerText: "RETREAT", bgImg: "url('https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=300&q=80')", title: "Yoga Retreat 2024", desc: "Relax and rejuvenate", meta: "Outdoors • Sep 2", price: "Starts from $199" }
             ]
         },
         products: {
             title: "Products",
             count: "2 In Stock",
             items: [
-                { bannerText: "PROTEIN", grad: "linear-gradient(135deg, #001b4d, #005bf0)", title: "STRON Protein Powder", desc: "Vanilla Bean (2 lbs)", meta: "Supplements • In stock", price: "Starts from $39.99" },
-                { bannerText: "GEAR", grad: "linear-gradient(135deg, #1a1a1a, #4d4d4d)", title: "Pro Resistance Bands", desc: "Set of 5 levels", meta: "Equipment • In stock", price: "Starts from $19.99" }
+                { bannerText: "PROTEIN", bgImg: "url('https://images.unsplash.com/photo-1593095948071-474c5cc2989d?w=300&q=80')", title: "STRON Protein Powder", desc: "Vanilla Bean (2 lbs)", meta: "Supplements • In stock", price: "Starts from $39.99" },
+                { bannerText: "GEAR", bgImg: "url('https://images.unsplash.com/photo-1584735935682-2f2b69dff9d2?w=300&q=80')", title: "Pro Resistance Bands", desc: "Set of 5 levels", meta: "Equipment • In stock", price: "Starts from $19.99" }
             ]
         },
         services: {
             title: "Services",
             count: "2 Available",
             items: [
-                { bannerText: "TRAIN", grad: "linear-gradient(135deg, #4d1a00, #f05a00)", title: "1-on-1 Personal Training", desc: "Customized workout plan", meta: "60 mins • Flexible", price: "Starts from $60" },
-                { bannerText: "DIET", grad: "linear-gradient(135deg, #004d33, #00f0a8)", title: "Nutrition Consultation", desc: "Meal planning & macros", meta: "45 mins • Online", price: "Starts from $80" }
+                { bannerText: "TRAIN", bgImg: "url('https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=300&q=80')", title: "1-on-1 Personal Training", desc: "Customized workout plan", meta: "60 mins • Flexible", price: "Starts from $60" },
+                { bannerText: "DIET", bgImg: "url('https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=300&q=80')", title: "Nutrition Consultation", desc: "Meal planning & macros", meta: "45 mins • Online", price: "Starts from $80" }
             ]
         }
     };
@@ -488,7 +488,7 @@
         data.items.forEach(item => {
             listEl.innerHTML += `
                 <div class="mockup-item">
-                    <div class="mockup-item-banner" style="background: ${item.grad};">
+                    <div class="mockup-item-banner" style="background: linear-gradient(135deg, rgba(0,27,77,0.7), rgba(0,91,240,0.7)), ${item.bgImg}; background-size: cover; background-position: center;">
                         <div class="mockup-item-circle"></div>
                         <div class="mockup-item-banner-text">${item.bannerText}</div>
                     </div>
