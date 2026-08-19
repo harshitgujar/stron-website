@@ -21,7 +21,7 @@
     --gradient-2: linear-gradient(135deg, #005bf0 0%, #003380 100%);
     
     /* Typography */
-    --font-main: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    --font-main: 'Helvetica Neue', sans-serif;
     
     /* Spacing */
     --sp-xs: 0.5rem;
@@ -2524,7 +2524,7 @@ ul {
                 box-shadow 0.35s ease, 
                 filter 0.35s ease;
     user-select: none;
-    font-family: var(--font-primary);
+    font-family: var(--font-main);
     box-shadow: 0 12px 28px rgba(0, 0, 0, 0.55), 
                 inset 0 1.5px 0 rgba(255, 255, 255, 0.45),
                 inset 0 -1.5px 0 rgba(0, 0, 0, 0.25);
@@ -3424,7 +3424,7 @@ ul {
 .review-card-tilted .quote-icon {
     font-size: 3rem;
     color: #fff;
-    font-family: serif;
+    
     line-height: 1;
     margin-bottom: 1rem;
     opacity: 0.8;
