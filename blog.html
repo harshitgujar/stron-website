@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>STRON — The Fitness Operating Platform</title>
+    <meta name="description" content="One platform for every fitness experience. Run your fitness business, organize events and track every workout.">
+
+    <link rel="stylesheet" href="style.css?v=2">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.css">
+</head>
+<body class="theme-dark" style="background: #0d0d12; color: #fff;">
+    <!-- Locomotive Scroll Container -->
+    <div data-scroll-container>
+        
+
+        <!-- BLOG HERO SECTION -->
+        <section class="blog-hero" style="position: relative; min-height: 80vh; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 6rem 2rem; overflow: hidden; border-bottom: 1px solid rgba(255,255,255,0.05);">
+            
+            <!-- Faint Dot Grid Background -->
+            <div style="position: absolute; inset: 0; background-image: radial-gradient(rgba(255,255,255,0.2) 2px, transparent 2px); background-size: 30px 30px; opacity: 1; z-index: 1;"></div>
+            
+            <!-- Gym Background Image (Faded / Masked like the Colosseum in the screenshot) -->
+            <div style="position: absolute; bottom: 0; left: -5%; width: 60%; height: 80%; background-image: url('assets/gym-banner-bg.jpg'); background-size: cover; background-position: center; opacity: 0.2; -webkit-mask-image: linear-gradient(to top, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 100%); mask-image: linear-gradient(to top, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 100%); z-index: 1; mix-blend-mode: luminosity;"></div>
+            <div style="position: absolute; bottom: 0; right: -5%; width: 60%; height: 80%; background-image: url('assets/crossfit_event_photo_1786782507044.jpg'); background-size: cover; background-position: center; opacity: 0.15; -webkit-mask-image: linear-gradient(to top right, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 80%); mask-image: linear-gradient(to top right, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 80%); z-index: 1; mix-blend-mode: luminosity;"></div>
+
+            <!-- Content -->
+            <div style="position: relative; z-index: 10; text-align: center; max-width: 800px; margin: 0 auto; padding-top: 4rem;">
+                <h1 style="font-size: clamp(3rem, 6vw, 5rem); font-weight: 500; letter-spacing: -2px; line-height: 1.1; margin-bottom: 1.5rem; color: #fff;">
+                    Build lasting<br>relationships.
+                </h1>
+                <p style="font-size: 1.1rem; color: #aaa; margin-bottom: 2.5rem; max-width: 600px; margin-inline: auto; line-height: 1.6;">
+                    The ultimate platform for modern fitness institutions — tools that handle the full client lifecycle across coaching, community, and growth.
+                </p>
+                <a href="#articles" style="display: inline-block; background: #fff; color: #0d0d12; padding: 1rem 2.5rem; border-radius: 8px; font-weight: 600; text-decoration: none; transition: all 0.3s ease;">
+                    Read Latest Articles
+                </a>
+            </div>
+        </section>
+
+        <!-- BLOG GRID SECTION (Placeholder for actual blog posts) -->
+        <section id="articles" style="padding: 6rem 2rem; background: #0d0d12; position: relative; z-index: 10;">
+            <div style="max-width: 1200px; margin: 0 auto;">
+                <h2 style="font-size: 2rem; font-weight: 700; margin-bottom: 3rem; color: #fff;">Latest Articles</h2>
+                
+                <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 2rem;">
+                    <!-- Placeholder Card 1 -->
+                    <div class="mini-ui-card" style="background: #15151f; border-radius: 16px; overflow: hidden; padding: 0; border: 1px solid rgba(255,255,255,0.05);">
+                        <div style="height: 200px; background-image: url('assets/virtual_challenge_photo_1786782933816.jpg'); background-size: cover; background-position: center;"></div>
+                        <div style="padding: 1.5rem;">
+                            <div style="font-size: 0.75rem; color: #005bf0; font-weight: 700; text-transform: uppercase; margin-bottom: 0.5rem; letter-spacing: 1px;">Growth</div>
+                            <h3 style="font-size: 1.25rem; font-weight: 700; color: #fff; margin-bottom: 0.75rem;">How to scale your virtual challenges to 10k+ users</h3>
+                            <p style="color: #888; font-size: 0.9rem; line-height: 1.5; margin-bottom: 1.5rem;">Learn the exact playbook Alpha Gym used to create a viral step challenge that reached across the globe.</p>
+                            <div style="font-size: 0.8rem; color: #666;">Aug 24, 2026 • 5 min read</div>
+                        </div>
+                    </div>
+                    
+                    <!-- Placeholder Card 2 -->
+                    <div class="mini-ui-card" style="background: #15151f; border-radius: 16px; overflow: hidden; padding: 0; border: 1px solid rgba(255,255,255,0.05);">
+                        <div style="height: 200px; background-image: url('assets/crossfit_event_photo_1786782507044.jpg'); background-size: cover; background-position: center;"></div>
+                        <div style="padding: 1.5rem;">
+                            <div style="font-size: 0.75rem; color: #005bf0; font-weight: 700; text-transform: uppercase; margin-bottom: 0.5rem; letter-spacing: 1px;">Community</div>
+                            <h3 style="font-size: 1.25rem; font-weight: 700; color: #fff; margin-bottom: 0.75rem;">Building a cult-like following for your local gym</h3>
+                            <p style="color: #888; font-size: 0.9rem; line-height: 1.5; margin-bottom: 1.5rem;">Community is everything. Discover how hosting cross-gym leaderboards increases retention by over 40%.</p>
+                            <div style="font-size: 0.8rem; color: #666;">Aug 20, 2026 • 4 min read</div>
+                        </div>
+                    </div>
+
+                    <!-- Placeholder Card 3 -->
+                    <div class="mini-ui-card" style="background: #15151f; border-radius: 16px; overflow: hidden; padding: 0; border: 1px solid rgba(255,255,255,0.05);">
+                        <div style="height: 200px; background-image: url('assets/operational-showcase-backdrop.png'); background-size: cover; background-position: center;"></div>
+                        <div style="padding: 1.5rem;">
+                            <div style="font-size: 0.75rem; color: #005bf0; font-weight: 700; text-transform: uppercase; margin-bottom: 0.5rem; letter-spacing: 1px;">Productivity</div>
+                            <h3 style="font-size: 1.25rem; font-weight: 700; color: #fff; margin-bottom: 0.75rem;">Automate your booking flow with STRON</h3>
+                            <p style="color: #888; font-size: 0.9rem; line-height: 1.5; margin-bottom: 1.5rem;">Stop doing manual entry. Here are 5 ways to automate your daily operations so you can focus on training.</p>
+                            <div style="font-size: 0.8rem; color: #666;">Aug 18, 2026 • 6 min read</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer class="new-footer">
+        <div class="footer-blob-container">
+            <div class="footer-blob footer-blob-1"></div>
+            <div class="footer-blob footer-blob-2"></div>
+            <div class="footer-blob footer-blob-3"></div>
+            <div class="footer-blob footer-blob-4"></div>
+        </div>
+        <div class="footer-blobs-overlay"></div>
+        <div class="footer-glow"></div>
+        <div class="footer-content">
+            <div class="footer-top">
+                <div class="footer-left">
+                    <div class="download-label">Download Now</div>
+                    <div class="footer-logo">STRON</div>
+                </div>
+                <div class="footer-right">
+                    <div class="footer-nav-col">
+                        <a href="#" class="footer-link">LinkedIn</a>
+                        <a href="#" class="footer-link">Instagram</a>
+                        <a href="#" class="footer-link">X</a>
+                        <a href="#" class="btn-contact">Contact Us</a>
+                    </div>
+                    <div class="footer-nav-col">
+                        <a href="#" class="footer-link">About</a>
+                        <a href="#" class="footer-link">Contact</a>
+                        <a href="#" class="footer-link">Founding Team</a>
+                        <a href="#" class="footer-link">Privacy & Terms</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="footer-bottom-text">One App for all your Fitness Journey, Available on your Device</div>
+                <div class="footer-badges">
+                    <a href="#" class="btn-store">Google Play Store</a>
+                    <a href="#" class="btn-store">Apple App Store</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
