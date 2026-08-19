@@ -159,11 +159,59 @@ ul {
     background-color: var(--bg-elevated);
 }
 
+/* New Light Theme Utilities for Redesign */
+.bg-light {
+    background-color: #f8f9fa;
+    color: #111111;
+}
+
+.bg-white {
+    background-color: #ffffff;
+    color: #111111;
+}
+
+.text-dark {
+    color: #111111 !important;
+}
+
+.text-gray {
+    color: #555555 !important;
+}
+
+.text-purple {
+    color: #8b5cf6 !important; /* Lofi purple */
+}
+
+/* Layout utilities for new sections */
+.d-flex { display: flex; }
+.align-center { align-items: center; }
+.justify-center { justify-content: center; }
+.justify-between { justify-content: space-between; }
+.flex-column { flex-direction: column; }
+.w-100 { width: 100%; }
+.h-100 { height: 100%; }
+
 .mt-small { margin-top: var(--sp-sm); }
 .mt-medium { margin-top: var(--sp-md); }
 .mt-large { margin-top: var(--sp-lg); }
+.mb-small { margin-bottom: var(--sp-sm); }
+.mb-medium { margin-bottom: var(--sp-md); }
 .mb-large { margin-bottom: var(--sp-lg); }
 .mt-auto { margin-top: auto; }
+
+/* 2-Column Grid for Feature Sections */
+.grid-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+}
+@media (max-width: 991px) {
+    .grid-2 {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+}
 
 .grid-3 {
     display: grid;
@@ -280,7 +328,7 @@ ul {
     overflow: hidden;
     display: flex;
     flex-direction: column;
-    background-color: #0048cb;
+    background-color: var(--bg-primary); /* Dark background */
 }
 
 .hero-card::before {
@@ -290,10 +338,7 @@ ul {
     left: 0;
     right: 0;
     bottom: 0;
-    background-image: url('assets/hero-macbook-mockup.png');
-    background-size: cover;
-    background-position: center center;
-    background-repeat: no-repeat;
+    background: radial-gradient(circle at 80% 50%, rgba(139, 92, 246, 0.15), transparent 50%); /* Subtle purple glow */
     z-index: 0;
 }
 
@@ -354,11 +399,12 @@ ul {
 }
 
 .nav-cta .btn-primary {
-    background: #0a66f0;
-    border: 1px solid rgba(255, 255, 255, 0.18);
-    box-shadow: 0 4px 15px rgba(10, 102, 240, 0.35);
+    background: #e0e0e0;
+    color: #000;
+    border: none;
+    box-shadow: none;
     padding: 0.5rem 1.15rem;
-    border-radius: 8px;
+    border-radius: 4px;
     font-weight: 600;
     font-size: 0.86rem;
     text-transform: none;
@@ -367,9 +413,9 @@ ul {
 }
 
 .nav-cta .btn-primary:hover {
-    background: #005bf0;
+    background: #ffffff;
     transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(10, 102, 240, 0.5);
+    box-shadow: 0 4px 10px rgba(255, 255, 255, 0.2);
 }
 
 .mobile-menu-toggle {
@@ -382,8 +428,8 @@ ul {
 .new-hero {
     flex-grow: 1;
     display: flex;
-    justify-content: flex-start;
-    align-items: flex-start;
+    justify-content: space-between;
+    align-items: center;
     padding: 0 2rem;
     max-width: 1280px;
     margin: 0 auto;
@@ -395,11 +441,79 @@ ul {
 .hero-content-left {
     flex: 1;
     max-width: 500px;
-    margin-top: calc(clamp(4.5rem, 8vh, 6.5rem) + 15px);
-    margin-left: 0;
     display: flex;
     flex-direction: column;
     gap: 1.35rem;
+}
+
+/* Lofi Hero Right Styling */
+.hero-content-right {
+    flex: 1;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 600px;
+    max-width: 600px;
+}
+
+.lofi-phone-mockup {
+    width: 280px;
+    height: 580px;
+    background-color: #ff0000; /* Red from lofi */
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-weight: bold;
+    z-index: 2;
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+}
+
+.lofi-float-card {
+    position: absolute;
+    background: #e0e0e0;
+    color: #333;
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    z-index: 3;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+}
+
+.card-step-race {
+    width: 120px;
+    height: 80px;
+    left: 0;
+    top: 30%;
+}
+
+.card-opinion {
+    width: 100px;
+    height: 60px;
+    left: 10%;
+    bottom: 15%;
+}
+
+.card-king-hill {
+    width: 100px;
+    height: 70px;
+    right: 5%;
+    top: 25%;
+}
+
+.card-step-tracking {
+    width: 120px;
+    height: 80px;
+    right: 0;
+    bottom: 20%;
 }
 
 .h-hero {
@@ -524,6 +638,67 @@ ul {
 /* ==========================================================================
    FEATURES CARDS (ECOSYSTEM)
    ========================================================================== */
+
+/* Lofi Features Nav Bar */
+.features-nav-bar {
+    border-top: 1px solid #eaeaea;
+    border-bottom: 1px solid #eaeaea;
+    padding: 2rem 0;
+    width: 100%;
+}
+
+.features-nav-grid {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.feature-nav-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.feature-nav-icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+
+.feature-nav-icon svg {
+    width: 24px;
+    height: 24px;
+}
+
+.feature-nav-icon.bg-purple { background-color: #8b5cf6; }
+.feature-nav-icon.bg-orange { background-color: #f97316; }
+.feature-nav-icon.bg-green { background-color: #22c55e; }
+
+.feature-nav-content h4 {
+    font-size: 0.9rem;
+    font-weight: 800;
+    margin-bottom: 0.2rem;
+    letter-spacing: 0.05em;
+    color: #111;
+}
+
+.feature-nav-content.purple h4 { color: #8b5cf6; }
+.feature-nav-content.orange h4 { color: #f97316; }
+.feature-nav-content.green h4 { color: #22c55e; }
+
+.feature-nav-content p {
+    font-size: 0.8rem;
+    color: #555;
+    line-height: 1.4;
+    margin: 0;
+}
+
 .blob-card-wrapper {
     position: relative;
     width: 100%;
