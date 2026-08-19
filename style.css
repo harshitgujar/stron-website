@@ -3837,8 +3837,8 @@ ul {
 }
 
 .faq-chevron-circle {
-    width: 28px;
-    height: 28px;
+    width: 24px;
+    height: 24px;
     border-radius: 50%;
     background: rgba(255, 255, 255, 0.08);
     display: flex;
@@ -4399,7 +4399,7 @@ ul {
 .saas-pill.green { color: #33c8e5; background: rgba(0, 180, 216, 0.15); }
 
 .saas-h2 {
-    font-size: clamp(2.5rem, 4vw, 3.5rem);
+    font-size: clamp(2rem, 3.5vw, 3rem);
     font-weight: 700;
     line-height: 1.1;
     margin-bottom: 1rem;
@@ -4447,8 +4447,8 @@ ul {
 }
 
 .pillar-icon-wrapper {
-    width: 64px;
-    height: 64px;
+    width: 48px;
+    height: 48px;
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -4462,8 +4462,8 @@ ul {
 
 .pillar-icon-wrapper svg {
     color: white;
-    width: 28px;
-    height: 28px;
+    width: 24px;
+    height: 24px;
 }
 
 /* Horizontal Steps */
@@ -4486,8 +4486,8 @@ ul {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: 28px;
-    height: 28px;
+    width: 24px;
+    height: 24px;
     border-radius: 50%;
     background: #005bf0;
     color: white;
@@ -4548,7 +4548,7 @@ ul {
 }
 
 .saas-dark-cta h2 {
-    font-size: clamp(3rem, 5vw, 4.5rem);
+    font-size: clamp(2.5rem, 4vw, 3.5rem);
     font-weight: 700;
     margin-bottom: 1.5rem;
     line-height: 1.1;
