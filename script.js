@@ -22,6 +22,31 @@ document.addEventListener('DOMContentLoaded', () => {
         pinType: document.querySelector("[data-scroll-container]").style.transform ? "transform" : "fixed"
     });
 
+    // Smooth scroll for Contact Us
+    const contactLinks = document.querySelectorAll('a[href="#contact"]');
+    contactLinks.forEach(link => {
+        link.addEventListener('click', (e) => {
+            e.preventDefault();
+            const footer = document.querySelector('#contact');
+            if (footer && locoScroll) {
+                locoScroll.scrollTo(footer);
+            }
+        });
+    });
+
+
+    
+    // Handle initial hash routing for locomotive scroll
+    setTimeout(() => {
+        if (window.location.hash) {
+            const target = document.querySelector(window.location.hash);
+            if (target && locoScroll) {
+                locoScroll.scrollTo(target);
+            }
+        }
+    }, 500); // Wait for layout to settle
+
+
     // Standard fade-in for section containers
     const fadeElements = gsap.utils.toArray('.fade-in');
     fadeElements.forEach((el) => {
