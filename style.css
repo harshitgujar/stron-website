@@ -4345,20 +4345,21 @@ ul {
 }
 
 /* ==========================================================================
-   SAAS LIGHT THEME & UTILITIES
+   SAAS DARK THEME & UTILITIES
    ========================================================================== */
 
-.theme-light {
-    background-color: #f7f8fa;
-    color: #1a1a1a;
+.theme-light, .theme-dark-saas {
+    background-color: #0a0a0f;
+    color: #f0f0f0;
 }
 
-.theme-light h2, .theme-light h3, .theme-light h4 {
-    color: #111;
+.theme-light h2, .theme-light h3, .theme-light h4,
+.theme-dark-saas h2, .theme-dark-saas h3, .theme-dark-saas h4 {
+    color: #ffffff;
 }
 
-.theme-light p {
-    color: #555;
+.theme-light p, .theme-dark-saas p {
+    color: #aaaaaa;
 }
 
 .saas-section {
@@ -4393,9 +4394,9 @@ ul {
     margin-bottom: 1rem;
 }
 
-.saas-pill.blue { color: #005bf0; background: rgba(0, 91, 240, 0.1); }
-.saas-pill.orange { color: #ff8500; background: rgba(255, 133, 0, 0.1); }
-.saas-pill.green { color: #00b4d8; background: rgba(0, 180, 216, 0.1); }
+.saas-pill.blue { color: #4d94ff; background: rgba(77, 148, 255, 0.15); }
+.saas-pill.orange { color: #ff9e33; background: rgba(255, 133, 0, 0.15); }
+.saas-pill.green { color: #33c8e5; background: rgba(0, 180, 216, 0.15); }
 
 .saas-h2 {
     font-size: clamp(2.5rem, 4vw, 3.5rem);
@@ -4403,12 +4404,13 @@ ul {
     line-height: 1.1;
     margin-bottom: 1rem;
     letter-spacing: -1px;
+    color: white;
 }
 
 .saas-p {
     font-size: 1.1rem;
     line-height: 1.6;
-    color: #555;
+    color: #aaaaaa;
     margin-bottom: 2rem;
 }
 
@@ -4423,9 +4425,9 @@ ul {
     align-items: center;
     gap: 1rem;
     padding: 0.8rem 0;
-    border-bottom: 1px solid rgba(0,0,0,0.05);
+    border-bottom: 1px solid rgba(255,255,255,0.05);
     font-weight: 500;
-    color: #333;
+    color: #e0e0e0;
 }
 
 .saas-list li svg {
@@ -4436,10 +4438,11 @@ ul {
 
 /* Three Pillars Icons */
 .pillar-card {
-    background: white;
+    background: #12121a;
     padding: 2rem;
     border-radius: 16px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    border: 1px solid rgba(255,255,255,0.03);
     text-align: center;
 }
 
@@ -4499,21 +4502,22 @@ ul {
     display: flex;
     align-items: center;
     margin-bottom: 0.5rem;
+    color: white;
 }
 
 .saas-step-p {
     font-size: 0.9rem;
-    color: #666;
+    color: #999;
     margin-bottom: 1.5rem;
 }
 
 /* Visual UI Cards for Steps */
 .mini-ui-card {
-    background: white;
+    background: #15151f;
     border-radius: 12px;
     padding: 1rem;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-    border: 1px solid rgba(0,0,0,0.05);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    border: 1px solid rgba(255,255,255,0.05);
 }
 
 .mockup-container {
@@ -4529,7 +4533,8 @@ ul {
     max-width: 100%;
     height: auto;
     border-radius: 20px;
-    box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+    border: 1px solid rgba(255,255,255,0.05);
 }
 
 /* Dark CTA Section */
