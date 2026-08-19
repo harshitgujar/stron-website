@@ -105,17 +105,24 @@
                     <span class="saas-pill blue">SELL</span>
                     <h2 class="saas-h2">Everything you sell.<br>One place.</h2>
                     <p class="saas-p">Memberships, events, products, training sessions and workshops — give customers one simple way to discover and buy what you offer.</p>
-                    <ul class="saas-list">
-                        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg> Memberships</li>
-                        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg> Recurring payments</li>
-                        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg> Events</li>
-                        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg> Products</li>
-                        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg> Services</li>
-                        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg> Workshops</li>
-                    </ul>
+                    <div class="filter-pills-wrapper">
+                        <button class="filter-pill active" onclick="switchCategory('memberships')" id="pill-memberships">Memberships</button>
+                        <button class="filter-pill" onclick="switchCategory('events')" id="pill-events">Events</button>
+                        <button class="filter-pill" onclick="switchCategory('products')" id="pill-products">Products</button>
+                        <button class="filter-pill" onclick="switchCategory('services')" id="pill-services">Services</button>
+                    </div>
                 </div>
+                
                 <div class="mockup-container">
-                    <img src="assets/gym_dashboard_hero.png" alt="STRON Offerings Dashboard" style="border: 1px solid rgba(255,255,255,0.1); border-radius: 12px; box-shadow: 0 20px 40px rgba(0,0,0,0.08);">
+                    <div class="mockup-ui-card">
+                        <div class="mockup-ui-header">
+                            <h3 id="mockup-title">Memberships</h3>
+                            <span class="mockup-ui-badge" id="mockup-count">3 Active</span>
+                        </div>
+                        <div class="mockup-ui-body" id="mockup-list">
+                            <!-- Injected via JS -->
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -461,6 +468,78 @@
             }
         }
     </script>
+
+<script>
+    const categoryData = {
+        memberships: {
+            title: "Memberships",
+            count: "3 Active",
+            items: [
+                { icon: "🏋️", title: "Monthly Pro", desc: "Access to all gym equipment", price: "$49/mo" },
+                { icon: "⭐", title: "Annual Elite", desc: "VIP Access + 2 PT Sessions", price: "$499/yr" },
+                { icon: "🎟️", title: "Day Pass", desc: "Drop-in access", price: "$15/day" }
+            ]
+        },
+        events: {
+            title: "Events",
+            count: "2 Upcoming",
+            items: [
+                { icon: "🔥", title: "Summer HIIT Bootcamp", desc: "Sat, Aug 15 • 10:00 AM", price: "$20" },
+                { icon: "🧘‍♀️", title: "Yoga Retreat 2024", desc: "Sun, Sep 2 • 8:00 AM", price: "$199" }
+            ]
+        },
+        products: {
+            title: "Products",
+            count: "2 In Stock",
+            items: [
+                { icon: "🥤", title: "STRON Protein Powder", desc: "Vanilla Bean (2 lbs)", price: "$39.99" },
+                { icon: "🎽", title: "Pro Resistance Bands", desc: "Set of 5 levels", price: "$19.99" }
+            ]
+        },
+        services: {
+            title: "Services",
+            count: "2 Available",
+            items: [
+                { icon: "💪", title: "1-on-1 Personal Training", desc: "Customized workout plan", price: "$60/hr" },
+                { icon: "🥗", title: "Nutrition Consultation", desc: "Meal planning & macros", price: "$80/hr" }
+            ]
+        }
+    };
+
+    function switchCategory(cat) {
+        // Update pills
+        document.querySelectorAll('.filter-pill').forEach(pill => pill.classList.remove('active'));
+        document.getElementById('pill-' + cat).classList.add('active');
+
+        // Update UI Card
+        const data = categoryData[cat];
+        document.getElementById('mockup-title').textContent = data.title;
+        document.getElementById('mockup-count').textContent = data.count;
+        
+        const listEl = document.getElementById('mockup-list');
+        listEl.innerHTML = '';
+        
+        data.items.forEach(item => {
+            listEl.innerHTML += `
+                <div class="mockup-item">
+                    <div class="mockup-item-icon">${item.icon}</div>
+                    <div class="mockup-item-details">
+                        <h4>${item.title}</h4>
+                        <p>${item.desc}</p>
+                    </div>
+                    <div class="mockup-item-price">${item.price}</div>
+                </div>
+            `;
+        });
+    }
+
+    // Initialize first category on load
+    document.addEventListener('DOMContentLoaded', () => {
+        if(document.getElementById('pill-memberships')) {
+            switchCategory('memberships');
+        }
+    });
+</script>
 </body>
 
 </html>
