@@ -892,7 +892,7 @@ ul {
 .feature-accordion-layout {
     display: grid;
     grid-template-columns: 1fr 340px;
-    gap: 4rem;
+    gap: 3rem;
     align-items: start;
     margin-top: 2rem;
     width: 100%;
@@ -1267,7 +1267,7 @@ ul {
     flex-direction: column;
     justify-content: space-between;
     min-height: 720px;
-    gap: 4rem;
+    gap: 3rem;
 }
 
 .showcase-cards-row {
@@ -3372,7 +3372,7 @@ ul {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 4rem;
+    gap: 3rem;
     margin-bottom: 3.5rem;
 }
 
@@ -4363,7 +4363,7 @@ ul {
 }
 
 .saas-section {
-    padding: 6rem 2rem;
+    padding: 6rem 8vw;
     max-width: 1600px;
     margin: 0 auto;
 }
@@ -4371,7 +4371,7 @@ ul {
 .saas-grid-2 {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 4rem;
+    gap: 3rem;
     align-items: center;
 }
 
