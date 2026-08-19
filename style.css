@@ -4393,7 +4393,7 @@ ul {
     margin-bottom: 1rem;
 }
 
-.saas-pill.purple { color: #9d4edd; background: rgba(157, 78, 221, 0.1); }
+.saas-pill.blue { color: #005bf0; background: rgba(0, 91, 240, 0.1); }
 .saas-pill.orange { color: #ff8500; background: rgba(255, 133, 0, 0.1); }
 .saas-pill.green { color: #00b4d8; background: rgba(0, 180, 216, 0.1); }
 
@@ -4429,7 +4429,7 @@ ul {
 }
 
 .saas-list li svg {
-    color: #9d4edd;
+    color: #005bf0;
     width: 20px;
     height: 20px;
 }
@@ -4453,7 +4453,7 @@ ul {
     margin: 0 auto 1.5rem;
 }
 
-.pillar-icon-wrapper.purple { background: #9d4edd; }
+.pillar-icon-wrapper.blue { background: #005bf0; }
 .pillar-icon-wrapper.orange { background: #ff8500; }
 .pillar-icon-wrapper.green { background: #38b000; }
 
@@ -4486,7 +4486,7 @@ ul {
     width: 28px;
     height: 28px;
     border-radius: 50%;
-    background: #9d4edd;
+    background: #005bf0;
     color: white;
     font-size: 0.8rem;
     font-weight: 700;
