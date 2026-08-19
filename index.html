@@ -76,37 +76,29 @@
 
         <!-- NEW SAAS STRUCTURE -->
         
-        <!-- SECTION 2: THREE PILLARS (Light Theme) -->
-        <section class="saas-section theme-dark-saas" style="padding-top: 4rem;">
-            <div class="saas-grid-3">
-                <!-- SELL -->
-                <div class="pillar-card">
-                    <div class="pillar-icon-wrapper blue">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
-                    </div>
-                    <h3 style="font-weight: 700; font-size: 1.2rem; color: #005bf0; margin-bottom: 0.5rem;">SELL</h3>
-                    <p style="font-size: 0.95rem; color: #aaa;">Memberships • Events<br>Products • Services</p>
-                </div>
-                <!-- ENGAGE -->
-                <div class="pillar-card">
-                    <div class="pillar-icon-wrapper orange">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
-                    </div>
-                    <h3 style="font-weight: 700; font-size: 1.2rem; color: #ff8500; margin-bottom: 0.5rem;">ENGAGE</h3>
-                    <p style="font-size: 0.95rem; color: #aaa;">Games • Polls • Challenges</p>
-                </div>
-                <!-- GROW -->
-                <div class="pillar-card">
-                    <div class="pillar-icon-wrapper green">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg>
-                    </div>
-                    <h3 style="font-weight: 700; font-size: 1.2rem; color: #00b4d8; margin-bottom: 0.5rem;">GROW</h3>
-                    <p style="font-size: 0.95rem; color: #aaa;">Discovery • Promotions<br>Analytics</p>
-                </div>
+        
+        <!-- SECTION 2: TABS / PILLS -->
+        <section class="saas-section theme-dark-saas" style="padding-top: 4rem; padding-bottom: 2rem; text-align: center;">
+            <h2 class="saas-h2" style="font-size: 2rem; margin-bottom: 2rem;">Explore the Platform</h2>
+            <div class="saas-tabs-container" style="display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap;">
+                <button class="saas-tab-btn active" onclick="switchTab('sell')" id="btn-sell" style="display: flex; align-items: center; gap: 0.5rem; background: rgba(0, 91, 240, 0.2); color: white; border: 1px solid #005bf0; padding: 0.8rem 2rem; border-radius: 30px; font-weight: 700; font-size: 0.9rem; cursor: pointer; transition: all 0.3s ease;">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
+                    SELL
+                </button>
+                <button class="saas-tab-btn" onclick="switchTab('engage')" id="btn-engage" style="display: flex; align-items: center; gap: 0.5rem; background: rgba(255, 255, 255, 0.05); color: #aaa; border: 1px solid rgba(255,255,255,0.1); padding: 0.8rem 2rem; border-radius: 30px; font-weight: 700; font-size: 0.9rem; cursor: pointer; transition: all 0.3s ease;">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle></svg>
+                    ENGAGE
+                </button>
+                <button class="saas-tab-btn" onclick="switchTab('grow')" id="btn-grow" style="display: flex; align-items: center; gap: 0.5rem; background: rgba(255, 255, 255, 0.05); color: #aaa; border: 1px solid rgba(255,255,255,0.1); padding: 0.8rem 2rem; border-radius: 30px; font-weight: 700; font-size: 0.9rem; cursor: pointer; transition: all 0.3s ease;">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg>
+                    GROW
+                </button>
             </div>
         </section>
 
-        <!-- SECTION 3: SELL (Light Theme) -->
+        <!-- TAB CONTENTS -->
+        <div id="content-sell" class="saas-tab-content">
+<!-- SECTION 3: SELL (Light Theme) -->
         <section class="saas-section theme-dark-saas" style="background: #0d0d12;">
             <div class="saas-grid-2">
                 <div>
@@ -128,7 +120,11 @@
             </div>
         </section>
 
-        <!-- SECTION 4: ENGAGE (Light Theme) -->
+        
+        </div>
+        
+        <div id="content-engage" class="saas-tab-content" style="display: none;">
+<!-- SECTION 4: ENGAGE (Light Theme) -->
         <section class="saas-section theme-dark-saas">
             <div class="saas-grid-2">
                 <div>
@@ -166,69 +162,11 @@
             </div>
         </section>
 
-        <!-- SECTION 5: HOW IT WORKS (Light Theme) -->
-        <section class="saas-section theme-dark-saas" style="background: #0d0d12; padding-top: 2rem; padding-bottom: 6rem;">
-            <h2 class="saas-h2" style="margin-bottom: 3rem;">Create experiences<br>in minutes.</h2>
-            <div class="saas-steps">
-                <div class="saas-step">
-                    <div class="saas-step-title"><span class="saas-step-number">1</span> Create</div>
-                    <p class="saas-step-p">Choose your experience.</p>
-                    <div class="mini-ui-card" style="font-size: 0.8rem;">
-                        <div style="margin-bottom: 0.5rem; color: #aaa;">What do you want to create?</div>
-                        <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem; background: rgba(255,255,255,0.03); padding: 0.5rem; border-radius: 6px;"><svg viewBox="0 0 24 24" fill="none" stroke="#005bf0" stroke-width="2" width="16" height="16"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg> Game</div>
-                        <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem; background: rgba(255,255,255,0.03); padding: 0.5rem; border-radius: 6px;"><svg viewBox="0 0 24 24" fill="none" stroke="#005bf0" stroke-width="2" width="16" height="16"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></svg> Movement Poll</div>
-                        <div style="display: flex; align-items: center; gap: 0.5rem; background: rgba(255,255,255,0.03); padding: 0.5rem; border-radius: 6px;"><svg viewBox="0 0 24 24" fill="none" stroke="#005bf0" stroke-width="2" width="16" height="16"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg> Virtual Challenge</div>
-                    </div>
-                </div>
-                <div class="saas-step" style="margin-top: -2rem;">
-                    <div style="color: rgba(0, 91, 240, 0.3); letter-spacing: 2px; font-weight: 700; font-size: 1.5rem; position: absolute; left: -2rem; top: 2rem;">&rarr;</div>
-                    <div class="saas-step-title"><span class="saas-step-number">2</span> Customise</div>
-                    <p class="saas-step-p">Set the rules, dates and details.</p>
-                    <div class="mini-ui-card" style="font-size: 0.8rem;">
-                        <div style="margin-bottom: 0.5rem; font-weight: 600;">Basic Details</div>
-                        <div style="margin-bottom: 0.25rem; color: #999; font-size: 0.7rem;">Title</div>
-                        <div style="background: rgba(255,255,255,0.03); padding: 0.5rem; border-radius: 6px; margin-bottom: 0.5rem; border: 1px solid rgba(255,255,255,0.1);">7 Day Step Challenge</div>
-                        <div style="margin-bottom: 0.25rem; color: #999; font-size: 0.7rem;">Duration</div>
-                        <div style="background: rgba(255,255,255,0.03); padding: 0.5rem; border-radius: 6px; border: 1px solid rgba(255,255,255,0.1);">7 Days</div>
-                    </div>
-                </div>
-                <div class="saas-step">
-                    <div style="color: rgba(0, 91, 240, 0.3); letter-spacing: 2px; font-weight: 700; font-size: 1.5rem; position: absolute; left: -2rem; top: 2rem;">&rarr;</div>
-                    <div class="saas-step-title"><span class="saas-step-number">3</span> Publish</div>
-                    <p class="saas-step-p">Make it available to your customers.</p>
-                    <div class="mini-ui-card" style="font-size: 0.8rem; text-align: center;">
-                        <div style="margin-bottom: 1rem; font-weight: 600; text-align: left;">Publish Challenge</div>
-                        <div style="display: flex; gap: 0.5rem; align-items: center; margin-bottom: 1rem; text-align: left;">
-                            <div style="width: 32px; height: 32px; background: #333; border-radius: 6px;"></div>
-                            <div>
-                                <div style="font-weight: 600;">7 Day Step Challenge</div>
-                                <div style="font-size: 0.7rem; color: #999;">7 Days • Steps</div>
-                            </div>
-                        </div>
-                        <button style="background: #005bf0; color: white; border: none; padding: 0.5rem 1rem; border-radius: 6px; font-weight: 600; width: 100%;">Publish Now</button>
-                    </div>
-                </div>
-                <div class="saas-step" style="margin-top: -2rem;">
-                    <div style="color: rgba(0, 91, 240, 0.3); letter-spacing: 2px; font-weight: 700; font-size: 1.5rem; position: absolute; left: -2rem; top: 2rem;">&rarr;</div>
-                    <div class="saas-step-title"><span class="saas-step-number">4</span> Participate</div>
-                    <p class="saas-step-p">Customers join and compete.</p>
-                    <div class="mini-ui-card" style="font-size: 0.8rem;">
-                        <div style="margin-bottom: 0.5rem; font-weight: 600;">Participants</div>
-                        <div style="font-size: 1.5rem; font-weight: 700; margin-bottom: 1rem;">124</div>
-                        <div style="display: flex; align-items: center;">
-                            <div style="display: flex; margin-right: 10px;">
-                                <div style="width: 24px; height: 24px; border-radius: 50%; background: #333; border: 2px solid white; margin-left: -8px;"></div>
-                                <div style="width: 24px; height: 24px; border-radius: 50%; background: #444; border: 2px solid white; margin-left: -8px;"></div>
-                                <div style="width: 24px; height: 24px; border-radius: 50%; background: #555; border: 2px solid white; margin-left: -8px;"></div>
-                            </div>
-                            <span style="font-size: 0.75rem; font-weight: 600; background: rgba(255,255,255,0.1); padding: 0.2rem 0.5rem; border-radius: 12px;">+120</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+        
+        </div>
 
-        <!-- SECTION 6: GROW (Light Theme) -->
+        <div id="content-grow" class="saas-tab-content" style="display: none;">
+<!-- SECTION 6: GROW (Light Theme) -->
         <section class="saas-section theme-dark-saas">
             <div class="saas-grid-2">
                 <div>
@@ -293,6 +231,70 @@
                                 <div style="font-size: 0.7rem; color: #999; margin-bottom: 0.2rem;">Challenges</div>
                                 <div style="font-weight: 700;">4</div>
                             </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        
+        </div>
+<!-- SECTION 5: HOW IT WORKS (Light Theme) -->
+        <section class="saas-section theme-dark-saas" style="background: #0d0d12; padding-top: 2rem; padding-bottom: 6rem;">
+            <h2 class="saas-h2" style="margin-bottom: 3rem;">Create experiences<br>in minutes.</h2>
+            <div class="saas-steps">
+                <div class="saas-step">
+                    <div class="saas-step-title"><span class="saas-step-number">1</span> Create</div>
+                    <p class="saas-step-p">Choose your experience.</p>
+                    <div class="mini-ui-card" style="font-size: 0.8rem;">
+                        <div style="margin-bottom: 0.5rem; color: #aaa;">What do you want to create?</div>
+                        <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem; background: rgba(255,255,255,0.03); padding: 0.5rem; border-radius: 6px;"><svg viewBox="0 0 24 24" fill="none" stroke="#005bf0" stroke-width="2" width="16" height="16"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg> Game</div>
+                        <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem; background: rgba(255,255,255,0.03); padding: 0.5rem; border-radius: 6px;"><svg viewBox="0 0 24 24" fill="none" stroke="#005bf0" stroke-width="2" width="16" height="16"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></svg> Movement Poll</div>
+                        <div style="display: flex; align-items: center; gap: 0.5rem; background: rgba(255,255,255,0.03); padding: 0.5rem; border-radius: 6px;"><svg viewBox="0 0 24 24" fill="none" stroke="#005bf0" stroke-width="2" width="16" height="16"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg> Virtual Challenge</div>
+                    </div>
+                </div>
+                <div class="saas-step" style="margin-top: -2rem;">
+                    <div style="color: rgba(0, 91, 240, 0.3); letter-spacing: 2px; font-weight: 700; font-size: 1.5rem; position: absolute; left: -2rem; top: 2rem;">&rarr;</div>
+                    <div class="saas-step-title"><span class="saas-step-number">2</span> Customise</div>
+                    <p class="saas-step-p">Set the rules, dates and details.</p>
+                    <div class="mini-ui-card" style="font-size: 0.8rem;">
+                        <div style="margin-bottom: 0.5rem; font-weight: 600;">Basic Details</div>
+                        <div style="margin-bottom: 0.25rem; color: #999; font-size: 0.7rem;">Title</div>
+                        <div style="background: rgba(255,255,255,0.03); padding: 0.5rem; border-radius: 6px; margin-bottom: 0.5rem; border: 1px solid rgba(255,255,255,0.1);">7 Day Step Challenge</div>
+                        <div style="margin-bottom: 0.25rem; color: #999; font-size: 0.7rem;">Duration</div>
+                        <div style="background: rgba(255,255,255,0.03); padding: 0.5rem; border-radius: 6px; border: 1px solid rgba(255,255,255,0.1);">7 Days</div>
+                    </div>
+                </div>
+                <div class="saas-step">
+                    <div style="color: rgba(0, 91, 240, 0.3); letter-spacing: 2px; font-weight: 700; font-size: 1.5rem; position: absolute; left: -2rem; top: 2rem;">&rarr;</div>
+                    <div class="saas-step-title"><span class="saas-step-number">3</span> Publish</div>
+                    <p class="saas-step-p">Make it available to your customers.</p>
+                    <div class="mini-ui-card" style="font-size: 0.8rem; text-align: center;">
+                        <div style="margin-bottom: 1rem; font-weight: 600; text-align: left;">Publish Challenge</div>
+                        <div style="display: flex; gap: 0.5rem; align-items: center; margin-bottom: 1rem; text-align: left;">
+                            <div style="width: 32px; height: 32px; background: #333; border-radius: 6px;"></div>
+                            <div>
+                                <div style="font-weight: 600;">7 Day Step Challenge</div>
+                                <div style="font-size: 0.7rem; color: #999;">7 Days • Steps</div>
+                            </div>
+                        </div>
+                        <button style="background: #005bf0; color: white; border: none; padding: 0.5rem 1rem; border-radius: 6px; font-weight: 600; width: 100%;">Publish Now</button>
+                    </div>
+                </div>
+                <div class="saas-step" style="margin-top: -2rem;">
+                    <div style="color: rgba(0, 91, 240, 0.3); letter-spacing: 2px; font-weight: 700; font-size: 1.5rem; position: absolute; left: -2rem; top: 2rem;">&rarr;</div>
+                    <div class="saas-step-title"><span class="saas-step-number">4</span> Participate</div>
+                    <p class="saas-step-p">Customers join and compete.</p>
+                    <div class="mini-ui-card" style="font-size: 0.8rem;">
+                        <div style="margin-bottom: 0.5rem; font-weight: 600;">Participants</div>
+                        <div style="font-size: 1.5rem; font-weight: 700; margin-bottom: 1rem;">124</div>
+                        <div style="display: flex; align-items: center;">
+                            <div style="display: flex; margin-right: 10px;">
+                                <div style="width: 24px; height: 24px; border-radius: 50%; background: #333; border: 2px solid white; margin-left: -8px;"></div>
+                                <div style="width: 24px; height: 24px; border-radius: 50%; background: #444; border: 2px solid white; margin-left: -8px;"></div>
+                                <div style="width: 24px; height: 24px; border-radius: 50%; background: #555; border: 2px solid white; margin-left: -8px;"></div>
+                            </div>
+                            <span style="font-size: 0.75rem; font-weight: 600; background: rgba(255,255,255,0.1); padding: 0.2rem 0.5rem; border-radius: 12px;">+120</span>
                         </div>
                     </div>
                 </div>
@@ -422,5 +424,43 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/Flip.min.js"></script>
     <script src="script.js?v=10"></script>
+
+    <script>
+        function switchTab(tabId) {
+            // Hide all contents
+            document.getElementById('content-sell').style.display = 'none';
+            document.getElementById('content-engage').style.display = 'none';
+            document.getElementById('content-grow').style.display = 'none';
+            
+            // Reset all buttons
+            const btns = ['btn-sell', 'btn-engage', 'btn-grow'];
+            btns.forEach(btn => {
+                const el = document.getElementById(btn);
+                el.style.background = 'rgba(255, 255, 255, 0.05)';
+                el.style.color = '#aaa';
+                el.style.border = '1px solid rgba(255,255,255,0.1)';
+            });
+
+            // Show active content
+            document.getElementById('content-' + tabId).style.display = 'block';
+            
+            // Highlight active button
+            const activeBtn = document.getElementById('btn-' + tabId);
+            if (tabId === 'sell') {
+                activeBtn.style.background = 'rgba(0, 91, 240, 0.2)';
+                activeBtn.style.color = 'white';
+                activeBtn.style.border = '1px solid #005bf0';
+            } else if (tabId === 'engage') {
+                activeBtn.style.background = 'rgba(255, 133, 0, 0.2)';
+                activeBtn.style.color = 'white';
+                activeBtn.style.border = '1px solid #ff8500';
+            } else if (tabId === 'grow') {
+                activeBtn.style.background = 'rgba(56, 176, 0, 0.2)';
+                activeBtn.style.color = 'white';
+                activeBtn.style.border = '1px solid #38b000';
+            }
+        }
+    </script>
 </body>
+
 </html>
