@@ -4777,3 +4777,8 @@ ul {
 .blog-card:hover .blog-card-img {
     transform: scale(1.08);
 }
+
+.nav-link.active {
+    color: #005bf0 !important;
+    font-weight: 700;
+}
