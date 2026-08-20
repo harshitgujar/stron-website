@@ -280,7 +280,7 @@ ul {
     overflow: hidden;
     display: flex;
     flex-direction: column;
-    background-color: #0048cb;
+    background-color: #08080d;
 }
 
 .hero-card::before {
@@ -290,10 +290,97 @@ ul {
     left: 0;
     right: 0;
     bottom: 0;
-    background-image: url('assets/ws-1.png');
-    background-size: cover;
+    background-image: 
+        linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+    background-size: 42px 42px;
     background-position: center center;
-    background-repeat: no-repeat;
+    z-index: 1;
+    pointer-events: none;
+}
+
+/* Hero Organic Moving Blue Gradient */
+.hero-blob-container {
+    position: absolute;
+    inset: 0;
+    filter: blur(85px);
+    opacity: 0.9;
+    z-index: 0;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.hero-blob {
+    position: absolute;
+    border-radius: 50%;
+}
+
+.hero-blob-1 {
+    width: 620px;
+    height: 620px;
+    background: #002b80;
+    left: 0%;
+    top: 5%;
+    animation: heroBlobFloat1 4.2s infinite alternate ease-in-out;
+}
+
+.hero-blob-2 {
+    width: 700px;
+    height: 700px;
+    background: #005bf0;
+    right: 5%;
+    top: 15%;
+    animation: heroBlobFloat2 3.6s infinite alternate ease-in-out;
+}
+
+.hero-blob-3 {
+    width: 580px;
+    height: 580px;
+    background: #0037a3;
+    left: 30%;
+    bottom: 0%;
+    animation: heroBlobFloat3 4.8s infinite alternate ease-in-out;
+}
+
+.hero-blob-4 {
+    width: 520px;
+    height: 520px;
+    background: #00a2ff;
+    right: 20%;
+    top: 0%;
+    opacity: 0.8;
+    animation: heroBlobFloat4 3.9s infinite alternate ease-in-out;
+}
+
+@keyframes heroBlobFloat1 {
+    0% { transform: translate(0, 0) scale(1) rotate(0deg); }
+    50% { transform: translate(60px, -45px) scale(1.18) rotate(12deg); }
+    100% { transform: translate(-30px, 30px) scale(0.95) rotate(-6deg); }
+}
+
+@keyframes heroBlobFloat2 {
+    0% { transform: translate(0, 0) scale(1) rotate(0deg); }
+    50% { transform: translate(-50px, -50px) scale(1.22) rotate(-10deg); }
+    100% { transform: translate(45px, 25px) scale(0.92) rotate(8deg); }
+}
+
+@keyframes heroBlobFloat3 {
+    0% { transform: translate(0, 0) scale(1) rotate(0deg); }
+    50% { transform: translate(50px, -35px) scale(1.15) rotate(15deg); }
+    100% { transform: translate(-40px, 30px) scale(0.94) rotate(-8deg); }
+}
+
+@keyframes heroBlobFloat4 {
+    0% { transform: translate(0, 0) scale(1) rotate(0deg); }
+    50% { transform: translate(-45px, -40px) scale(1.25) rotate(-12deg); }
+    100% { transform: translate(35px, -15px) scale(1.05) rotate(6deg); }
+}
+
+.hero-blobs-overlay {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 50% 50%, rgba(8, 8, 13, 0.2) 0%, rgba(8, 8, 13, 0.65) 100%);
+    pointer-events: none;
     z-index: 0;
 }
 
