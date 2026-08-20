@@ -12,6 +12,37 @@ document.addEventListener('DOMContentLoaded', () => {
 
     locoScroll.on("scroll", ScrollTrigger.update);
 
+    // Sticky Nav Logic: Show when scrolling stops
+    const stickyNav = document.getElementById('sticky-nav');
+    if (stickyNav) {
+        let scrollTimeout;
+        let isScrolling = false;
+        
+        locoScroll.on('scroll', (args) => {
+            // Only show sticky nav if we've scrolled down a bit (e.g., past the hero section)
+            if (args.scroll.y > 200) {
+                if (!isScrolling) {
+                    // Start scrolling - hide nav
+                    stickyNav.style.transform = 'translateY(-100%)';
+                }
+                isScrolling = true;
+                
+                clearTimeout(scrollTimeout);
+                scrollTimeout = setTimeout(() => {
+                    // Stopped scrolling - show nav
+                    isScrolling = false;
+                    stickyNav.style.transform = 'translateY(0)';
+                }, 350); // wait 350ms after scroll stops
+            } else {
+                // If near the top, hide the sticky nav completely since the original nav is visible
+                stickyNav.style.transform = 'translateY(-100%)';
+                clearTimeout(scrollTimeout);
+                isScrolling = false;
+            }
+        });
+    }
+
+
     ScrollTrigger.scrollerProxy("[data-scroll-container]", {
         scrollTop(value) {
             return arguments.length ? locoScroll.scrollTo(value, 0, 0) : locoScroll.scroll.instance.scroll.y;
