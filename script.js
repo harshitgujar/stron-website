@@ -24,12 +24,12 @@ document.addEventListener('DOMContentLoaded', () => {
                              : (locoScroll.scroll.instance.scroll.y || 0);
                              
             if (currentY > 200) {
-                if (currentY > lastY + 1) {
+                if (currentY > lastY) {
                     // Scrolling down - hide
                     stickyNav.style.transform = 'translateY(-100%)';
-                } else if (currentY < lastY - 1) {
+                } else if (currentY < lastY) {
                     // Scrolling up - show
-                    stickyNav.style.transform = 'translateY(0)';
+                    stickyNav.style.transform = 'translateY(0px)';
                 }
                 
                 lastY = currentY;
@@ -37,7 +37,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 clearTimeout(scrollTimeout);
                 scrollTimeout = setTimeout(() => {
                     // Show when completely stopped
-                    stickyNav.style.transform = 'translateY(0)';
+                    stickyNav.style.transform = 'translateY(0px)';
                 }, 150); 
             } else {
                 stickyNav.style.transform = 'translateY(-100%)';
