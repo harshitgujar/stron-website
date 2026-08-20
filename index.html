@@ -122,26 +122,202 @@
 <!-- SECTION 3: SELL (Light Theme) -->
         <section class="saas-section theme-dark-saas" style="background: #0d0d12;">
             <div class="saas-grid-2">
-                <div>
+                <div style="position: sticky; top: 120px; align-self: start;">
                     <span class="saas-pill blue">SELL</span>
                     <h2 class="saas-h2">Everything you sell.<br>One place.</h2>
                     <p class="saas-p">Memberships, events, products, training sessions and workshops — give customers one simple way to discover and buy what you offer.</p>
                     <div class="filter-pills-wrapper">
-                        <button class="filter-pill active" onclick="switchCategory('memberships')" id="pill-memberships">Memberships</button>
-                        <button class="filter-pill" onclick="switchCategory('events')" id="pill-events">Events</button>
-                        <button class="filter-pill" onclick="switchCategory('products')" id="pill-products">Products</button>
-                        <button class="filter-pill" onclick="switchCategory('services')" id="pill-services">Services</button>
+                        <button class="filter-pill active" style="pointer-events: none;">Memberships</button>
+                        <button class="filter-pill active" style="pointer-events: none;">Events</button>
+                        <button class="filter-pill active" style="pointer-events: none;">Products</button>
+                        <button class="filter-pill active" style="pointer-events: none;">Services</button>
                     </div>
                 </div>
                 
-                <div class="mockup-container">
+<div class="mockup-container" style="display: flex; flex-direction: column; gap: 2rem;">
                     <div class="mockup-ui-card">
                         <div class="mockup-ui-header">
-                            <h3 id="mockup-title">Memberships</h3>
-                            <span class="mockup-ui-badge" id="mockup-count">3 Active</span>
+                            <h3>Memberships</h3>
+                            <span class="mockup-ui-badge">3 Active</span>
                         </div>
-                        <div class="mockup-ui-body" id="mockup-list">
-                            <!-- Injected via JS -->
+                        <div class="mockup-ui-body">
+                            <div class="mockup-list-item">
+                                <div class="mockup-item-left">
+                                    <div class="mockup-item-img" style="background-image: url('https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=300&q=80'); position: relative; overflow: hidden; background-size: cover; background-position: center; border-radius: 8px;">
+                                        <div style="position: absolute; inset: 0; background: rgba(0,91,240,0.6); mix-blend-mode: multiply;"></div>
+                                        <div style="position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 1.1rem; color: #fff; font-style: italic; letter-spacing: 1px; z-index: 2;">PRO</div>
+                                        <div style="position: absolute; right: -12px; top: 50%; transform: translateY(-50%); width: 40px; height: 40px; border-radius: 50%; background: #f5f5f7; z-index: 3;"></div>
+                                    </div>
+                                    <div class="mockup-item-text">
+                                        <h4>Monthly Pro</h4>
+                                        <div class="mockup-item-meta">Recurring • 1 Month</div>
+                                        <div class="mockup-item-price">Starts from $49</div>
+                                    </div>
+                                </div>
+                                <div class="mockup-chevron">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                                </div>
+                            </div>
+                            <div class="mockup-list-item">
+                                <div class="mockup-item-left">
+                                    <div class="mockup-item-img" style="background-image: url('https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?w=300&q=80'); position: relative; overflow: hidden; background-size: cover; background-position: center; border-radius: 8px;">
+                                        <div style="position: absolute; inset: 0; background: rgba(0,91,240,0.6); mix-blend-mode: multiply;"></div>
+                                        <div style="position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 1.1rem; color: #fff; font-style: italic; letter-spacing: 1px; z-index: 2;">ELITE</div>
+                                        <div style="position: absolute; right: -12px; top: 50%; transform: translateY(-50%); width: 40px; height: 40px; border-radius: 50%; background: #f5f5f7; z-index: 3;"></div>
+                                    </div>
+                                    <div class="mockup-item-text">
+                                        <h4>Annual Elite</h4>
+                                        <div class="mockup-item-meta">Recurring • 1 Year</div>
+                                        <div class="mockup-item-price">Starts from $499</div>
+                                    </div>
+                                </div>
+                                <div class="mockup-chevron">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                                </div>
+                            </div>
+                            <div class="mockup-list-item">
+                                <div class="mockup-item-left">
+                                    <div class="mockup-item-img" style="background-image: url('https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?w=300&q=80'); position: relative; overflow: hidden; background-size: cover; background-position: center; border-radius: 8px;">
+                                        <div style="position: absolute; inset: 0; background: rgba(0,91,240,0.6); mix-blend-mode: multiply;"></div>
+                                        <div style="position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 1.1rem; color: #fff; font-style: italic; letter-spacing: 1px; z-index: 2;">PASS</div>
+                                        <div style="position: absolute; right: -12px; top: 50%; transform: translateY(-50%); width: 40px; height: 40px; border-radius: 50%; background: #f5f5f7; z-index: 3;"></div>
+                                    </div>
+                                    <div class="mockup-item-text">
+                                        <h4>Day Pass</h4>
+                                        <div class="mockup-item-meta">One-time • 24 hrs</div>
+                                        <div class="mockup-item-price">Starts from $15</div>
+                                    </div>
+                                </div>
+                                <div class="mockup-chevron">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mockup-ui-card">
+                        <div class="mockup-ui-header">
+                            <h3>Events</h3>
+                            <span class="mockup-ui-badge">2 Upcoming</span>
+                        </div>
+                        <div class="mockup-ui-body">
+                            <div class="mockup-list-item">
+                                <div class="mockup-item-left">
+                                    <div class="mockup-item-img" style="background-image: url('https://images.unsplash.com/photo-1552674605-db6ffd4facb5?w=300&q=80'); position: relative; overflow: hidden; background-size: cover; background-position: center; border-radius: 8px;">
+                                        <div style="position: absolute; inset: 0; background: rgba(0,91,240,0.6); mix-blend-mode: multiply;"></div>
+                                        <div style="position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 1.1rem; color: #fff; font-style: italic; letter-spacing: 1px; z-index: 2;">BOOTCAMP</div>
+                                        <div style="position: absolute; right: -12px; top: 50%; transform: translateY(-50%); width: 40px; height: 40px; border-radius: 50%; background: #f5f5f7; z-index: 3;"></div>
+                                    </div>
+                                    <div class="mockup-item-text">
+                                        <h4>Summer HIIT Bootcamp</h4>
+                                        <div class="mockup-item-meta">Studio 1 • Aug 15</div>
+                                        <div class="mockup-item-price">Starts from $20</div>
+                                    </div>
+                                </div>
+                                <div class="mockup-chevron">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                                </div>
+                            </div>
+                            <div class="mockup-list-item">
+                                <div class="mockup-item-left">
+                                    <div class="mockup-item-img" style="background-image: url('https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=300&q=80'); position: relative; overflow: hidden; background-size: cover; background-position: center; border-radius: 8px;">
+                                        <div style="position: absolute; inset: 0; background: rgba(0,91,240,0.6); mix-blend-mode: multiply;"></div>
+                                        <div style="position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 1.1rem; color: #fff; font-style: italic; letter-spacing: 1px; z-index: 2;">RETREAT</div>
+                                        <div style="position: absolute; right: -12px; top: 50%; transform: translateY(-50%); width: 40px; height: 40px; border-radius: 50%; background: #f5f5f7; z-index: 3;"></div>
+                                    </div>
+                                    <div class="mockup-item-text">
+                                        <h4>Yoga Retreat 2024</h4>
+                                        <div class="mockup-item-meta">Outdoors • Sep 2</div>
+                                        <div class="mockup-item-price">Starts from $199</div>
+                                    </div>
+                                </div>
+                                <div class="mockup-chevron">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mockup-ui-card">
+                        <div class="mockup-ui-header">
+                            <h3>Products</h3>
+                            <span class="mockup-ui-badge">2 In Stock</span>
+                        </div>
+                        <div class="mockup-ui-body">
+                            <div class="mockup-list-item">
+                                <div class="mockup-item-left">
+                                    <div class="mockup-item-img" style="background-image: url('https://images.unsplash.com/photo-1593095948071-474c5cc2989d?w=300&q=80'); position: relative; overflow: hidden; background-size: cover; background-position: center; border-radius: 8px;">
+                                        <div style="position: absolute; inset: 0; background: rgba(0,91,240,0.6); mix-blend-mode: multiply;"></div>
+                                        <div style="position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 1.1rem; color: #fff; font-style: italic; letter-spacing: 1px; z-index: 2;">PROTEIN</div>
+                                        <div style="position: absolute; right: -12px; top: 50%; transform: translateY(-50%); width: 40px; height: 40px; border-radius: 50%; background: #f5f5f7; z-index: 3;"></div>
+                                    </div>
+                                    <div class="mockup-item-text">
+                                        <h4>STRON Protein Powder</h4>
+                                        <div class="mockup-item-meta">Supplements • In stock</div>
+                                        <div class="mockup-item-price">Starts from $39.99</div>
+                                    </div>
+                                </div>
+                                <div class="mockup-chevron">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                                </div>
+                            </div>
+                            <div class="mockup-list-item">
+                                <div class="mockup-item-left">
+                                    <div class="mockup-item-img" style="background-image: url('https://images.unsplash.com/photo-1584735935682-2f2b69dff9d2?w=300&q=80'); position: relative; overflow: hidden; background-size: cover; background-position: center; border-radius: 8px;">
+                                        <div style="position: absolute; inset: 0; background: rgba(0,91,240,0.6); mix-blend-mode: multiply;"></div>
+                                        <div style="position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 1.1rem; color: #fff; font-style: italic; letter-spacing: 1px; z-index: 2;">GEAR</div>
+                                        <div style="position: absolute; right: -12px; top: 50%; transform: translateY(-50%); width: 40px; height: 40px; border-radius: 50%; background: #f5f5f7; z-index: 3;"></div>
+                                    </div>
+                                    <div class="mockup-item-text">
+                                        <h4>Pro Resistance Bands</h4>
+                                        <div class="mockup-item-meta">Equipment • In stock</div>
+                                        <div class="mockup-item-price">Starts from $19.99</div>
+                                    </div>
+                                </div>
+                                <div class="mockup-chevron">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mockup-ui-card">
+                        <div class="mockup-ui-header">
+                            <h3>Services</h3>
+                            <span class="mockup-ui-badge">2 Available</span>
+                        </div>
+                        <div class="mockup-ui-body">
+                            <div class="mockup-list-item">
+                                <div class="mockup-item-left">
+                                    <div class="mockup-item-img" style="background-image: url('https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=300&q=80'); position: relative; overflow: hidden; background-size: cover; background-position: center; border-radius: 8px;">
+                                        <div style="position: absolute; inset: 0; background: rgba(0,91,240,0.6); mix-blend-mode: multiply;"></div>
+                                        <div style="position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 1.1rem; color: #fff; font-style: italic; letter-spacing: 1px; z-index: 2;">TRAIN</div>
+                                        <div style="position: absolute; right: -12px; top: 50%; transform: translateY(-50%); width: 40px; height: 40px; border-radius: 50%; background: #f5f5f7; z-index: 3;"></div>
+                                    </div>
+                                    <div class="mockup-item-text">
+                                        <h4>1-on-1 Personal Training</h4>
+                                        <div class="mockup-item-meta">60 mins • Flexible</div>
+                                        <div class="mockup-item-price">Starts from $60</div>
+                                    </div>
+                                </div>
+                                <div class="mockup-chevron">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                                </div>
+                            </div>
+                            <div class="mockup-list-item">
+                                <div class="mockup-item-left">
+                                    <div class="mockup-item-img" style="background-image: url('https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=300&q=80'); position: relative; overflow: hidden; background-size: cover; background-position: center; border-radius: 8px;">
+                                        <div style="position: absolute; inset: 0; background: rgba(0,91,240,0.6); mix-blend-mode: multiply;"></div>
+                                        <div style="position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 1.1rem; color: #fff; font-style: italic; letter-spacing: 1px; z-index: 2;">DIET</div>
+                                        <div style="position: absolute; right: -12px; top: 50%; transform: translateY(-50%); width: 40px; height: 40px; border-radius: 50%; background: #f5f5f7; z-index: 3;"></div>
+                                    </div>
+                                    <div class="mockup-item-text">
+                                        <h4>Nutrition Consultation</h4>
+                                        <div class="mockup-item-meta">45 mins • Online</div>
+                                        <div class="mockup-item-price">Starts from $80</div>
+                                    </div>
+                                </div>
+                                <div class="mockup-chevron">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -706,84 +882,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/Flip.min.js"></script>
     <script src="script.js?v=10"></script>
 
-<script>
-    const categoryData = {
-        memberships: {
-            title: "Memberships",
-            count: "3 Active",
-            items: [
-                { bannerText: "PRO", bgImg: "url('https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=300&q=80')", title: "Monthly Pro", desc: "Access to all gym equipment", meta: "Recurring • 1 Month", price: "Starts from $49" },
-                { bannerText: "ELITE", bgImg: "url('https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?w=300&q=80')", title: "Annual Elite", desc: "VIP Access + 2 PT Sessions", meta: "Recurring • 1 Year", price: "Starts from $499" },
-                { bannerText: "PASS", bgImg: "url('https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?w=300&q=80')", title: "Day Pass", desc: "Drop-in access", meta: "One-time • 24 hrs", price: "Starts from $15" }
-            ]
-        },
-        events: {
-            title: "Events",
-            count: "2 Upcoming",
-            items: [
-                { bannerText: "BOOTCAMP", bgImg: "url('https://images.unsplash.com/photo-1552674605-db6ffd4facb5?w=300&q=80')", title: "Summer HIIT Bootcamp", desc: "Intense full body workout", meta: "Studio 1 • Aug 15", price: "Starts from $20" },
-                { bannerText: "RETREAT", bgImg: "url('https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=300&q=80')", title: "Yoga Retreat 2024", desc: "Relax and rejuvenate", meta: "Outdoors • Sep 2", price: "Starts from $199" }
-            ]
-        },
-        products: {
-            title: "Products",
-            count: "2 In Stock",
-            items: [
-                { bannerText: "PROTEIN", bgImg: "url('https://images.unsplash.com/photo-1593095948071-474c5cc2989d?w=300&q=80')", title: "STRON Protein Powder", desc: "Vanilla Bean (2 lbs)", meta: "Supplements • In stock", price: "Starts from $39.99" },
-                { bannerText: "GEAR", bgImg: "url('https://images.unsplash.com/photo-1584735935682-2f2b69dff9d2?w=300&q=80')", title: "Pro Resistance Bands", desc: "Set of 5 levels", meta: "Equipment • In stock", price: "Starts from $19.99" }
-            ]
-        },
-        services: {
-            title: "Services",
-            count: "2 Available",
-            items: [
-                { bannerText: "TRAIN", bgImg: "url('https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=300&q=80')", title: "1-on-1 Personal Training", desc: "Customized workout plan", meta: "60 mins • Flexible", price: "Starts from $60" },
-                { bannerText: "DIET", bgImg: "url('https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=300&q=80')", title: "Nutrition Consultation", desc: "Meal planning & macros", meta: "45 mins • Online", price: "Starts from $80" }
-            ]
-        }
-    };
-
-    function switchCategory(cat) {
-        // Update pills
-        document.querySelectorAll('.filter-pill').forEach(pill => pill.classList.remove('active'));
-        document.getElementById('pill-' + cat).classList.add('active');
-
-        // Update UI Card
-        const data = categoryData[cat];
-        document.getElementById('mockup-title').textContent = data.title;
-        document.getElementById('mockup-count').textContent = data.count;
-        
-        const listEl = document.getElementById('mockup-list');
-        listEl.innerHTML = '';
-        
-        data.items.forEach(item => {
-            listEl.innerHTML += `
-                <div class="mockup-item">
-                    <div class="mockup-item-banner" style="background: linear-gradient(135deg, rgba(0,27,77,0.7), rgba(0,91,240,0.7)), ${item.bgImg}; background-size: cover; background-position: center;">
-                        <div class="mockup-item-circle"></div>
-                        <div class="mockup-item-banner-text">${item.bannerText}</div>
-                    </div>
-                    <div class="mockup-item-details">
-                        <h4>${item.title}</h4>
-                        <p class="desc">${item.desc}</p>
-                        <p class="meta">${item.meta}</p>
-                        <div class="mockup-item-footer">
-                            <span class="mockup-item-price">${item.price}</span>
-                            <span class="mockup-item-chevron"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><polyline points="9 18 15 12 9 6"></polyline></svg></span>
-                        </div>
-                    </div>
-                </div>
-            `;
-        });
-    }
-
-    // Initialize first category on load
-    document.addEventListener('DOMContentLoaded', () => {
-        if(document.getElementById('pill-memberships')) {
-            switchCategory('memberships');
-        }
-    });
-</script>
 </body>
 
 </html>
