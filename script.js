@@ -12,32 +12,36 @@ document.addEventListener('DOMContentLoaded', () => {
 
     locoScroll.on("scroll", ScrollTrigger.update);
 
-    // Sticky Nav Logic: Show when scrolling stops
+    // Sticky Nav Logic
     const stickyNav = document.getElementById('sticky-nav');
     if (stickyNav) {
         let scrollTimeout;
-        let isScrolling = false;
+        let lastY = 0;
         
         locoScroll.on('scroll', (args) => {
-            // Only show sticky nav if we've scrolled down a bit (e.g., past the hero section)
-            if (args.scroll.y > 200) {
-                if (!isScrolling) {
-                    // Start scrolling - hide nav
+            const currentY = (args && args.scroll && typeof args.scroll.y !== 'undefined') 
+                             ? args.scroll.y 
+                             : (locoScroll.scroll.instance.scroll.y || 0);
+                             
+            if (currentY > 200) {
+                if (currentY > lastY + 1) {
+                    // Scrolling down - hide
                     stickyNav.style.transform = 'translateY(-100%)';
+                } else if (currentY < lastY - 1) {
+                    // Scrolling up - show
+                    stickyNav.style.transform = 'translateY(0)';
                 }
-                isScrolling = true;
+                
+                lastY = currentY;
                 
                 clearTimeout(scrollTimeout);
                 scrollTimeout = setTimeout(() => {
-                    // Stopped scrolling - show nav
-                    isScrolling = false;
+                    // Show when completely stopped
                     stickyNav.style.transform = 'translateY(0)';
-                }, 350); // wait 350ms after scroll stops
+                }, 150); 
             } else {
-                // If near the top, hide the sticky nav completely since the original nav is visible
                 stickyNav.style.transform = 'translateY(-100%)';
                 clearTimeout(scrollTimeout);
-                isScrolling = false;
             }
         });
     }
