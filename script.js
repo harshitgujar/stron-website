@@ -23,7 +23,8 @@ document.addEventListener('DOMContentLoaded', () => {
                              ? args.scroll.y 
                              : (locoScroll.scroll.instance.scroll.y || 0);
                              
-            if (currentY > 200) {
+            const heroThreshold = window.innerHeight * 0.85;
+            if (currentY > heroThreshold) {
                 if (currentY > lastY) {
                     // Scrolling down - hide
                     stickyNav.style.transform = 'translateY(-100%)';
