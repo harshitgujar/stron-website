@@ -9,11 +9,12 @@
     <link rel="stylesheet" href="style.css?v=2">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.css">
 </head>
-<body style="overflow-x: hidden;">
+<body>
 
     <div data-scroll-container>
 
-        <!-- Ambient Background Glow 1 -->
+        <div style="position: absolute; inset: 0; overflow: hidden; pointer-events: none; z-index: -1;">
+<!-- Ambient Background Glow 1 -->
         <div style="position: absolute; top: 10%; left: -200px; width: 600px; height: 600px; background: radial-gradient(circle, rgba(0,91,240,0.15) 0%, rgba(0,0,0,0) 70%); filter: blur(80px); z-index: -1; pointer-events: none; border-radius: 50%;"></div>
 
         <!-- Ambient Background Glow 2 -->
@@ -22,7 +23,8 @@
         <!-- Ambient Background Glow 3 -->
         <div style="position: absolute; top: 75%; left: -250px; width: 700px; height: 700px; background: radial-gradient(circle, rgba(137,255,253,0.08) 0%, rgba(0,91,240,0.15) 40%, rgba(0,0,0,0) 70%); filter: blur(100px); z-index: -1; pointer-events: none; border-radius: 50%;"></div>
 
-    <main>
+    </div>
+<main>
         <div class="hero-card-wrapper">
             <div class="hero-card">
                 <!-- Navigation inside Hero Card -->
