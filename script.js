@@ -1,34 +1,42 @@
 // STRON - Interactive scripts
 
 document.addEventListener('DOMContentLoaded', () => {
-    // 1. GSAP + Locomotive Scroll Setup
-    gsap.registerPlugin(ScrollTrigger);
+    // 1. GSAP ScrollTrigger Setup
+    if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
+        gsap.registerPlugin(ScrollTrigger);
 
-    const locoScroll = new LocomotiveScroll({
-        el: document.querySelector("[data-scroll-container]"),
-        smooth: true,
-        multiplier: 1
-    });
+        // Section animations
+        gsap.utils.toArray('.saas-section').forEach(section => {
+            gsap.from(section, {
+                opacity: 0,
+                y: 30,
+                duration: 0.8,
+                scrollTrigger: {
+                    trigger: section,
+                    start: "top 85%",
+                    toggleActions: "play none none reverse"
+                }
+            });
+        });
+    }
 
-    locoScroll.on("scroll", ScrollTrigger.update);
+    
 
-    // Sticky Nav Logic
+    // 3. Sticky Nav Logic (Native Scroll)
     const stickyNav = document.getElementById('sticky-nav');
     if (stickyNav) {
         let scrollTimeout;
         let lastY = 0;
         
-        locoScroll.on('scroll', (args) => {
-            const currentY = (args && args.scroll && typeof args.scroll.y !== 'undefined') 
-                             ? args.scroll.y 
-                             : (locoScroll.scroll.instance.scroll.y || 0);
-                             
-            const heroThreshold = window.innerHeight * 0.85;
+        window.addEventListener('scroll', () => {
+            const currentY = window.scrollY;
+            const heroThreshold = window.innerHeight * 0.5;
+            
             if (currentY > heroThreshold) {
                 if (currentY > lastY) {
                     // Scrolling down - hide
                     stickyNav.style.transform = 'translateY(-100%)';
-                } else if (currentY < lastY) {
+                } else {
                     // Scrolling up - show
                     stickyNav.style.transform = 'translateY(0px)';
                 }
@@ -37,160 +45,36 @@ document.addEventListener('DOMContentLoaded', () => {
                 
                 clearTimeout(scrollTimeout);
                 scrollTimeout = setTimeout(() => {
-                    // Show when completely stopped
                     stickyNav.style.transform = 'translateY(0px)';
                 }, 150); 
             } else {
                 stickyNav.style.transform = 'translateY(-100%)';
                 clearTimeout(scrollTimeout);
             }
-        });
+        }, { passive: true });
     }
 
-
-    ScrollTrigger.scrollerProxy("[data-scroll-container]", {
-        scrollTop(value) {
-            return arguments.length ? locoScroll.scrollTo(value, 0, 0) : locoScroll.scroll.instance.scroll.y;
-        },
-        getBoundingClientRect() {
-            return {top: 0, left: 0, width: window.innerWidth, height: window.innerHeight};
-        },
-        pinType: document.querySelector("[data-scroll-container]").style.transform ? "transform" : "fixed"
-    });
-
-    // Smooth scroll for Contact Us
-    const contactLinks = document.querySelectorAll('a[href="#contact"]');
-    contactLinks.forEach(link => {
-        link.addEventListener('click', (e) => {
-            e.preventDefault();
-            const footer = document.querySelector('#contact');
-            if (footer && locoScroll) {
-                locoScroll.scrollTo(footer);
-            }
-        });
-    });
-
-
-    
-    // Handle initial hash routing for locomotive scroll
-    setTimeout(() => {
-        if (window.location.hash) {
-            const target = document.querySelector(window.location.hash);
-            if (target && locoScroll) {
-                locoScroll.scrollTo(target);
-            }
-        }
-    }, 500); // Wait for layout to settle
-
-
-    // Standard fade-in for section containers
-    const fadeElements = gsap.utils.toArray('.fade-in');
-    fadeElements.forEach((el) => {
-        gsap.fromTo(el, 
-            { y: 40, opacity: 0 },
-            {
-                y: 0,
-                opacity: 1,
-                duration: 1,
-                ease: "power3.out",
-                scrollTrigger: {
-                    trigger: el,
-                    scroller: "[data-scroll-container]",
-                    start: "top 85%",
-                    toggleActions: "play none none none"
-                }
-            }
-        );
-    });
-
-    // Stagger animation for grid cards
-    gsap.utils.toArray('.grid-3').forEach(grid => {
-        gsap.fromTo(grid.children, 
-            { y: 30, opacity: 0 },
-            {
-                y: 0,
-                opacity: 1,
-                duration: 0.8,
-                stagger: 0.15,
-                ease: "power2.out",
-                scrollTrigger: {
-                    trigger: grid,
-                    scroller: "[data-scroll-container]",
-                    start: "top 85%",
-                }
-            }
-        );
-    });
-
-    ScrollTrigger.addEventListener("refresh", () => locoScroll.update());
-    ScrollTrigger.refresh();
-
-
-    // 2. Interactive Feature Accordion & Dynamic Mockup Showcase
-    const featureScreens = {
-        'members': {
-            pill: 'MEMBERS',
-            title: 'Member Directory',
-            statNum: '1,248',
-            statLbl: 'Active Members',
-            bg: 'linear-gradient(135deg, #3385ff, #7928ca)'
-        },
-        'attendance': {
-            pill: 'ATTENDANCE',
-            title: 'Live Check-in Hub',
-            statNum: '94.2%',
-            statLbl: 'Weekly Check-in Rate',
-            bg: 'linear-gradient(135deg, #00c3ff, #0a66f0)'
-        },
-        'memberships': {
-            pill: 'PLANS & PASSES',
-            title: 'Tiered Memberships',
-            statNum: '4 Tiers',
-            statLbl: 'Auto-Renew Enabled',
-            bg: 'linear-gradient(135deg, #ff2d78, #ff8c00)'
-        },
-        'payments': {
-            pill: 'FINANCE',
-            title: 'Automated Billing',
-            statNum: '$42,850',
-            statLbl: 'Processed This Month',
-            bg: 'linear-gradient(135deg, #00ff87, #0a66f0)'
-        },
-        'workouts': {
-            pill: 'PROGRAMMING',
-            title: 'Workout Engine',
-            statNum: '320+',
-            statLbl: 'Custom WODs Logged',
-            bg: 'linear-gradient(135deg, #7928ca, #ff007f)'
-        },
-        'crm': {
-            pill: 'CRM & LEADS',
-            title: 'Lead Pipeline',
-            statNum: '84%',
-            statLbl: 'Lead-to-Trial Conversion',
-            bg: 'linear-gradient(135deg, #f12711, #f5af19)'
-        },
-        'analytics': {
-            pill: 'ANALYTICS',
-            title: 'Business Health',
-            statNum: '91.8%',
-            statLbl: 'Quarterly Member Retention',
-            bg: 'linear-gradient(135deg, #11998e, #38ef7d)'
-        }
-    };
-
-    const accordionItems = document.querySelectorAll('.feature-acc-item');
+    // 4. Section 2 Feature Interaction / Tab switching
+    const listItems = document.querySelectorAll('.saas-feature-item');
     const pixelMockupImg = document.getElementById('pixelMockupImg');
 
-    if (accordionItems.length > 0) {
-        accordionItems.forEach(item => {
-            const activateItem = () => {
-                const isActive = item.classList.contains('active');
-                if (isActive) return;
+    const imageMap = {
+        '1': 'assets/3r23-1.png',
+        '2': 'assets/ws-1.png',
+        '3': 'assets/ws-1.png',
+        '4': 'assets/3r23-1.png'
+    };
 
-                // Toggle active classes
-                accordionItems.forEach(i => i.classList.remove('active'));
+    if (listItems.length > 0) {
+        listItems.forEach(item => {
+            const activateItem = () => {
+                listItems.forEach(li => li.classList.remove('active'));
                 item.classList.add('active');
+
+                const featureId = item.getAttribute('data-feature');
+                if (pixelMockupImg && imageMap[featureId]) {
+                    pixelMockupImg.src = imageMap[featureId];
+                }
 
                 if (pixelMockupImg && typeof gsap !== 'undefined') {
                     gsap.fromTo(pixelMockupImg, 
@@ -200,13 +84,10 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             };
 
-            // Switch interaction to hover (mouseenter) while retaining touch support
             item.addEventListener('mouseenter', activateItem);
             item.addEventListener('click', activateItem);
         });
     }
-
-
 
     // 5. Events Staggered Carousel Controls
     const eventsViewport = document.getElementById('eventsCarouselViewport');
@@ -264,7 +145,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 e.preventDefault();
                 const isActive = item.classList.contains('active');
                 
-                // Optional: Close other items for single-open behavior
                 faqCardItems.forEach(otherItem => {
                     if (otherItem !== item) {
                         otherItem.classList.remove('active');
@@ -283,39 +163,32 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
     }
-    // 8. Reviews Carousel Logic (Queue with Swapping 3D Rotation)
+
+    // 8. Reviews Carousel Logic
     const reviewCards = Array.from(document.querySelectorAll('.review-card-tilted'));
     const btnPrev = document.getElementById('btn-prev-review');
     const btnNext = document.getElementById('btn-next-review');
     const carouselContainer = document.getElementById('reviews-carousel');
 
     if (reviewCards.length > 0 && btnPrev && btnNext) {
-        const totalCards = reviewCards.length; // 6 cards
-        let activeIndex = 1; // start with Alex R (index 1) in center, Sarah (0) on left, David (2) on right
+        const totalCards = reviewCards.length;
+        let activeIndex = 1;
         let isAnimating = false;
 
         function updateCarousel() {
             reviewCards.forEach((card, i) => {
-                // Calculate circular offset relative to activeIndex
                 const diff = (i - activeIndex + totalCards) % totalCards;
-
-                // Reset all position classes
                 card.classList.remove('pos-center', 'pos-left', 'pos-right', 'pos-hidden-left', 'pos-hidden-right');
 
                 if (diff === 0) {
-                    // Center Active Card
                     card.classList.add('pos-center');
                 } else if (diff === 1) {
-                    // Immediate Right Card
                     card.classList.add('pos-right');
                 } else if (diff === totalCards - 1) {
-                    // Immediate Left Card
                     card.classList.add('pos-left');
                 } else if (diff <= Math.floor(totalCards / 2)) {
-                    // Waiting in Right Queue
                     card.classList.add('pos-hidden-right');
                 } else {
-                    // Waiting in Left Queue
                     card.classList.add('pos-hidden-left');
                 }
             });
@@ -337,7 +210,6 @@ document.addEventListener('DOMContentLoaded', () => {
             setTimeout(() => { isAnimating = false; }, 400);
         }
 
-        // Button clicks
         btnNext.addEventListener('click', (e) => {
             e.preventDefault();
             nextSlide();
@@ -348,7 +220,6 @@ document.addEventListener('DOMContentLoaded', () => {
             prevSlide();
         });
 
-        // Direct card click support (Click left card -> rotate left; Click right card -> rotate right)
         reviewCards.forEach((card) => {
             card.addEventListener('click', () => {
                 if (card.classList.contains('pos-left')) {
@@ -359,7 +230,6 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
 
-        // Touch swipe support for mobile
         if (carouselContainer) {
             let touchStartX = 0;
             let touchEndX = 0;
@@ -373,15 +243,14 @@ document.addEventListener('DOMContentLoaded', () => {
                 const swipeDist = touchEndX - touchStartX;
                 if (Math.abs(swipeDist) > 40) {
                     if (swipeDist < 0) {
-                        nextSlide(); // swipe left -> next
+                        nextSlide();
                     } else {
-                        prevSlide(); // swipe right -> prev
+                        prevSlide();
                     }
                 }
             }, { passive: true });
         }
 
-        // Keyboard arrow support when in view
         document.addEventListener('keydown', (e) => {
             if (!carouselContainer) return;
             const rect = carouselContainer.getBoundingClientRect();
@@ -392,8 +261,6 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
 
-        // Initial setup
         updateCarousel();
     }
-
 });

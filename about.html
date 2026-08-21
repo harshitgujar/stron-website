@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>How to scale your virtual challenges to 10k+ users — STRON Blog</title>
-    <meta name="description" content="Learn the exact playbook Alpha Gym used to create a viral step challenge that reached across the globe.">
+    <title>About — STRON | The Fitness Operating Platform</title>
+    <meta name="description" content="Building the Operating System for Fitness Experiences. Unifying a fragmented fitness ecosystem through AI.">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -14,9 +14,12 @@
     <style>
         :root {
             --bg-color: #08080d;
+            --card-bg: #0e0f17;
+            --card-hover: #141522;
             --text-primary: #ffffff;
-            --text-secondary: rgba(255, 255, 255, 0.76);
+            --text-secondary: rgba(255, 255, 255, 0.72);
             --text-muted: rgba(255, 255, 255, 0.45);
+            --border-light: rgba(255, 255, 255, 0.08);
             --accent-blue: #005bf0;
             --font-main: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
         }
@@ -30,78 +33,374 @@
             -webkit-font-smoothing: antialiased;
         }
 
-        .article-container {
-            max-width: 760px;
-            margin: 0 auto;
-            padding: 3.5rem 1.5rem 5rem 1.5rem;
-            position: relative;
-            z-index: 10;
+        /* Minimal Dark Navigation */
+        .about-nav {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(8, 8, 13, 0.95);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+            border-bottom: 1px solid var(--border-light);
+            padding: 1.1rem 2.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
 
-        .article-body {
-            font-size: 0.98rem;
-            line-height: 1.75;
-            color: var(--text-secondary);
-        }
-
-        .article-body h2 {
+        .about-nav-logo {
+            font-size: 1.15rem;
+            font-weight: 800;
+            letter-spacing: -0.5px;
             color: #ffffff;
-            font-size: 1.35rem;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .about-nav-links {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        .about-nav-link {
+            font-size: 0.82rem;
+            font-weight: 600;
+            color: var(--text-muted);
+            text-decoration: none;
+            letter-spacing: 0.5px;
+            transition: color 0.2s ease;
+        }
+
+        .about-nav-link:hover, .about-nav-link.active {
+            color: #ffffff;
+        }
+
+        .about-nav-cta {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .btn-white-pill {
+            background: #ffffff;
+            color: #08080d;
+            border-radius: 999px;
+            padding: 0.55rem 1.35rem;
+            font-size: 0.82rem;
             font-weight: 700;
-            margin: 2.5rem 0 0.9rem 0;
-            letter-spacing: -0.4px;
-            line-height: 1.3;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            border: none;
+            transition: all 0.2s ease;
         }
 
-        .article-body p {
+        .btn-white-pill:hover {
+            background: #e2e8f0;
+            transform: translateY(-1px);
+        }
+
+        /* Container */
+        .editorial-container {
+            max-width: 1240px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* Section Layouts */
+        .editorial-section {
+            padding: 5rem 0;
+            border-bottom: 1px solid var(--border-light);
+        }
+
+        .editorial-section:last-child {
+            border-bottom: none;
+        }
+
+        .section-label {
+            font-size: 0.75rem;
+            font-weight: 800;
+            letter-spacing: 1.5px;
+            color: #005bf0;
+            text-transform: uppercase;
             margin-bottom: 1.5rem;
+            display: block;
         }
 
-        .article-body blockquote {
-            border-left: 3px solid #005bf0;
-            background: rgba(0, 91, 240, 0.06);
-            border-radius: 0 14px 14px 0;
-            padding: 1.25rem 1.5rem;
-            margin: 2.25rem 0;
-            font-size: 1.05rem;
-            font-style: italic;
+        /* Hero Header */
+        .hero-statement {
+            font-size: clamp(2.5rem, 5.5vw, 4.5rem);
+            font-weight: 800;
+            line-height: 1.05;
+            letter-spacing: -2px;
+            margin: 0 0 2rem 0;
             color: #ffffff;
+            max-width: 980px;
+        }
+
+        .hero-lead {
+            font-size: clamp(1.1rem, 2vw, 1.4rem);
             line-height: 1.55;
+            color: var(--text-secondary);
+            max-width: 780px;
+            margin: 0;
+            font-weight: 400;
         }
 
-        .article-hero-img {
+        /* Outcomes / Metrics Grid (Dark Theme) */
+        .outcomes-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            border-top: 1px solid var(--border-light);
+            border-left: 1px solid var(--border-light);
+            margin-top: 2.5rem;
+        }
+
+        .outcome-col {
+            border-right: 1px solid var(--border-light);
+            border-bottom: 1px solid var(--border-light);
+            padding: 3rem 2rem 2.5rem 2rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            min-height: 280px;
+            background: var(--card-bg);
+            transition: background 0.2s ease;
+        }
+
+        .outcome-col:hover {
+            background: var(--card-hover);
+        }
+
+        .outcome-col-header {
+            font-size: 0.8rem;
+            font-weight: 700;
+            color: var(--text-muted);
+            letter-spacing: 0.5px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .outcome-number {
+            font-size: clamp(3rem, 4.5vw, 4.2rem);
+            font-weight: 800;
+            line-height: 1;
+            letter-spacing: -2px;
+            color: #ffffff;
+            margin: 2rem 0 0.5rem 0;
+        }
+
+        .outcome-desc {
+            font-size: 0.88rem;
+            line-height: 1.45;
+            color: var(--text-secondary);
+            margin: 0;
+            font-weight: 400;
+        }
+
+        /* 2-Column Asymmetric Row */
+        .asym-row {
+            display: grid;
+            grid-template-columns: 240px 1fr;
+            gap: 3rem;
+        }
+
+        .statement-text {
+            font-size: clamp(1.4rem, 2.5vw, 1.95rem);
+            font-weight: 600;
+            line-height: 1.4;
+            letter-spacing: -0.5px;
+            color: #ffffff;
+            margin-bottom: 2.5rem;
+        }
+
+        /* Directory / Tabular Roster */
+        .roster-table {
             width: 100%;
-            height: 340px;
-            border-radius: 18px;
-            overflow: hidden;
-            background-image: url('assets/virtual_challenge_photo_1786782933816.jpg');
-            background-size: cover;
-            background-position: center;
-            margin: 2rem 0 2.5rem 0;
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.45);
+            border-top: 1px solid var(--border-light);
         }
 
-        .cta-box {
-            background: linear-gradient(180deg, #05060b 0%, #091226 24%, #0045be 58%, #002d80 84%, #001a4d 100%);
-            border: 1px solid rgba(255, 255, 255, 0.12);
-            border-radius: 22px;
-            padding: 2.75rem 2rem;
-            text-align: center;
-            margin-top: 4rem;
-            box-shadow: 0 20px 50px rgba(0, 45, 128, 0.25);
+        .roster-row {
+            display: grid;
+            grid-template-columns: 260px 1fr 140px;
+            padding: 1.25rem 0;
+            border-bottom: 1px solid var(--border-light);
+            font-size: 0.92rem;
+            align-items: center;
+            transition: background 0.15s ease;
         }
 
-        @media (max-width: 768px) {
-            .article-hero-img { height: 220px; }
-            .article-container { padding: 2.5rem 1.25rem 3.5rem 1.25rem; }
+        .roster-row:hover {
+            background: rgba(255, 255, 255, 0.03);
+        }
+
+        .roster-title {
+            font-weight: 700;
+            color: #ffffff;
+        }
+
+        .roster-desc {
+            color: var(--text-secondary);
+            font-weight: 400;
+        }
+
+        .roster-tag {
+            color: #60a5fa;
+            text-align: right;
+            font-size: 0.82rem;
+            font-weight: 600;
+        }
+
+        /* Selected Audiences Grid (Dark Theme) */
+        .clients-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+            margin-top: 1rem;
+        }
+
+        .client-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-light);
+            border-radius: 16px;
+            padding: 1.75rem 1.5rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            min-height: 190px;
+            transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .client-card:hover {
+            border-color: rgba(255, 255, 255, 0.2);
+            background: var(--card-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+
+        .client-icon-title {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-weight: 700;
+            font-size: 1.02rem;
+            color: #ffffff;
+            margin-bottom: 0.5rem;
+        }
+
+        .client-card p {
+            font-size: 0.84rem;
+            line-height: 1.45;
+            color: var(--text-secondary);
+            margin: 0 0 1.25rem 0;
+            font-weight: 400;
+        }
+
+        .client-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+        }
+
+        .client-tag {
+            font-size: 0.72rem;
+            font-weight: 600;
+            background: rgba(255, 255, 255, 0.06);
+            color: rgba(255, 255, 255, 0.7);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 0.2rem 0.6rem;
+            border-radius: 6px;
+        }
+
+        /* Philosophy 3-Cols */
+        .philosophy-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        .philosophy-card {
+            border-top: 2px solid rgba(255, 255, 255, 0.2);
+            padding-top: 1.5rem;
+        }
+
+        .philosophy-num {
+            font-size: 0.8rem;
+            font-weight: 800;
+            color: #60a5fa;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .philosophy-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #ffffff;
+            margin: 0 0 0.75rem 0;
+            line-height: 1.25;
+        }
+
+        .philosophy-desc {
+            font-size: 0.9rem;
+            line-height: 1.6;
+            color: var(--text-secondary);
+            margin: 0;
+        }
+
+        /* Legal Box */
+        .legal-box {
+            background: #0e1019;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: #ffffff;
+            border-radius: 24px;
+            padding: 3.5rem;
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        /* Footer minimal */
+        .editorial-footer {
+            padding: 3.5rem 0 4rem 0;
+            border-top: 1px solid var(--border-light);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: var(--text-muted);
+            font-size: 0.82rem;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 960px) {
+            .outcomes-grid { grid-template-columns: repeat(2, 1fr); }
+            .clients-grid { grid-template-columns: repeat(2, 1fr); }
+            .philosophy-grid { grid-template-columns: 1fr; }
+            .asym-row { grid-template-columns: 1fr; gap: 1rem; }
+            .legal-box { grid-template-columns: 1fr; gap: 2rem; padding: 2rem; }
+            .roster-row { grid-template-columns: 1fr; gap: 0.5rem; }
+            .roster-tag { text-align: left; }
+            .about-nav-links { display: none; }
+        }
+
+        @media (max-width: 600px) {
+            .outcomes-grid { grid-template-columns: 1fr; }
+            .clients-grid { grid-template-columns: 1fr; }
+            .about-nav { padding: 1rem 1.5rem; }
+            .editorial-section { padding: 3.5rem 0; }
         }
     </style>
             <link rel="icon" type="image/svg+xml" href="assets/stron-logo.svg">
 </head>
 <body>
 
-    <!-- Sticky Navigation Bar -->
+    <!-- Minimalist Dark Navigation Bar -->
+        <!-- Sticky Navigation Bar -->
     <nav id="sticky-nav" class="nav new-nav" style="position: fixed; top: 0; left: 0; right: 0; z-index: 9999; transform: translateY(-100%); transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1); background: rgba(8, 8, 12, 0.96); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); border-bottom: 1px solid rgba(255, 255, 255, 0.06);">
         <div class="nav-container">
             <a href="index.html" class="logo">
@@ -127,7 +426,7 @@
                 <a href="index.html" class="nav-link">HOME</a>
                 <a href="about.html" class="nav-link">ABOUT US</a>
                 <a href="javascript:void(0);" onclick="var f = document.querySelector('footer') || document.getElementById('contact'); if(f) { f.scrollIntoView({behavior:'smooth'}); } return false;" class="nav-link">CONTACT US</a>
-                <a href="blog.html" class="nav-link active" style="color: #ffffff; font-weight: 700;">BLOG</a>
+                <a href="blog.html" class="nav-link">BLOG</a>
                 <a href="pricing.html" class="nav-link">PRICING</a>
             </div>
             <div class="nav-cta" style="gap: 10px; display: flex; align-items: center;">
@@ -147,7 +446,7 @@
         </div>
     </nav>
 
-    <!-- Top Navigation Bar -->
+    <!-- Top Black Navigation Bar -->
     <nav class="nav new-nav" style="background: #08080c; border-bottom: 1px solid rgba(255,255,255,0.06);">
         <div class="nav-container">
             <a href="index.html" class="logo">
@@ -171,9 +470,9 @@
             </a>
             <div class="nav-links">
                 <a href="index.html" class="nav-link">HOME</a>
-                <a href="about.html" class="nav-link">ABOUT US</a>
+                <a href="about.html" class="nav-link" style="color: #ffffff; font-weight: 700;">ABOUT US</a>
                 <a href="javascript:void(0);" onclick="var f = document.querySelector('footer') || document.getElementById('contact'); if(f) { f.scrollIntoView({behavior:'smooth'}); } return false;" class="nav-link">CONTACT US</a>
-                <a href="blog.html" class="nav-link active" style="color: #ffffff; font-weight: 700;">BLOG</a>
+                <a href="blog.html" class="nav-link">BLOG</a>
                 <a href="pricing.html" class="nav-link">PRICING</a>
             </div>
             <div class="nav-cta" style="gap: 10px; display: flex; align-items: center;">
@@ -193,94 +492,225 @@
         </div>
     </nav>
 
-    <!-- Main Article Content -->
-    <main class="article-container">
+    <main class="editorial-container">
         
-        <!-- Back Navigation Pill Button -->
-        <div style="margin-bottom: 2.25rem;">
-            <a href="blog.html" class="nav-pill-btn" style="display: inline-flex; align-items: center; justify-content: center; gap: 8px; background: rgba(255, 255, 255, 0.06); color: #ffffff; border: 1px solid rgba(255, 255, 255, 0.14); border-radius: 999px; font-weight: 600; font-size: 0.82rem; padding: 0.45rem 1.15rem; text-decoration: none; transition: all 0.2s ease; box-shadow: 0 4px 12px rgba(0,0,0,0.2);">
-                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
-                Back to all articles
-            </a>
-        </div>
+        <!-- SECTION 1: HERO HEADER -->
+        <section class="editorial-section" style="padding-top: 6rem; padding-bottom: 4.5rem;">
+            <span class="section-label">COMPANY // ABOUT STRON</span>
+            <h1 class="hero-statement">
+                Building the Operating System for Fitness Experiences.
+            </h1>
+            <p class="hero-lead">
+                Our mission is to unify a fragmented fitness ecosystem and empower both businesses and consumers through AI.
+            </p>
+        </section>
 
-        <!-- Article Kicker & Refined Title -->
-        <div style="font-size: 0.72rem; color: #60a5fa; font-weight: 800; text-transform: uppercase; margin-bottom: 0.75rem; letter-spacing: 1.2px;">Growth Playbook</div>
-        <h1 style="font-size: clamp(1.85rem, 3.2vw, 2.6rem); font-weight: 800; letter-spacing: -0.8px; line-height: 1.2; margin: 0 0 1.25rem 0; color: #ffffff;">
-            How to scale your virtual challenges to 10k+ users
-        </h1>
+        <!-- SECTION 3: OUR STORY & WHAT WE STAND FOR (Editorial Two-Column Layout) -->
+        <section class="editorial-section">
+            <div class="asym-row">
+                <div>
+                    <span class="section-label">OUR STORY</span>
+                </div>
+                <div>
+                    <div class="statement-text">
+                        Fitness businesses deserve software designed specifically for how they operate — memberships, attendance, programs, and growth — not generic tools bolted together.
+                    </div>
+                    <p style="font-size: 1.05rem; line-height: 1.7; color: var(--text-secondary); margin-bottom: 2rem;">
+                        Consumers deserve one platform that supports every aspect of their fitness journey: workouts, activity tracking, communities, challenges, and AI coaching. STRON connects businesses, communities, and members through an AI-powered ecosystem designed to make fitness easier to manage, more engaging to experience, and more rewarding to sustain.
+                    </p>
+                    
+                    <div style="display: flex; gap: 12px; margin-bottom: 4rem; flex-wrap: wrap;">
+                        <span class="client-tag" style="padding: 0.35rem 0.85rem; font-size: 0.8rem; background: #005bf0; color: #fff; border: none;">AI-First</span>
+                        <span class="client-tag" style="padding: 0.35rem 0.85rem; font-size: 0.8rem;">Premium</span>
+                        <span class="client-tag" style="padding: 0.35rem 0.85rem; font-size: 0.8rem;">Athletic</span>
+                        <span class="client-tag" style="padding: 0.35rem 0.85rem; font-size: 0.8rem;">Community-Powered</span>
+                    </div>
 
-        <!-- Author & Metadata (Refined Minimal Size) -->
-        <div style="display: flex; align-items: center; gap: 0.85rem; color: var(--text-muted); font-size: 0.82rem; margin-bottom: 2rem; flex-wrap: wrap;">
-            <div style="display: flex; align-items: center; gap: 0.5rem;">
-                <div style="width: 28px; height: 28px; border-radius: 50%; background-image: url('https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=80&h=80'); background-size: cover; background-position: center; border: 1px solid rgba(255,255,255,0.2);"></div>
-                <span style="color: #ffffff; font-weight: 600;">Sarah Jenkins</span>
+                    <!-- Tabular Directory Structure (What We Stand For) -->
+                    <span class="section-label" style="margin-bottom: 1.25rem;">WHAT WE STAND FOR</span>
+                    <div class="roster-table">
+                        
+                        <div class="roster-row">
+                            <span class="roster-title">AI-Native Platform</span>
+                            <span class="roster-desc">Workouts, insights, churn prediction, and engagement powered by AI.</span>
+                            <span class="roster-tag">Intelligence</span>
+                        </div>
+
+                        <div class="roster-row">
+                            <span class="roster-title">Business Operations</span>
+                            <span class="roster-desc">Memberships, QR attendance, analytics, and marketplace in one place.</span>
+                            <span class="roster-tag">Management</span>
+                        </div>
+
+                        <div class="roster-row">
+                            <span class="roster-title">Member Experience</span>
+                            <span class="roster-desc">One fitness identity across every activity, class, and workout community.</span>
+                            <span class="roster-tag">Experience</span>
+                        </div>
+
+                        <div class="roster-row">
+                            <span class="roster-title">Built for India, Aiming Worldwide</span>
+                            <span class="roster-desc">Available on iOS and Android today as we expand the operating system globally.</span>
+                            <span class="roster-tag">Global Vision</span>
+                        </div>
+
+                    </div>
+                </div>
             </div>
-            <span>•</span>
-            <span>Aug 24, 2026</span>
-            <span>•</span>
-            <span>5 min read</span>
-        </div>
+        </section>
 
-        <!-- Featured Cover Image -->
-        <div class="article-hero-img"></div>
+        <!-- SECTION 4: OUR PHILOSOPHY (3 Core Pillars) -->
+        <section class="editorial-section">
+            <div class="asym-row">
+                <div>
+                    <span class="section-label">OUR PURPOSE</span>
+                </div>
+                <div>
+                    <h2 style="font-size: clamp(1.8rem, 3.2vw, 2.4rem); font-weight: 800; letter-spacing: -1px; margin: 0 0 3rem 0; color: #ffffff;">
+                        We exist so fitness becomes:
+                    </h2>
 
-        <!-- Article Prose Content -->
-        <article class="article-body">
-            <p>
-                Running a virtual fitness challenge is one of the most effective ways to build community, drive engagement, and generate new recurring memberships for your brand. But scaling that challenge from 50 local gym-goers to 10,000+ active participants requires a unified operating platform that removes operational bottlenecks.
-            </p>
-            
-            <h2>1. Automate your onboarding & tracking</h2>
-            <p>
-                When you cross the 500-participant mark, manual data entry, paper sign-ins, and spreadsheet tracking fall apart. Alpha Gym scaled their 30-Day Step Challenge by utilizing STRON's automated onboarding flows. As soon as a user registers, they are automatically placed onto the live leaderboard and sent an automated WhatsApp welcome sequence.
-            </p>
-            
-            <blockquote>
-                "We used to spend 15 hours a week just updating participant scores and resolving sync issues. Now, STRON handles leaderboard updates and verification in real time, freeing our coaches to focus entirely on member engagement."
-            </blockquote>
-            
-            <h2>2. Leverage viral social proof loops</h2>
-            <p>
-                Sustainable fitness growth relies on viral loops. The most effective way to turn your existing athletes into an organic acquisition engine is by giving them beautifully styled, one-click shareable milestone cards for Instagram Stories and WhatsApp groups.
-            </p>
+                    <div class="philosophy-grid">
+                        <div class="philosophy-card">
+                            <span class="philosophy-num">01 / OPERATIONS</span>
+                            <h3 class="philosophy-title">Easier To Manage</h3>
+                            <p class="philosophy-desc">Eliminating spreadsheets, WhatsApp chaos, and disjointed tools with unified billing, turnstiles, and automatic renewals.</p>
+                        </div>
 
-            <img src="assets/3r23-1.png" alt="STRON Analytics Dashboard" style="width: 100%; border-radius: 14px; margin: 2rem 0; border: 1px solid rgba(255,255,255,0.08); box-shadow: 0 10px 25px rgba(0,0,0,0.4);">
-            
-            <h2>3. Keep friction at absolute zero</h2>
-            <p>
-                If your fitness event requires athletes to download three separate apps or buy proprietary hardware trackers, drop-off rates surge above 70%. A high-converting event allows members to sync Apple Health, Google Health Connect, or their gym's QR pass in under 5 seconds.
-            </p>
-            
-            <!-- Social Share Bar -->
-            <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid rgba(255,255,255,0.08); padding-top: 1.5rem; margin-top: 3rem; flex-wrap: wrap; gap: 1rem;">
-                <div style="font-weight: 700; color: #ffffff; font-size: 0.88rem;">Share this playbook</div>
-                <div style="display: flex; gap: 1.25rem;">
-                    <a href="#" style="color: #60a5fa; text-decoration: none; font-weight: 600; font-size: 0.84rem;">Twitter / X</a>
-                    <a href="#" style="color: #60a5fa; text-decoration: none; font-weight: 600; font-size: 0.84rem;">LinkedIn</a>
-                    <a href="#" style="color: #60a5fa; text-decoration: none; font-weight: 600; font-size: 0.84rem;">WhatsApp</a>
+                        <div class="philosophy-card">
+                            <span class="philosophy-num">02 / COMMUNITY</span>
+                            <h3 class="philosophy-title">More Engaging</h3>
+                            <p class="philosophy-desc">Turning everyday fitness routines into social experiences with live challenges, leaderboards, games, and creator workshops.</p>
+                        </div>
+
+                        <div class="philosophy-card">
+                            <span class="philosophy-num">03 / HABIT FORMATION</span>
+                            <h3 class="philosophy-title">More Rewarding To Sustain</h3>
+                            <p class="philosophy-desc">Powering long-term consistency through streak rewards, partner perks, and hyper-personalized AI workout coaching.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 5: BUILT FOR EVERY FITNESS SEGMENT (Selected Audiences Grid) -->
+        <section class="editorial-section">
+            <div class="asym-row" style="margin-bottom: 2rem;">
+                <div>
+                    <span class="section-label">SELECTED AUDIENCES</span>
+                </div>
+                <div>
+                    <h2 style="font-size: clamp(1.8rem, 3.2vw, 2.4rem); font-weight: 800; letter-spacing: -1px; margin: 0 0 0.75rem 0; color: #ffffff;">
+                        Built for every fitness business & member
+                    </h2>
+                    <p style="font-size: 1rem; color: var(--text-secondary); margin: 0 0 2rem 0;">
+                        Tailored operating modules crafted for the exact workflows of modern fitness verticals.
+                    </p>
                 </div>
             </div>
 
-            <!-- Bottom Callout Card -->
-            <div class="cta-box">
-                <h2 style="font-size: clamp(1.4rem, 2.5vw, 1.85rem); font-weight: 800; color: #ffffff; margin: 0 0 0.75rem 0; letter-spacing: -0.6px;">
-                    Ready to launch your own challenge?
-                </h2>
-                <p style="font-size: 0.92rem; color: rgba(255,255,255,0.85); margin: 0 0 1.75rem 0; max-width: 500px; margin-inline: auto; line-height: 1.55;">
-                    Join premier gyms, studios, and fitness creators scaling their community operations with STRON.
-                </p>
-                <a href="pricing.html" style="display: inline-block; background: #ffffff; color: #005bf0; padding: 0.75rem 1.8rem; border-radius: 999px; font-weight: 700; font-size: 0.88rem; text-decoration: none; transition: transform 0.2s ease;">
-                    Start For Free
-                </a>
+            <div class="clients-grid">
+                <!-- Card 1 -->
+                <div class="client-card">
+                    <div>
+                        <div class="client-icon-title">Gyms & Clubs</div>
+                        <p>Enterprise member management, biometric QR access, and automated recurring dues.</p>
+                    </div>
+                    <div class="client-tags">
+                        <span class="client-tag">Enterprise</span>
+                        <span class="client-tag">Auto-Billing</span>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="client-card">
+                    <div>
+                        <div class="client-icon-title">Sports Academies</div>
+                        <p>Batch scheduling, coach allocations, parent portals, and athlete progression tracking.</p>
+                    </div>
+                    <div class="client-tags">
+                        <span class="client-tag">Batches</span>
+                        <span class="client-tag">Schedules</span>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="client-card">
+                    <div>
+                        <div class="client-icon-title">Yoga & Pilates</div>
+                        <p>Class credits, studio capacity management, drop-in passes, and holistic pulse.</p>
+                    </div>
+                    <div class="client-tags">
+                        <span class="client-tag">Bookings</span>
+                        <span class="client-tag">Class Packs</span>
+                    </div>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="client-card">
+                    <div>
+                        <div class="client-icon-title">Personal Trainers</div>
+                        <p>1-on-1 client programming, routine delivery, custom nutrition, and direct billing.</p>
+                    </div>
+                    <div class="client-tags">
+                        <span class="client-tag">1:1 VIP</span>
+                        <span class="client-tag">Client CRM</span>
+                    </div>
+                </div>
+
+                <!-- Card 5 -->
+                <div class="client-card">
+                    <div>
+                        <div class="client-icon-title">CrossFit Boxes</div>
+                        <p>Daily WOD boards, real-time leaderboard gamification, and competitive challenges.</p>
+                    </div>
+                    <div class="client-tags">
+                        <span class="client-tag">WODs</span>
+                        <span class="client-tag">Leaderboards</span>
+                    </div>
+                </div>
+
+                <!-- Card 6 -->
+                <div class="client-card">
+                    <div>
+                        <div class="client-icon-title">Running & Cycling</div>
+                        <p>Live GPS route tracking, pace metrics, group milestones, and event check-ins.</p>
+                    </div>
+                    <div class="client-tags">
+                        <span class="client-tag">GPS Sync</span>
+                        <span class="client-tag">Milestones</span>
+                    </div>
+                </div>
+
+                <!-- Card 7 -->
+                <div class="client-card">
+                    <div>
+                        <div class="client-icon-title">Dance Studios</div>
+                        <p>Workshop ticketing, guest instructor passes, choreography sessions, and commerce.</p>
+                    </div>
+                    <div class="client-tags">
+                        <span class="client-tag">Workshops</span>
+                        <span class="client-tag">Drop-Ins</span>
+                    </div>
+                </div>
+
+                <!-- Card 8 -->
+                <div class="client-card">
+                    <div>
+                        <div class="client-icon-title">Fitness Creators</div>
+                        <p>Direct storefront commerce, branded apparel, merchandise, and supplement sales.</p>
+                    </div>
+                    <div class="client-tags">
+                        <span class="client-tag">Merch</span>
+                        <span class="client-tag">Supplements</span>
+                    </div>
+                </div>
             </div>
+        </section>
 
-        </article>
+        </main>
 
-    </main>
-
-    <!-- Glowing Blue Blobs Footer -->
-    <footer id="contact" class="new-footer" style="padding: 6rem 4rem 4rem 4rem; min-height: 60vh; display: flex; flex-direction: column; justify-content: flex-end; position: relative; overflow: hidden; background: #08080d; border-top: 1px solid rgba(255,255,255,0.06);">
+    <footer id="contact" class="new-footer" style="padding: 6rem 4rem 4rem 4rem; min-height: 60vh; display: flex; flex-direction: column; justify-content: flex-end; position: relative; overflow: hidden; background: #08080c; border-top: 1px solid rgba(255,255,255,0.06);">
         <div class="footer-blob-container">
             <div class="footer-blob footer-blob-1"></div>
             <div class="footer-blob footer-blob-2"></div>
@@ -344,8 +774,8 @@
                 <div>
                     <div style="font-size: 0.75rem; font-weight: 700; color: rgba(255,255,255,0.4); letter-spacing: 1px; margin-bottom: 1.5rem; text-transform: uppercase;">Company</div>
                     <div style="display: flex; flex-direction: column; gap: 1rem;">
-                        <a href="about.html" style="color: #4d94ff; text-decoration: none; font-size: 0.9rem;">About</a>
-                        <a href="blog.html" style="color: #ffffff; font-weight: 700; text-decoration: none; font-size: 0.9rem;">Blog</a>
+                        <a href="about.html" style="color: #ffffff; font-weight: 700; text-decoration: none; font-size: 0.9rem;">About</a>
+                        <a href="blog.html" style="color: #4d94ff; text-decoration: none; font-size: 0.9rem;">Blog</a>
                         <a href="#" style="color: #4d94ff; text-decoration: none; font-size: 0.9rem;">Careers</a>
                         <a href="javascript:void(0);" onclick="var f = document.querySelector('footer') || document.getElementById('contact'); if(f) { f.scrollIntoView({behavior:'smooth'}); } return false;" style="color: #4d94ff; text-decoration: none; font-size: 0.9rem;">Contact Us</a>
                     </div>

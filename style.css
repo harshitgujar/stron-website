@@ -266,17 +266,21 @@ ul {
    HERO CARD & NAVIGATION
    ========================================================================== */
 .hero-card-wrapper {
-    padding: 0;
+    padding: 0.2rem 0.65rem 0.65rem 0.65rem;
     width: 100%;
-    min-height: 100vh;
-    overflow: hidden;
+    background: #08080c;
+    box-sizing: border-box;
 }
 
 .hero-card {
     position: relative;
     width: 100%;
-    min-height: 100vh;
-    border-radius: 0;
+    max-width: 100%;
+    margin: 0 auto;
+    min-height: calc(100vh - 90px);
+    border-radius: 18px;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
     overflow: hidden;
     display: flex;
     flex-direction: column;
@@ -291,8 +295,8 @@ ul {
     right: 0;
     bottom: 0;
     background-image: 
-        linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+        linear-gradient(rgba(255, 255, 255, 0.018) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.018) 1px, transparent 1px);
     background-size: 42px 42px;
     background-position: center center;
     z-index: 1;
@@ -398,12 +402,18 @@ ul {
 .new-nav {
     position: relative;
     width: 100%;
-    height: 70px;
+    height: 75px;
     display: flex;
     align-items: center;
-    background: transparent;
+    background: #08080c;
     z-index: 100;
-    margin-top: 0.5rem;
+}
+
+.nav-divider {
+    width: 1px;
+    height: 18px;
+    background: rgba(255, 255, 255, 0.2);
+    margin: 0 1.5rem;
 }
 
 .nav-container {
@@ -430,13 +440,15 @@ ul {
 
 .nav-links {
     display: flex;
-    gap: 2.2rem;
+    gap: 1.8rem;
+    align-items: center;
 }
 
 .nav-link {
-    font-size: 0.92rem;
+    font-size: 0.78rem;
     font-weight: 500;
-    color: rgba(255, 255, 255, 0.8);
+    letter-spacing: 0.6px;
+    color: rgba(255, 255, 255, 0.7);
     transition: var(--tr-fast);
     text-decoration: none;
 }
@@ -493,7 +505,7 @@ ul {
 .hero-content-left {
     flex: 1;
     max-width: 580px;
-    margin-top: calc(clamp(4.5rem, 8vh, 6.5rem) + 65px);
+    margin-top: clamp(8.5rem, 16vh, 12.5rem);
     margin-left: clamp(2rem, 5vw, 6rem);
     display: flex;
     flex-direction: column;
@@ -515,7 +527,7 @@ ul {
     color: rgba(255, 255, 255, 0.85);
     margin: 0;
     max-width: 465px;
-    text-shadow: 0 2px 12px rgba(0, 0, 0, 0.7);
+    text-shadow: none;
 }
 
 /* Hero CTA Button Group */
@@ -4879,4 +4891,12 @@ ul {
 .nav-link.active {
     color: #005bf0 !important;
     font-weight: 700;
+}
+
+.nav-link:focus,
+.nav-link:focus-visible,
+.nav-pill-btn:focus,
+.nav-pill-btn:focus-visible {
+    outline: none !important;
+    box-shadow: none !important;
 }

@@ -1,1 +1,6 @@
 .vercel
+.DS_Store
+*/.DS_Store
+index_before_destruction.html
+index_c0270da.html
+old_index.html
