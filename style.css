@@ -505,7 +505,7 @@ ul {
 .hero-content-left {
     flex: 1;
     max-width: 580px;
-    margin-top: clamp(8.5rem, 16vh, 12.5rem);
+    margin-top: clamp(5.8rem, 11.5vh, 9.8rem);
     margin-left: clamp(2rem, 5vw, 6rem);
     display: flex;
     flex-direction: column;
