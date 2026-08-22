@@ -4978,3 +4978,36 @@ ul {
         grid-template-columns: 1fr !important;
     }
 }
+
+/* ==========================================================================
+   HERO VERTICAL MASONRY CARDS (RECTANGULAR)
+   ========================================================================== */
+@keyframes heroColFloat1 {
+    0% { transform: translateY(0px); }
+    100% { transform: translateY(-28px); }
+}
+
+@keyframes heroColFloat2 {
+    0% { transform: translateY(-20px); }
+    100% { transform: translateY(12px); }
+}
+
+@keyframes heroColFloat3 {
+    0% { transform: translateY(5px); }
+    100% { transform: translateY(-22px); }
+}
+
+.hero-vertical-card {
+    border-radius: 18px;
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.45);
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden;
+    position: relative;
+}
+
+.hero-vertical-card:hover {
+    transform: translateY(-4px) scale(1.02);
+    border-color: rgba(255, 255, 255, 0.3);
+    box-shadow: 0 20px 45px rgba(0, 91, 240, 0.3);
+}

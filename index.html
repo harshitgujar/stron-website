@@ -180,7 +180,128 @@
                             </div>
                         </div>
                     </div>
-                    </section>
+                    
+                    <!-- Hero Right: 3 Staggered Vertical Columns of Rectangular Sports & Feature Cards -->
+                    <div class="hero-content-right" style="flex: 1.25; display: flex; justify-content: center; align-items: center; position: relative; padding: 1.5rem 0; width: 100%; max-width: 610px; z-index: 5; height: 570px; overflow: hidden; mask-image: linear-gradient(to bottom, transparent 0%, black 10%, black 90%, transparent 100%); -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 10%, black 90%, transparent 100%);">
+                        
+                        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.75rem; width: 100%;">
+                            
+                            <!-- COLUMN 1: Left Vertical Column -->
+                            <div style="display: flex; flex-direction: column; gap: 0.75rem; animation: heroColFloat1 7s ease-in-out infinite alternate;">
+                                
+                                <!-- Card 1A: Sports Photo (CrossFit / Strength) -->
+                                <div class="hero-vertical-card" style="height: 190px; background-image: url('assets/crossfit_event_photo_1786782507044.jpg'); background-size: cover; background-position: center;">
+                                    <div style="position: absolute; inset: 0; background: linear-gradient(180deg, rgba(0,0,0,0.1) 0%, rgba(10,12,20,0.85) 100%);"></div>
+                                    <div style="position: absolute; bottom: 0.75rem; left: 0.75rem; right: 0.75rem; z-index: 2;">
+                                        <span style="font-size: 0.65rem; font-weight: 800; color: #60a5fa; background: rgba(0, 91, 240, 0.25); border: 1px solid rgba(0, 91, 240, 0.4); padding: 0.2rem 0.5rem; border-radius: 6px; display: inline-block; margin-bottom: 0.3rem;">CROSSFIT</span>
+                                        <div style="font-size: 0.82rem; font-weight: 700; color: #ffffff; line-height: 1.2;">Arena Battles</div>
+                                    </div>
+                                </div>
+
+                                <!-- Card 1B: Feature Container (Smart QR Check-in) -->
+                                <div class="hero-vertical-card" style="background: rgba(16, 18, 27, 0.88); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); padding: 0.85rem;">
+                                    <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.45rem;">
+                                        <span style="font-size: 0.62rem; font-weight: 800; color: #818cf8; letter-spacing: 0.5px;">SMART QR</span>
+                                        <span style="width: 7px; height: 7px; background: #22c55e; border-radius: 50%; box-shadow: 0 0 8px #22c55e;"></span>
+                                    </div>
+                                    <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem;">
+                                        <div style="width: 28px; height: 28px; background: rgba(0, 91, 240, 0.2); border: 1px solid rgba(0, 91, 240, 0.4); border-radius: 8px; display: flex; align-items: center; justify-content: center; color: #60a5fa; flex-shrink: 0;">
+                                            <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><path d="M3 3h7v7H3V3zm2 2v3h3V5H5zm9-2h7v7h-7V3zm2 2v3h3V5h-3zM3 14h7v7H3v-7zm2 2v3h3v-3H5zm14-2h3v3h-3v-3zm-5 0h3v3h-3v-3zm2 5h3v3h-3v-3zm3 0h3v3h-3v-3zm-5-3h3v3h-3v-3z"/></svg>
+                                        </div>
+                                        <div style="font-size: 0.78rem; font-weight: 700; color: #ffffff; line-height: 1.2;">Touchless Check-in</div>
+                                    </div>
+                                    <div style="background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.08); border-radius: 8px; padding: 0.35rem 0.5rem; display: flex; justify-content: space-between; font-size: 0.68rem;">
+                                        <span style="color: #9ca3af;">Today</span>
+                                        <span style="color: #ffffff; font-weight: 700;">342 Passes</span>
+                                    </div>
+                                </div>
+
+                                <!-- Card 1C: Sports Photo (Running / 10K) -->
+                                <div class="hero-vertical-card" style="height: 180px; background-image: url('assets/marathon_event_photo_1786782362149.jpg'); background-size: cover; background-position: center;">
+                                    <div style="position: absolute; inset: 0; background: linear-gradient(180deg, rgba(0,0,0,0.1) 0%, rgba(10,12,20,0.85) 100%);"></div>
+                                    <div style="position: absolute; bottom: 0.75rem; left: 0.75rem; right: 0.75rem; z-index: 2;">
+                                        <span style="font-size: 0.65rem; font-weight: 800; color: #4ade80; background: rgba(34, 197, 94, 0.2); border: 1px solid rgba(34, 197, 94, 0.35); padding: 0.2rem 0.5rem; border-radius: 6px; display: inline-block; margin-bottom: 0.3rem;">MARATHON</span>
+                                        <div style="font-size: 0.82rem; font-weight: 700; color: #ffffff; line-height: 1.2;">10K City Run</div>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <!-- COLUMN 2: Center Vertical Column (Offset) -->
+                            <div style="display: flex; flex-direction: column; gap: 0.75rem; margin-top: -24px; animation: heroColFloat2 8s ease-in-out infinite alternate;">
+                                
+                                <!-- Card 2A: Feature Container (Live Race VS Challenge) -->
+                                <div class="hero-vertical-card" style="background: rgba(16, 18, 27, 0.88); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); padding: 0.85rem;">
+                                    <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.45rem;">
+                                        <span style="font-size: 0.62rem; font-weight: 800; color: #f87171; letter-spacing: 0.5px;">LIVE RACE</span>
+                                        <span style="font-size: 0.6rem; font-weight: 800; background: rgba(239, 68, 68, 0.2); color: #f87171; padding: 0.15rem 0.4rem; border-radius: 4px;">VS MODE</span>
+                                    </div>
+                                    <div style="font-size: 0.78rem; font-weight: 700; color: #ffffff; margin-bottom: 0.45rem;">1K Steps Sprint</div>
+                                    <div style="background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.08); border-radius: 8px; padding: 0.4rem 0.55rem; display: flex; justify-content: space-between; align-items: center;">
+                                        <span style="font-size: 0.7rem; color: #4ade80; font-weight: 700;">+50 lead</span>
+                                        <span style="font-size: 0.68rem; color: #cbd5e1;">You vs Ritik</span>
+                                    </div>
+                                </div>
+
+                                <!-- Card 2B: Sports Photo (Gym Training / Iron Pulse) -->
+                                <div class="hero-vertical-card" style="height: 195px; background-image: url('assets/gym-banner-bg.jpg'); background-size: cover; background-position: center;">
+                                    <div style="position: absolute; inset: 0; background: linear-gradient(180deg, rgba(0,0,0,0.1) 0%, rgba(10,12,20,0.85) 100%);"></div>
+                                    <div style="position: absolute; bottom: 0.75rem; left: 0.75rem; right: 0.75rem; z-index: 2;">
+                                        <span style="font-size: 0.65rem; font-weight: 800; color: #38bdf8; background: rgba(56, 189, 248, 0.25); border: 1px solid rgba(56, 189, 248, 0.4); padding: 0.2rem 0.5rem; border-radius: 6px; display: inline-block; margin-bottom: 0.3rem;">GYM OPERATING</span>
+                                        <div style="font-size: 0.82rem; font-weight: 700; color: #ffffff; line-height: 1.2;">Iron Pulse Club</div>
+                                    </div>
+                                </div>
+
+                                <!-- Card 2C: Feature Container (Auto Renewals) -->
+                                <div class="hero-vertical-card" style="background: rgba(16, 18, 27, 0.88); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); padding: 0.85rem;">
+                                    <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.45rem;">
+                                        <span style="font-size: 0.62rem; font-weight: 800; color: #38bdf8; letter-spacing: 0.5px;">AUTO RENEWALS</span>
+                                        <span style="font-size: 0.6rem; color: #4ade80; font-weight: 700;">✓ 100%</span>
+                                    </div>
+                                    <div style="font-size: 1.1rem; font-weight: 800; color: #ffffff; letter-spacing: -0.5px; margin-bottom: 0.15rem;">₹1,12,500</div>
+                                    <div style="font-size: 0.66rem; color: #9ca3af;">Zero payment follow-ups</div>
+                                </div>
+
+                            </div>
+
+                            <!-- COLUMN 3: Right Vertical Column -->
+                            <div style="display: flex; flex-direction: column; gap: 0.75rem; animation: heroColFloat3 6.5s ease-in-out infinite alternate;">
+                                
+                                <!-- Card 3A: Sports Photo (Athletic Sprint) -->
+                                <div class="hero-vertical-card" style="height: 185px; background-image: url('assets/running_athlete_pill.jpg'); background-size: cover; background-position: center;">
+                                    <div style="position: absolute; inset: 0; background: linear-gradient(180deg, rgba(0,0,0,0.1) 0%, rgba(10,12,20,0.85) 100%);"></div>
+                                    <div style="position: absolute; bottom: 0.75rem; left: 0.75rem; right: 0.75rem; z-index: 2;">
+                                        <span style="font-size: 0.65rem; font-weight: 800; color: #fbbf24; background: rgba(251, 191, 36, 0.2); border: 1px solid rgba(251, 191, 36, 0.35); padding: 0.2rem 0.5rem; border-radius: 6px; display: inline-block; margin-bottom: 0.3rem;">LEADERBOARD</span>
+                                        <div style="font-size: 0.82rem; font-weight: 700; color: #ffffff; line-height: 1.2;">Top 1% Athletes</div>
+                                    </div>
+                                </div>
+
+                                <!-- Card 3B: Feature Container (Analytics & Retention) -->
+                                <div class="hero-vertical-card" style="background: rgba(16, 18, 27, 0.88); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); padding: 0.85rem;">
+                                    <div style="font-size: 0.62rem; font-weight: 800; color: #c084fc; letter-spacing: 0.5px; margin-bottom: 0.3rem;">ANALYTICS</div>
+                                    <div style="display: flex; align-items: baseline; gap: 0.4rem; margin-bottom: 0.3rem;">
+                                        <span style="font-size: 1.05rem; font-weight: 800; color: #4ade80;">+28%</span>
+                                        <span style="font-size: 0.66rem; color: #9ca3af;">Retention</span>
+                                    </div>
+                                    <div style="width: 100%; height: 4px; background: rgba(255,255,255,0.08); border-radius: 999px; overflow: hidden;">
+                                        <div style="width: 78%; height: 100%; background: linear-gradient(90deg, #005bf0, #38bdf8); border-radius: 999px;"></div>
+                                    </div>
+                                </div>
+
+                                <!-- Card 3C: Sports Photo (Virtual Challenges) -->
+                                <div class="hero-vertical-card" style="height: 180px; background-image: url('assets/virtual_challenge_photo_1786782933816.jpg'); background-size: cover; background-position: center;">
+                                    <div style="position: absolute; inset: 0; background: linear-gradient(180deg, rgba(0,0,0,0.1) 0%, rgba(10,12,20,0.85) 100%);"></div>
+                                    <div style="position: absolute; bottom: 0.75rem; left: 0.75rem; right: 0.75rem; z-index: 2;">
+                                        <span style="font-size: 0.65rem; font-weight: 800; color: #f472b6; background: rgba(244, 114, 182, 0.2); border: 1px solid rgba(244, 114, 182, 0.35); padding: 0.2rem 0.5rem; border-radius: 6px; display: inline-block; margin-bottom: 0.3rem;">COMMUNITY</span>
+                                        <div style="font-size: 0.82rem; font-weight: 700; color: #ffffff; line-height: 1.2;">Virtual Leagues</div>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </div>
+                </section>
             </div>
         </div>
 
