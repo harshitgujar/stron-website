@@ -5066,3 +5066,40 @@ ul {
     transform: translateY(-1px);
     box-shadow: 0 4px 15px rgba(255, 255, 255, 0.25);
 }
+
+/* ==========================================================================
+   HERO STORE BUTTONS (WHITE RECTANGULAR)
+   ========================================================================== */
+.hero-store-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
+    background: #ffffff;
+    color: #005bf0 !important;
+    border: none;
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 0.92rem;
+    padding: 0.78rem 1.65rem;
+    text-decoration: none;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.16);
+    transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    cursor: pointer;
+}
+
+.hero-store-btn svg {
+    fill: #005bf0;
+    transition: transform 0.2s ease;
+}
+
+.hero-store-btn:hover {
+    background: #f8fafc;
+    color: #0046b8 !important;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.24);
+}
+
+.hero-store-btn:hover svg {
+    transform: scale(1.08);
+}
