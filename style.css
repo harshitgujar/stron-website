@@ -4932,3 +4932,49 @@ ul {
         display: none !important;
     }
 }
+
+/* ==========================================================================
+   HERO BENTO GRID (Dark Theme Containers)
+   ========================================================================== */
+.hero-bento-card {
+    transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.hero-bento-card:hover {
+    transform: translateY(-3px);
+    border-color: rgba(56, 189, 248, 0.35) !important;
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.65), 0 0 25px rgba(0, 91, 240, 0.25) !important;
+}
+
+@media (max-width: 1180px) {
+    .new-hero {
+        flex-direction: column !important;
+        align-items: center !important;
+        gap: 3rem !important;
+        padding: 0 1.5rem !important;
+    }
+    .hero-content-left {
+        margin-left: 0 !important;
+        margin-top: 3rem !important;
+        max-width: 600px !important;
+        text-align: center !important;
+        align-items: center !important;
+    }
+    .hero-content-left .hero-cta-group {
+        justify-content: center !important;
+    }
+    .hero-content-left .hero-trusted-bulletin {
+        align-items: center !important;
+        margin-top: 3rem !important;
+    }
+    .hero-content-right {
+        max-width: 100% !important;
+        padding: 0 0 3rem 0 !important;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-bento-container {
+        grid-template-columns: 1fr !important;
+    }
+}
