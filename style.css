@@ -4680,7 +4680,6 @@ ul {
     gap: 1rem;
 }
 
-
 /* Dynamic Filter Pills & Mockup UI */
 .filter-pills-wrapper {
     display: flex;
@@ -4851,7 +4850,6 @@ ul {
     scrollbar-width: none;
 }
 
-
 /* Blog Card Hover Effects */
 .blog-card {
     background: #15151f;
@@ -4901,7 +4899,6 @@ ul {
     box-shadow: none !important;
 }
 
-
 /* Hero Floating Subcontainers */
 @keyframes floatAnim1 {
     0%, 100% { transform: translateY(0px); }
@@ -4931,140 +4928,6 @@ ul {
     .hero-float-card {
         display: none !important;
     }
-}
-
-/* ==========================================================================
-   HERO BENTO GRID (Dark Theme Containers)
-   ========================================================================== */
-.hero-bento-card {
-    transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.25s ease, box-shadow 0.25s ease;
-}
-
-.hero-bento-card:hover {
-    transform: translateY(-3px);
-    border-color: rgba(56, 189, 248, 0.35) !important;
-    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.65), 0 0 25px rgba(0, 91, 240, 0.25) !important;
-}
-
-@media (max-width: 1180px) {
-    .new-hero {
-        flex-direction: column !important;
-        align-items: center !important;
-        gap: 3rem !important;
-        padding: 0 1.5rem !important;
-    }
-    .hero-content-left {
-        margin-left: 0 !important;
-        margin-top: 3rem !important;
-        max-width: 600px !important;
-        text-align: center !important;
-        align-items: center !important;
-    }
-    .hero-content-left .hero-cta-group {
-        justify-content: center !important;
-    }
-    .hero-content-left .hero-trusted-bulletin {
-        align-items: center !important;
-        margin-top: 3rem !important;
-    }
-    .hero-content-right {
-        max-width: 100% !important;
-        padding: 0 0 3rem 0 !important;
-    }
-}
-
-@media (max-width: 768px) {
-    .hero-bento-container {
-        grid-template-columns: 1fr !important;
-    }
-}
-
-/* ==========================================================================
-   HERO VERTICAL MASONRY CARDS (RECTANGULAR)
-   ========================================================================== */
-@keyframes heroColFloat1 {
-    0% { transform: translateY(0px); }
-    100% { transform: translateY(-28px); }
-}
-
-@keyframes heroColFloat2 {
-    0% { transform: translateY(-20px); }
-    100% { transform: translateY(12px); }
-}
-
-@keyframes heroColFloat3 {
-    0% { transform: translateY(5px); }
-    100% { transform: translateY(-22px); }
-}
-
-.hero-vertical-card {
-    border-radius: 18px;
-    border: 1px solid rgba(255, 255, 255, 0.14);
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.45);
-    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease, box-shadow 0.3s ease;
-    overflow: hidden;
-    position: relative;
-}
-
-.hero-vertical-card:hover {
-    transform: translateY(-4px) scale(1.02);
-    border-color: rgba(255, 255, 255, 0.3);
-    box-shadow: 0 20px 45px rgba(0, 91, 240, 0.3);
-}
-
-/* ==========================================================================
-   HERO STORE PILLS & NAVBAR BOOK DEMO BUTTON
-   ========================================================================== */
-.hero-store-pill {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 9px;
-    background: rgba(14, 16, 26, 0.85);
-    color: #ffffff !important;
-    border: 1px solid rgba(255, 255, 255, 0.18);
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
-    border-radius: 999px;
-    font-weight: 700;
-    font-size: 0.92rem;
-    padding: 0.75rem 1.65rem;
-    text-decoration: none;
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.35);
-    transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.hero-store-pill:hover {
-    background: rgba(25, 29, 45, 0.95);
-    border-color: rgba(255, 255, 255, 0.35);
-    transform: translateY(-2px);
-    box-shadow: 0 12px 30px rgba(0, 91, 240, 0.25);
-}
-
-.btn-nav-demo {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 6px;
-    background: rgba(255, 255, 255, 0.12);
-    color: #ffffff !important;
-    border: 1px solid rgba(255, 255, 255, 0.24);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border-radius: 999px;
-    font-weight: 700;
-    font-size: 0.85rem;
-    padding: 0.55rem 1.45rem;
-    text-decoration: none;
-    transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.btn-nav-demo:hover {
-    background: #ffffff;
-    color: #005bf0 !important;
-    border-color: #ffffff;
-    transform: translateY(-1px);
-    box-shadow: 0 4px 15px rgba(255, 255, 255, 0.25);
 }
 
 /* ==========================================================================
