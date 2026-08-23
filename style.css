@@ -5103,3 +5103,27 @@ ul {
 .hero-store-btn:hover svg {
     transform: scale(1.08);
 }
+
+/* ==========================================================================
+   HERO FLOATING SVG WIDGET ANIMATION
+   ========================================================================== */
+@keyframes heroSvgHoverFloat {
+    0% {
+        transform: translateY(0px) rotate(0deg);
+    }
+    50% {
+        transform: translateY(-14px) rotate(0.4deg);
+    }
+    100% {
+        transform: translateY(6px) rotate(-0.3deg);
+    }
+}
+
+.hero-svg-floating {
+    animation: heroSvgHoverFloat 6s ease-in-out infinite alternate;
+    transition: filter 0.4s ease;
+}
+
+.hero-svg-floating:hover {
+    filter: drop-shadow(0 30px 60px rgba(0, 91, 240, 0.35)) !important;
+}
