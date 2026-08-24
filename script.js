@@ -23,34 +23,38 @@ document.addEventListener('DOMContentLoaded', () => {
     
 
     // 3. Sticky Nav Logic (Native Scroll)
-    const stickyNav = document.getElementById('sticky-nav');
-    if (stickyNav) {
+        // 3. Unified Smart Scroll Navigation (Hide on Scroll Down, Show on Scroll Stop & Up in all sections)
+    const navbar = document.querySelector('.nav.new-nav');
+    if (navbar) {
         let scrollTimeout;
-        let lastY = 0;
+        let lastScrollY = window.scrollY;
         
         window.addEventListener('scroll', () => {
-            const currentY = window.scrollY;
-            const heroThreshold = window.innerHeight * 0.5;
+            const currentScrollY = window.scrollY;
             
-            if (currentY > heroThreshold) {
-                if (currentY > lastY) {
-                    // Scrolling down - hide
-                    stickyNav.style.transform = 'translateY(-100%)';
-                } else {
-                    // Scrolling up - show
-                    stickyNav.style.transform = 'translateY(0px)';
-                }
-                
-                lastY = currentY;
-                
+            // At the top of the page, keep navbar visible
+            if (currentScrollY <= 40) {
+                navbar.style.transform = 'translateY(0)';
                 clearTimeout(scrollTimeout);
-                scrollTimeout = setTimeout(() => {
-                    stickyNav.style.transform = 'translateY(0px)';
-                }, 150); 
-            } else {
-                stickyNav.style.transform = 'translateY(-100%)';
-                clearTimeout(scrollTimeout);
+                lastScrollY = currentScrollY;
+                return;
             }
+            
+            if (currentScrollY > lastScrollY && currentScrollY > 60) {
+                // Scrolling down -> smoothly slide up and hide
+                navbar.style.transform = 'translateY(-100%)';
+            } else if (currentScrollY < lastScrollY) {
+                // Scrolling up -> immediately slide down into view
+                navbar.style.transform = 'translateY(0)';
+            }
+            
+            lastScrollY = currentScrollY;
+            
+            // When user stops scrolling in ANY section -> slide down into view
+            clearTimeout(scrollTimeout);
+            scrollTimeout = setTimeout(() => {
+                navbar.style.transform = 'translateY(0)';
+            }, 180);
         }, { passive: true });
     }
 
