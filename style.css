@@ -5030,3 +5030,39 @@ ul {
     opacity: 1;
     transform: scale(1.04);
 }
+
+/* ==========================================================================
+   NAVBAR BOOK DEMO BUTTON (SOLID WHITE RECTANGULAR BUTTON)
+   ========================================================================== */
+.btn-nav-demo,
+.nav-cta .nav-pill-btn {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    background: #ffffff !important;
+    color: #08080c !important;
+    font-weight: 700 !important;
+    font-size: 0.88rem !important;
+    padding: 0.55rem 1.35rem !important;
+    border-radius: 8px !important;
+    text-decoration: none !important;
+    border: 1px solid #ffffff !important;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25) !important;
+    transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), background 0.2s ease, box-shadow 0.2s ease, color 0.2s ease !important;
+    cursor: pointer !important;
+    white-space: nowrap !important;
+    line-height: 1 !important;
+}
+
+.btn-nav-demo:hover,
+.nav-cta .nav-pill-btn:hover {
+    background: #f0f4ff !important;
+    color: #005bf0 !important;
+    transform: translateY(-1px) scale(1.02) !important;
+    box-shadow: 0 6px 20px rgba(0, 91, 240, 0.32) !important;
+}
+
+.btn-nav-demo:active,
+.nav-cta .nav-pill-btn:active {
+    transform: translateY(0px) scale(0.98) !important;
+}
