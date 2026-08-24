@@ -4966,3 +4966,47 @@ ul {
 .hero-store-btn:hover svg {
     transform: scale(1.08);
 }
+
+/* ==========================================================================
+   HERO TRUSTED BULLETIN MARQUEE
+   ========================================================================== */
+@keyframes heroBulletinScroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+.hero-marquee-track {
+    display: flex;
+    align-items: center;
+    gap: 2.25rem;
+    width: max-content;
+    animation: heroBulletinScroll 20s linear infinite;
+    will-change: transform;
+}
+
+.hero-marquee-track:hover {
+    animation-play-state: paused;
+}
+
+.hero-marquee-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    font-weight: 800;
+    font-size: 0.92rem;
+    color: #ffffff;
+    opacity: 0.85;
+    letter-spacing: 0.4px;
+    white-space: nowrap;
+    transition: opacity 0.2s ease, transform 0.2s ease;
+    cursor: default;
+}
+
+.hero-marquee-item:hover {
+    opacity: 1;
+    transform: scale(1.04);
+}
