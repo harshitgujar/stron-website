@@ -260,10 +260,10 @@ ul {
 }
 
 /* ==========================================================================
-   NAVIGATION (STICKY SMART NAVBAR - ZERO GAP)
+   NAVIGATION (GLOBAL FIXED SMART NAVBAR)
    ========================================================================== */
 .new-nav {
-    position: sticky;
+    position: fixed;
     top: 0;
     left: 0;
     right: 0;
@@ -271,17 +271,20 @@ ul {
     height: 75px;
     display: flex;
     align-items: center;
-    background: #08080c;
+    background: rgba(8, 8, 12, 0.95);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
     border-bottom: 1px solid rgba(255, 255, 255, 0.06);
-    z-index: 9999;
+    z-index: 99999;
     transform: translateY(0);
     transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), background 0.3s ease, border-color 0.3s ease;
     will-change: transform;
 }
 
+/* Page Spacing for Fixed 75px Navbar - Perfectly flush with Hero Card */
 .hero-card-wrapper {
     margin-top: 0 !important;
-    padding: 0.2rem 0.65rem 0.65rem 0.65rem;
+    padding: 75px 0.65rem 0.65rem 0.65rem !important;
     width: 100%;
     background: #08080c;
     box-sizing: border-box;
@@ -290,11 +293,11 @@ ul {
 .editorial-container,
 .contact-container,
 .article-container {
-    padding-top: 0;
+    padding-top: 75px;
 }
 
 .pricing-hero {
-    margin-top: 0;
+    padding-top: 90px !important;
 }
 
 .hero-card {
