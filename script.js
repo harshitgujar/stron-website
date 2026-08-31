@@ -267,4 +267,62 @@ document.addEventListener('DOMContentLoaded', () => {
 
         updateCarousel();
     }
+
+
+    // 9. STRON Directory Live Filter & Search Logic (Gyms & Run Clubs)
+    const dirSearchInput = document.getElementById('directorySearchInput');
+    const cityChips = document.querySelectorAll('.city-filter-chip');
+    const dirCards = document.querySelectorAll('.directory-card');
+    const noResultsMsg = document.getElementById('directoryNoResults');
+
+    if (dirCards.length > 0) {
+        let activeCity = 'all';
+        let searchQuery = '';
+
+        function filterDirectory() {
+            let visibleCount = 0;
+            const query = searchQuery.toLowerCase().trim();
+
+            dirCards.forEach(card => {
+                const name = (card.getAttribute('data-name') || '').toLowerCase();
+                const city = (card.getAttribute('data-city') || '').toLowerCase();
+                const loc = (card.getAttribute('data-location') || '').toLowerCase();
+                const tags = (card.getAttribute('data-tags') || '').toLowerCase();
+
+                const matchesCity = (activeCity === 'all' || city === activeCity.toLowerCase());
+                const matchesSearch = !query || name.includes(query) || city.includes(query) || loc.includes(query) || tags.includes(query);
+
+                if (matchesCity && matchesSearch) {
+                    card.style.display = 'flex';
+                    visibleCount++;
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+
+            if (noResultsMsg) {
+                noResultsMsg.style.display = (visibleCount === 0) ? 'block' : 'none';
+            }
+        }
+
+        if (dirSearchInput) {
+            dirSearchInput.addEventListener('input', (e) => {
+                searchQuery = e.target.value;
+                filterDirectory();
+            });
+        }
+
+        if (cityChips.length > 0) {
+            cityChips.forEach(chip => {
+                chip.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    cityChips.forEach(c => c.classList.remove('active'));
+                    chip.classList.add('active');
+                    activeCity = chip.getAttribute('data-city-filter') || 'all';
+                    filterDirectory();
+                });
+            });
+        }
+    }
+
 });
